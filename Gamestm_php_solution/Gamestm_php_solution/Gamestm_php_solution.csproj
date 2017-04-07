@@ -37,6 +37,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="StockClass.cs" />
+    <Compile Include="SalesClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Message.manifest" />

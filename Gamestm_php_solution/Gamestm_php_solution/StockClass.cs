@@ -16,7 +16,7 @@ namespace Gamestm_php_solution
 			_Id = Id;
 			_Price = Price;
 		}
-
+			
 		public string GetName {
 			get {
 				return _Name;
