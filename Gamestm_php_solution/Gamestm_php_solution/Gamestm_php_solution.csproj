@@ -36,6 +36,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="StockClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Message.manifest" />
