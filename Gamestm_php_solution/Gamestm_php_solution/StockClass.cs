@@ -23,7 +23,7 @@ namespace Gamestm_php_solution
 			}
 		}
 
-		public double Price {
+		public double GetPrice {
 			get {
 				return _Price;
 			}
