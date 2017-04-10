@@ -53,7 +53,9 @@ namespace Gamestm_php_solution
 			get {
 				return _Desc;
 			}
-            //Add limitations and if statements if necessary.
+        //Add limitations and if statements if necessary.
 		}
+        //search for entry of typed sales item.
+        //if certain item is selected, change to '', store edited entry.
 	}
 }

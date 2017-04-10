@@ -1,5 +1,4 @@
 ﻿using System;
-
 //print out text and make sure it prints out.
 namespace Gamestm_php_solution
 {
