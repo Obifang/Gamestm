@@ -43,6 +43,14 @@ namespace Gamestm_php_solution
 				return _Desc;
 			}
 		}
+
+		public void edit(string newName, string newDesc, int newId, double newPrice)
+		{
+			_Name = newName;
+			_Desc = newDesc;
+			_Id = newId;
+			_Price = newPrice;
+		}
 	}
 }
 
