@@ -4,29 +4,45 @@ namespace Gamestm_php_solution
 {
 	class MainClass
 	{
-		public string userInput;
-
 		public static void Main()
 		{
-			StockClass testStock = new StockClass("stock name", "a type of stock", 1, 23);
-			Console.WriteLine(testStock.GetName);
-			Console.WriteLine(testStock.GetDesc);
-			Console.WriteLine(testStock.GetId);
-			Console.WriteLine(testStock.GetPrice);
+            string userInput;
+            StockClass[] stockArray = new StockClass[10];
+            stockArray[0] = new StockClass("Pain Killers", "kill that pain dead", 1, 25);
 
-			editStockRecord(testStock);
+            Console.WriteLine(stockArray[0].GetName);
+			Console.WriteLine(stockArray[0].GetDesc);
+			Console.WriteLine(stockArray[0].GetId);
+			Console.WriteLine(stockArray[0].GetPrice);
 
-			Console.WriteLine(testStock.GetName);
-			Console.WriteLine(testStock.GetDesc);
-			Console.WriteLine(testStock.GetId);
-			Console.WriteLine(testStock.GetPrice);
+            userInput = Console.ReadLine();
 
-			Console.ReadLine();
-		}
+            if (userInput == "edit")
+            {
+                Console.WriteLine("Enter new name");
+                string newName = Console.ReadLine();
+                Console.WriteLine("Enter new description");
+                string newDesc = Console.ReadLine();
+                Console.WriteLine("Enter new ID");
+                int newId = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("Enter new price");
+                double newPrice = Convert.ToDouble(Console.ReadLine());
 
-		public static void editStockRecord(StockClass s)
+                editStockRecord(stockArray[0], newName, newDesc, newId, newPrice);
+                userInput = "";
+            }
+
+            Console.WriteLine(stockArray[0].GetName);
+            Console.WriteLine(stockArray[0].GetDesc);
+            Console.WriteLine(stockArray[0].GetId);
+            Console.WriteLine(stockArray[0].GetPrice);
+
+            Console.ReadLine();
+        }
+
+		public static void editStockRecord(StockClass s, string newName, string newDesc, int newId, double newPrice)
 		{
-			s.edit("different name", "another desc", 5, 70);
+			s.edit(newName, newDesc, newId, newPrice);
 		}
 	}
 }
