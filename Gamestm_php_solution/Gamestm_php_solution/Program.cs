@@ -16,28 +16,30 @@ namespace Gamestm_php_solution
 			Console.WriteLine(stockArray[0].GetPrice);
 
             userInput = Console.ReadLine();
-
-            if (userInput == "edit")
+            while (userInput != "quit")
             {
-                Console.WriteLine("Enter new name");
-                string newName = Console.ReadLine();
-                Console.WriteLine("Enter new description");
-                string newDesc = Console.ReadLine();
-                Console.WriteLine("Enter new ID");
-                int newId = Convert.ToInt16(Console.ReadLine());
-                Console.WriteLine("Enter new price");
-                double newPrice = Convert.ToDouble(Console.ReadLine());
+                if (userInput == "edit")
+                {
+                    Console.WriteLine("Enter new name");
+                    string newName = Console.ReadLine();
+                    Console.WriteLine("Enter new description");
+                    string newDesc = Console.ReadLine();
+                    Console.WriteLine("Enter new ID");
+                    int newId = Convert.ToInt16(Console.ReadLine());
+                    Console.WriteLine("Enter new price");
+                    double newPrice = Convert.ToDouble(Console.ReadLine());
 
-                editStockRecord(stockArray[0], newName, newDesc, newId, newPrice);
-                userInput = "";
-            }
+                    editStockRecord(stockArray[0], newName, newDesc, newId, newPrice);
+                    userInput = "";
+                }
 
-            Console.WriteLine(stockArray[0].GetName);
-            Console.WriteLine(stockArray[0].GetDesc);
-            Console.WriteLine(stockArray[0].GetId);
-            Console.WriteLine(stockArray[0].GetPrice);
+                Console.WriteLine(stockArray[0].GetName);
+                Console.WriteLine(stockArray[0].GetDesc);
+                Console.WriteLine(stockArray[0].GetId);
+                Console.WriteLine(stockArray[0].GetPrice);
 
-            Console.ReadLine();
+                userInput = Console.ReadLine();
+            }          
         }
 
 		public static void editStockRecord(StockClass s, string newName, string newDesc, int newId, double newPrice)
