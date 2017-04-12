@@ -68,7 +68,7 @@ namespace Gamestm_php_solution
             {
 				return _StockSold;
 			}
-        }*/
+        }
 
         public void UpdateStock(string StockName, int StockSold)
         {
@@ -78,6 +78,6 @@ namespace Gamestm_php_solution
         public void AddStockToSale(string StockName, int StockSold)
           {
           //Just need to know what to insert here.
-          }*/
+          }
     }
 }
