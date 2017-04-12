@@ -63,19 +63,19 @@ namespace Gamestm_php_solution
         }
 
         //calculate the total stock sold and profit.
-        /*public StockSale[] Stocksold;
+        public StockSale[] Stocksold;
         { get
             {
 				return _StockSold;
 			}
         }*/
 
-        /*public void UpdateStock(StockName: string, StockSold: int)
+        public void UpdateStock(string StockName, int StockSold)
         {
           //just need to know what to insert here.
-        }*/
+        }
 
-        /*public void AddStockToSale(StockName: string, StockSold: int)
+        public void AddStockToSale(string StockName, int StockSold)
           {
           //Just need to know what to insert here.
           }*/

@@ -11,6 +11,7 @@ namespace Gamestm_php_solution
 		{
 			text = txt;
 		}
+
         //once the text inserted is given a value and then printed out.
 		public void Print()
 		{
