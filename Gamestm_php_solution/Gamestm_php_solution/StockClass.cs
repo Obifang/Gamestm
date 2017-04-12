@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Gamestm_php_solution
 {
@@ -13,6 +14,7 @@ namespace Gamestm_php_solution
 		private int _Id;
         //cost of item.
 		private double _Price;
+        //find out what stock is available.
         private int _InStock;
         
         //maybe have "Quantity" as a private variable if need be.
@@ -56,6 +58,7 @@ namespace Gamestm_php_solution
 			}
         //Add limitations and if statements if necessary.
 		}
+
         //get and find out if there is stock available or not.
         public int InStock
         {
@@ -64,11 +67,12 @@ namespace Gamestm_php_solution
                 return _InStock;
             }
         }
+
         //search for entry of typed sales item.
         //if certain item is selected, change to ' ', store edited entry.
         public void EditStock()
         {
             //just need to know what to insert here.
         }
-       }
+    }
 }
