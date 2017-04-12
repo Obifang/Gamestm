@@ -8,6 +8,7 @@ namespace Gamestm_php_solution
 		private string _Desc;
 		private int _Id;
 		private double _Price;
+        private int _InStock;
 
 		public StockClass (string Name, string Desc, int Id, double Price)
 		{
@@ -43,6 +44,11 @@ namespace Gamestm_php_solution
 				return _Desc;
 			}
 		}
-	}
+
+        public int InStock {
+            get => _InStock;
+            set => _InStock = value;
+        }
+    }
 }
 
