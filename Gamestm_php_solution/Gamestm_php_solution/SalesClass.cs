@@ -3,27 +3,28 @@ using System.Collections.Generic;
 
 namespace Gamestm_php_solution
 {
-	public class SalesClass
-	{
+    public class SalesClass
+    {
         //Stock Items.
-		private StockClass[] _StockItems;
+        private StockClass[] _StockItems;
         //Quantity of stock.
-		private int _StockCount;
+        private int _StockCount;
         //Cost of item.
         private double _ItemCost;
         //Date stock item was sold.
         private DateTime _SalesDate;
-
+        //stock sold.
+        //private StockClass[] _Stocksold;
         //I think we can reference stock class here as well to check the user input.
         //reference stock class or stock.
-		public SalesClass ()
-		{
+        public SalesClass()
+        {
             _StockItems = StockItems;
             _StockCount = StockCount;
             _ItemCost = ItemCost;
             _SalesDate = SalesDate;
-		}
-
+            //_StockSold = StockSold;
+        }
         //Getters and setters. add fields to each item.
         //assign price to stock item.
         //bring up stock data in set messages.
@@ -32,7 +33,6 @@ namespace Gamestm_php_solution
             get => StockItems;
             set => StockItems = value;
         }
-
         //with each stock added - increase quantity of item.
         //calculate the amount of purchases of each sales item.
         public int StockCount
@@ -40,14 +40,12 @@ namespace Gamestm_php_solution
             get => StockCount;
             set => StockCount = value;
         }
-
         //calculate salescost for each stock item.
         public double ItemCost
         {
             get => ItemCost;
             set => ItemCost = value;
         }
-
         //enable the sales date to synchronise with the clock on the computer.
         public DateTime SalesDate
         {
@@ -55,5 +53,11 @@ namespace Gamestm_php_solution
             set => SalesDate = value;
         }
         //calculate the total stock sold and profit.
+        /*public StockSale[] Stocksold;
+        { 
+            {
+				return _StockSold;
+			}
+        }*/
     }
 }

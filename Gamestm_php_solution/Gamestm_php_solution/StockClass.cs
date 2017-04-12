@@ -13,6 +13,7 @@ namespace Gamestm_php_solution
 		private int _Id;
         //cost of item.
 		private double _Price;
+        private int _InStock;
         
         //maybe have "Quantity" as a private variable if need be.
 		public StockClass (string Name, string Desc, int Id, double Price)
@@ -22,7 +23,7 @@ namespace Gamestm_php_solution
 			_Desc = Desc;
 			_Id = Id;
 			_Price = Price;
-		}
+        }
 
 		//Get the name of the product inserted.	
 		public string GetName {
@@ -55,7 +56,19 @@ namespace Gamestm_php_solution
 			}
         //Add limitations and if statements if necessary.
 		}
+        //get and find out if there is stock available or not.
+        public int InStock
+        {
+            get
+            {
+                return _InStock;
+            }
+        }
         //search for entry of typed sales item.
-        //if certain item is selected, change to '', store edited entry.
-	}
+        //if certain item is selected, change to ' ', store edited entry.
+        public void EditStock()
+        {
+            //just need to know what to insert here.
+        }
+       }
 }
