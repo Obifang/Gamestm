@@ -14,7 +14,7 @@ namespace Gamestm_php_solution
         //Date stock item was sold.
         private DateTime _SalesDate;
         //stock sold.
-        //private StockClass[] _Stocksold;
+        private StockClass[] _Stocksold;
         //I think we can reference stock class here as well to check the user input.
 
         //reference stock class or stock.
