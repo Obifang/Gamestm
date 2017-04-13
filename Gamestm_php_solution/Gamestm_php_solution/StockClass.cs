@@ -57,6 +57,16 @@ namespace Gamestm_php_solution
 			}
         //Add limitations and if statements if necessary.
 		}
+    
+		public void edit(string newName, string newDesc, int newId, double newPrice)
+		{
+			_Name = newName;
+			_Desc = newDesc;
+			_Id = newId;
+			_Price = newPrice;
+		}
+	}
+}
 
         //get and find out if there is stock available or not.
         public int InStock
