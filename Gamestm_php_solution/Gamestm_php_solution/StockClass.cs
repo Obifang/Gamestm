@@ -18,13 +18,14 @@ namespace Gamestm_php_solution
         private int _InStock;
         
         //maybe have "Quantity" as a private variable if need be.
-		public StockClass (string Name, string Desc, int Id, double Price)
+		public StockClass (string Name, string Desc, int Id, double Price, int InStock)
 		{
             //Provide a value for the variables.
 			_Name = Name;
 			_Desc = Desc;
 			_Id = Id;
 			_Price = Price;
+			_InStock = InStock;
         }
 
 		//Get the name of the product inserted.	

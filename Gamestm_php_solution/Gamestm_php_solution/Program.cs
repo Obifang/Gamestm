@@ -8,7 +8,7 @@ namespace Gamestm_php_solution
 		public static void Main()
 		{
             //Get the user to insert an item name, short description, ID for product and the price.
-			StockClass testStock = new StockClass ("stock name", "type of stock", 1, 23);
+			StockClass testStock = new StockClass ("Test Name", "TestType", 1, 23, 5);
 			Console.WriteLine (testStock.GetName);
 			Console.WriteLine (testStock.GetDesc);
 			Console.WriteLine (testStock.GetId);
