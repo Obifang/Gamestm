@@ -32,6 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -40,9 +43,11 @@
     <Compile Include="StockClass.cs" />
     <Compile Include="SalesClass.cs" />
     <Compile Include="StockSale.cs" />
+    <Compile Include="StockTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Message.manifest" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
