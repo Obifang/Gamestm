@@ -1,0 +1,17 @@
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Debug\PHPSolution.exe.config
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Debug\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Debug\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.pdb
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.exe
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.Main.resources
