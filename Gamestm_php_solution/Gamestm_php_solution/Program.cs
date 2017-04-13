@@ -12,9 +12,9 @@ namespace Gamestm_php_solution
             stockArray[0] = new StockClass("Pain Killers", "kill that pain dead", 1, 25);
             //Get the user to insert an item name, short description, ID for product and the price.
             Console.WriteLine(stockArray[0].GetName);
-		      	Console.WriteLine(stockArray[0].GetDesc);
-			      Console.WriteLine(stockArray[0].GetId);
-			      Console.WriteLine(stockArray[0].GetPrice);
+		    Console.WriteLine(stockArray[0].GetDesc);
+			Console.WriteLine(stockArray[0].GetId);
+			Console.WriteLine(stockArray[0].GetPrice);
 
             userInput = Console.ReadLine();
             while (userInput != "quit")
