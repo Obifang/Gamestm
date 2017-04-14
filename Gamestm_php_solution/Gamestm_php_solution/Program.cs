@@ -5,7 +5,7 @@ namespace Gamestm_php_solution
 {
 	class MainClass
 	{
-		public static void Main()
+		public static void Main(string[] args)
 		{
             string userInput;
             StockClass[] stockArray = new StockClass[10];
@@ -16,7 +16,6 @@ namespace Gamestm_php_solution
 			Console.WriteLine (testStock.GetDesc);
 			Console.WriteLine (testStock.GetId);
 			Console.WriteLine (testStock.GetPrice);*/
-
             Console.WriteLine(stockArray[0].GetName);
 		    Console.WriteLine(stockArray[0].GetDesc);
 			Console.WriteLine(stockArray[0].GetId);
@@ -52,7 +51,6 @@ namespace Gamestm_php_solution
 		public static void editStockRecord(StockClass s, string newName, string newDesc, int newId, double newPrice)
 		{
 			s.edit(newName, newDesc, newId, newPrice);
-
 		}
 	}
 }
