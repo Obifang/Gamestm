@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PHPSolution
 {
-    public partial class Main : Form
+    public partial class mainform : Form
     {
-        public Main()
+        public mainform()
         {
             InitializeComponent();
         }
@@ -26,14 +26,14 @@ namespace PHPSolution
 
         private void mainform_Load(object sender, EventArgs e)
         {
-            // Loads data into the 'pHPDatabaseDataSet.Stock' table
+            // Loads data into 'stockTableAdapter'
             try
             {
                 this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fill failed");
+                MessageBox.Show("Fill stock failed");
             }
 
             // Clears labels
@@ -45,20 +45,20 @@ namespace PHPSolution
             stockprice.Text = "";
         }
 
-        //Currently only works if value is hardcoded
+        //Provides complete data for a stock number.
         private void showstockrecord_Click(object sender, EventArgs e)
         {
             try
             {
-                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Stock_No]=5");//+showstocksearchbox);
+                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Stock_No]="+showstocksearchbox.Text.Trim());
                 var array = newResultRow[0].ItemArray;
 
-               stockno.Text = "ID Number:   " + array[0].ToString();
-               stockname.Text = "Name:          " + array[1].ToString();
-               stockdesc.Text = "Desc:           " + array[2].ToString();
-               stocktype.Text = "Type:            " + array[3].ToString();
-               stockquantity.Text = "Quantity:      " + array[4].ToString();
-               stockprice.Text = "Price:            " + array[5].ToString();
+                stockno.Text = "ID Number:   " + array[0].ToString();
+                stockname.Text = "Name:          " + array[1].ToString();
+                stockdesc.Text = "Desc:           " + array[2].ToString();
+                stocktype.Text = "Type:            " + array[3].ToString();
+                stockquantity.Text = "Quantity:      " + array[4].ToString();
+                stockprice.Text = "Price:            " + array[5].ToString();
             }
             catch (Exception ex)
             {
@@ -105,6 +105,18 @@ namespace PHPSolution
             catch (Exception ex)
             {
                 MessageBox.Show("Search for ID query failed");
+            }
+        }
+
+        private void refreshdatabase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Refresh failed");
             }
         }
     }

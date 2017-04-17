@@ -29,8 +29,9 @@ namespace PHPSolution
             string strdesc = stockdesc.Text;
             string strtype = stocktype.Text;
             int intQuantity;
-            decimal decPrice = Convert.ToDecimal(stockprice.Text); ;
             Int32.TryParse(stockquantity.Text, out intQuantity);
+            decimal decPrice = Convert.ToDecimal(stockprice.Text); ;
+            
            
             // Create a new row.
             PHPDatabaseDataSet.StockRow newStockRow = pHPDatabaseDataSet.Stock.NewStockRow();

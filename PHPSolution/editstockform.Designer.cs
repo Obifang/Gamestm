@@ -40,13 +40,15 @@
             this.stockTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockTableAdapter();
             this.tableAdapterManager = new PHPSolution.PHPDatabaseDataSetTableAdapters.TableAdapterManager();
             this.stocknumber = new System.Windows.Forms.TextBox();
+            this.editstocktextbox = new System.Windows.Forms.TextBox();
+            this.selectstocktoedit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // stockprice
             // 
-            this.stockprice.Location = new System.Drawing.Point(12, 142);
+            this.stockprice.Location = new System.Drawing.Point(12, 228);
             this.stockprice.Name = "stockprice";
             this.stockprice.Size = new System.Drawing.Size(449, 20);
             this.stockprice.TabIndex = 23;
@@ -54,7 +56,7 @@
             // 
             // stockquantity
             // 
-            this.stockquantity.Location = new System.Drawing.Point(12, 116);
+            this.stockquantity.Location = new System.Drawing.Point(12, 202);
             this.stockquantity.Name = "stockquantity";
             this.stockquantity.Size = new System.Drawing.Size(449, 20);
             this.stockquantity.TabIndex = 22;
@@ -62,7 +64,7 @@
             // 
             // stocktype
             // 
-            this.stocktype.Location = new System.Drawing.Point(12, 90);
+            this.stocktype.Location = new System.Drawing.Point(12, 176);
             this.stocktype.Name = "stocktype";
             this.stocktype.Size = new System.Drawing.Size(449, 20);
             this.stocktype.TabIndex = 21;
@@ -70,7 +72,7 @@
             // 
             // stockdesc
             // 
-            this.stockdesc.Location = new System.Drawing.Point(12, 64);
+            this.stockdesc.Location = new System.Drawing.Point(12, 150);
             this.stockdesc.Name = "stockdesc";
             this.stockdesc.Size = new System.Drawing.Size(449, 20);
             this.stockdesc.TabIndex = 20;
@@ -78,16 +80,17 @@
             // 
             // editstockrecordbutton
             // 
-            this.editstockrecordbutton.Location = new System.Drawing.Point(12, 219);
+            this.editstockrecordbutton.Location = new System.Drawing.Point(12, 284);
             this.editstockrecordbutton.Name = "editstockrecordbutton";
             this.editstockrecordbutton.Size = new System.Drawing.Size(449, 23);
             this.editstockrecordbutton.TabIndex = 19;
             this.editstockrecordbutton.Text = "Edit Stock";
             this.editstockrecordbutton.UseVisualStyleBackColor = true;
+            this.editstockrecordbutton.Click += new System.EventHandler(this.editstockrecordbutton_Click);
             // 
             // stockname
             // 
-            this.stockname.Location = new System.Drawing.Point(12, 38);
+            this.stockname.Location = new System.Drawing.Point(12, 124);
             this.stockname.Name = "stockname";
             this.stockname.Size = new System.Drawing.Size(449, 20);
             this.stockname.TabIndex = 18;
@@ -115,18 +118,38 @@
             // 
             // stocknumber
             // 
-            this.stocknumber.Location = new System.Drawing.Point(12, 12);
+            this.stocknumber.Location = new System.Drawing.Point(12, 98);
             this.stocknumber.Name = "stocknumber";
             this.stocknumber.ReadOnly = true;
             this.stocknumber.Size = new System.Drawing.Size(449, 20);
             this.stocknumber.TabIndex = 24;
             this.stocknumber.Text = "ID Number";
             // 
+            // editstocktextbox
+            // 
+            this.editstocktextbox.Location = new System.Drawing.Point(12, 12);
+            this.editstocktextbox.Name = "editstocktextbox";
+            this.editstocktextbox.Size = new System.Drawing.Size(449, 20);
+            this.editstocktextbox.TabIndex = 25;
+            this.editstocktextbox.Text = "Stock To Edit (ID Number) - If changed must press select stock to edit";
+            // 
+            // selectstocktoedit
+            // 
+            this.selectstocktoedit.Location = new System.Drawing.Point(12, 38);
+            this.selectstocktoedit.Name = "selectstocktoedit";
+            this.selectstocktoedit.Size = new System.Drawing.Size(449, 23);
+            this.selectstocktoedit.TabIndex = 26;
+            this.selectstocktoedit.Text = "Select Stock To Edit";
+            this.selectstocktoedit.UseVisualStyleBackColor = true;
+            this.selectstocktoedit.Click += new System.EventHandler(this.selectstocktoedit_Click);
+            // 
             // editstockform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 255);
+            this.ClientSize = new System.Drawing.Size(476, 315);
+            this.Controls.Add(this.selectstocktoedit);
+            this.Controls.Add(this.editstocktextbox);
             this.Controls.Add(this.stocknumber);
             this.Controls.Add(this.stockprice);
             this.Controls.Add(this.stockquantity);
@@ -156,5 +179,7 @@
         private PHPDatabaseDataSetTableAdapters.StockTableAdapter stockTableAdapter;
         private PHPDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox stocknumber;
+        public System.Windows.Forms.TextBox editstocktextbox;
+        private System.Windows.Forms.Button selectstocktoedit;
     }
 }

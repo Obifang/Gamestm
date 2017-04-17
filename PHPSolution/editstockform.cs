@@ -12,21 +12,40 @@ namespace PHPSolution
 {
     public partial class editstockform : Form
     {
-        //Allows access to a field on another form
-        private Main MainForm = new Main();
-        int stocktoedit = 3;
-        
-        //The idea is to have the old values popup, which the user will edit and the new edited values and any old values the user
-        //did not change will be pushed back into the database
         public editstockform()
         {
             InitializeComponent();
-            //Int32.TryParse(MainForm.editstocktextbox.Text, out stocktoedit);
+
+            // Loads data into 'stockTableAdapter'
             try
             {
-                //Currently doesn't work even though identical code is used in mainform.
-                //Perhaps has something to do with the tableadapters?
-                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Stock_No]=5");//+stocktoedit);
+                this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fill stock failed");
+            }            
+        }
+
+        //Populate the fields with the old data
+        private void selectstocktoedit_Click(object sender, EventArgs e)
+        {
+            //Initialise stockedit
+            int stocktoedit = 1;
+            try
+            {
+                stocktoedit = Int32.Parse(editstocktextbox.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Stock Edit Parse failed");
+                MessageBox.Show("String Value : " + editstocktextbox.Text.Trim() + "");
+            }
+
+            //Fetch data from database
+            try
+            {
+                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Stock_No]=" + stocktoedit + "");
                 var array = newResultRow[0].ItemArray;
 
                 stocknumber.Text = array[0].ToString();
@@ -41,11 +60,50 @@ namespace PHPSolution
                 MessageBox.Show("Fetch data for row edits failed");
             }
         }
-       
-        private void editstock_Click(object sender, EventArgs e)
+
+        private void editstockrecordbutton_Click(object sender, EventArgs e)
         {
-            //Int32.TryParse(MainForm.editstocktextbox.Text, out stocktoedit);
-            
+            //Initialise stockedit
+            int stocktoedit = 1;
+            try
+            {
+                stocktoedit = Int32.Parse(editstocktextbox.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Stock Edit Parse failed");
+                MessageBox.Show("String Value : " + editstocktextbox.Text.Trim() + "");
+            }
+
+            //Insert data back into database, overwriting the previous entry
+            //Initial values
+            string strname = stockname.Text;
+            string strdesc = stockdesc.Text;
+            string strtype = stocktype.Text;
+            int intQuantity;
+            Int32.TryParse(stockquantity.Text, out intQuantity);
+            decimal decPrice = Convert.ToDecimal(stockprice.Text);
+
+            // Find row you want to modify.
+            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);
+
+            // Insert data into old row
+            stockRow.Name = strname;
+            stockRow.Desc = strdesc;
+            stockRow.Type = strtype;
+            stockRow.Quantity = intQuantity;
+            stockRow.Price = decPrice;
+
+            // Save the new row to the database
+            try
+            {
+                stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Add stock failed");
+            }
         }
     }
 }
