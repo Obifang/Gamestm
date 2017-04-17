@@ -9,7 +9,7 @@ namespace Gamestm_php_solution
 		{
             string userInput;
             StockClass[] stockArray = new StockClass[10];
-            stockArray[0] = new StockClass("Pain Killers", "kill that pain dead", 1, 25);
+            stockArray[0] = new StockClass("Pain Killers", "kill that pain dead", 1, 25, 1);
             //Get the user to insert an item name, short description, ID for product and the price.
 			/*StockClass testStock = new StockClass ("Test Name", "TestType", 1, 23, 5);
 			Console.WriteLine (testStock.GetName);
@@ -52,7 +52,6 @@ namespace Gamestm_php_solution
 		public static void editStockRecord(StockClass s, string newName, string newDesc, int newId, double newPrice)
 		{
 			s.edit(newName, newDesc, newId, newPrice);
-
 		}
 	}
 }
