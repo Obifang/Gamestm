@@ -34,11 +34,6 @@ namespace PHPSolution
             _Price = newPrice;
 
             //Edit database
-
-
-
-
-
         }
 
         public string GetName

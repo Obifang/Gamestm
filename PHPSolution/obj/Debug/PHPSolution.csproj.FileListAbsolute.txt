@@ -26,3 +26,14 @@ H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Deb
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.pdb
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache

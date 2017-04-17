@@ -1,0 +1,7 @@
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\bin\Debug\Gamestm_php_solution.exe
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\bin\Debug\Gamestm_php_solution.pdb
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\bin\Debug\nunit.framework.dll
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\bin\Debug\nunit.framework.xml
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\obj\x86\Debug\Gamestm_php_solution.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\obj\x86\Debug\Gamestm_php_solution.exe
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\Gamestm_php_solution\Gamestm_php_solution\obj\x86\Debug\Gamestm_php_solution.pdb
