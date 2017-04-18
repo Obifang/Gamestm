@@ -67,14 +67,15 @@ namespace Gamestm_php_solution
 
         public void UpdateStock(string StockName, int StockSold)
         {
-          //just need to know what to insert here.
-
+            //just need to know what to insert here.
+            StockSold++;
+            //might increase stock sold with each item added to the database.
         }
 
         public void AddStockToSale(string StockName, int StockSold)
           {
-          //Just need to know what to insert here.
-
+            //Just need to know what to insert here.
+            StockSold++;
           }
     }
 }
