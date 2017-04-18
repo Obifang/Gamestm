@@ -20,10 +20,10 @@ namespace Gamestm_php_solution
         //reference stock class or stock.
         public SalesClass()
         {
-            _StockItems = StockItems;
-            _StockCount = StockCount;
-			_SalesDate = SalesDate;
-			_StockSold = new List<StockSale> ();
+            _StockItems = null;
+            _SalesDate = default(DateTime);
+            _StockCount = 0;
+            _StockSold = new List<StockSale> ();
             //StockClass[] StockItems = null;
             //DateTime SalesDate = default(DateTime);
             //double ItemCost = 0;
@@ -68,13 +68,18 @@ namespace Gamestm_php_solution
         public void UpdateStock(string StockName, int StockSold)
         {
             //just need to know what to insert here.
-            StockSold++;
+            StockSale Temp;
+            Temp = _StockSold.Find(x => x.GetStockName == StockName);
             //might increase stock sold with each item added to the database.
+            //Temp.UpdateStockSold = StockSold;
+            StockSold++;   
         }
 
         public void AddStockToSale(string StockName, int StockSold)
           {
             //Just need to know what to insert here.
+            _StockSold.Add(new StockSale(StockName, StockSold));
+            UpdateStock(StockName, StockSold);
             StockSold++;
           }
     }
