@@ -3,9 +3,10 @@
 
 namespace Gamestm_php_solution
 {
-	public class StockClass
+    //private variables.
+    public class StockClass
 	{
-        //private variables.
+        
         //name of product.
 		private string _Name;
         //product description.
@@ -69,20 +70,14 @@ namespace Gamestm_php_solution
             }
         }
 
+        //search for entry of typed sales item.
         public void edit(string newName, string newDesc, int newId, double newPrice)
 		{
-			_Name = newName;
+            //just need to know what to insert here.
+            _Name = newName;
 			_Desc = newDesc;
 			_Id = newId;
 			_Price = newPrice;
 		}
-
-        //search for entry of typed sales item.
-        //if certain item is selected, change to ' ', store edited entry.
-        public void EditStock()
-        {
-            //just need to know what to insert here.
-
-        }
     }
 }
