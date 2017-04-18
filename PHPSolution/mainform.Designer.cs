@@ -31,11 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainform));
             this.stockBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pHPDatabaseDataSet = new PHPSolution.PHPDatabaseDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +42,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.stockBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.refreshdatabase = new System.Windows.Forms.ToolStripButton();
             this.stockDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,35 +62,72 @@
             this.searchstock = new System.Windows.Forms.Button();
             this.editstockrecord = new System.Windows.Forms.Button();
             this.showstocksearchbox = new System.Windows.Forms.TextBox();
+            this.searchstockresult = new System.Windows.Forms.TextBox();
+            this.searchsalemultiline = new System.Windows.Forms.TextBox();
+            this.showsalesearchbox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.searchsaletextbox = new System.Windows.Forms.TextBox();
+            this.searchsalebutton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.showsalebutton = new System.Windows.Forms.Button();
             this.stockTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockTableAdapter();
             this.tableAdapterManager = new PHPSolution.PHPDatabaseDataSetTableAdapters.TableAdapterManager();
-            this.searchstockresult = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.saleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.SaleTableAdapter();
+            this.saleDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleBindingNaviagtor = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.showsalerecordmultiline = new System.Windows.Forms.TextBox();
+            this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
+            this.stockSaleDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stocksaleBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
             this.stockBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingNaviagtor)).BeginInit();
+            this.saleBindingNaviagtor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSaleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksaleBindingNavigator)).BeginInit();
+            this.stocksaleBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // stockBindingNavigator
             // 
-            this.stockBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.stockBindingNavigator.AddNewItem = null;
             this.stockBindingNavigator.BindingSource = this.stockBindingSource;
             this.stockBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.stockBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.stockBindingNavigator.DeleteItem = null;
             this.stockBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.stockBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -105,9 +139,6 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.stockBindingNavigatorSaveItem,
             this.refreshdatabase});
             this.stockBindingNavigator.Location = new System.Drawing.Point(12, 517);
             this.stockBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -116,18 +147,9 @@
             this.stockBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stockBindingNavigator.Name = "stockBindingNavigator";
             this.stockBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stockBindingNavigator.Size = new System.Drawing.Size(301, 25);
+            this.stockBindingNavigator.Size = new System.Drawing.Size(232, 25);
             this.stockBindingNavigator.TabIndex = 0;
             this.stockBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // stockBindingSource
             // 
@@ -145,15 +167,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -215,15 +228,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // stockBindingNavigatorSaveItem
-            // 
-            this.stockBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.stockBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("stockBindingNavigatorSaveItem.Image")));
-            this.stockBindingNavigatorSaveItem.Name = "stockBindingNavigatorSaveItem";
-            this.stockBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.stockBindingNavigatorSaveItem.Text = "Save Data";
-            this.stockBindingNavigatorSaveItem.Click += new System.EventHandler(this.stockBindingNavigatorSaveItem_Click);
-            // 
             // refreshdatabase
             // 
             this.refreshdatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -246,9 +250,9 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.stockDataGridView.DataSource = this.stockBindingSource;
-            this.stockDataGridView.Location = new System.Drawing.Point(12, 371);
+            this.stockDataGridView.Location = new System.Drawing.Point(11, 371);
             this.stockDataGridView.Name = "stockDataGridView";
-            this.stockDataGridView.Size = new System.Drawing.Size(404, 143);
+            this.stockDataGridView.Size = new System.Drawing.Size(320, 143);
             this.stockDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -290,7 +294,7 @@
             // 
             // showstockrecord
             // 
-            this.showstockrecord.Location = new System.Drawing.Point(241, 149);
+            this.showstockrecord.Location = new System.Drawing.Point(241, 94);
             this.showstockrecord.Name = "showstockrecord";
             this.showstockrecord.Size = new System.Drawing.Size(175, 23);
             this.showstockrecord.TabIndex = 2;
@@ -301,7 +305,7 @@
             // stockno
             // 
             this.stockno.AutoSize = true;
-            this.stockno.Location = new System.Drawing.Point(251, 195);
+            this.stockno.Location = new System.Drawing.Point(251, 140);
             this.stockno.Name = "stockno";
             this.stockno.Size = new System.Drawing.Size(55, 13);
             this.stockno.TabIndex = 3;
@@ -310,7 +314,7 @@
             // stockname
             // 
             this.stockname.AutoSize = true;
-            this.stockname.Location = new System.Drawing.Point(251, 208);
+            this.stockname.Location = new System.Drawing.Point(251, 153);
             this.stockname.Name = "stockname";
             this.stockname.Size = new System.Drawing.Size(69, 13);
             this.stockname.TabIndex = 4;
@@ -319,7 +323,7 @@
             // stockdesc
             // 
             this.stockdesc.AutoSize = true;
-            this.stockdesc.Location = new System.Drawing.Point(251, 221);
+            this.stockdesc.Location = new System.Drawing.Point(251, 166);
             this.stockdesc.Name = "stockdesc";
             this.stockdesc.Size = new System.Drawing.Size(66, 13);
             this.stockdesc.TabIndex = 5;
@@ -328,7 +332,7 @@
             // stocktype
             // 
             this.stocktype.AutoSize = true;
-            this.stocktype.Location = new System.Drawing.Point(251, 234);
+            this.stocktype.Location = new System.Drawing.Point(251, 179);
             this.stocktype.Name = "stocktype";
             this.stocktype.Size = new System.Drawing.Size(65, 13);
             this.stocktype.TabIndex = 6;
@@ -337,7 +341,7 @@
             // stockquantity
             // 
             this.stockquantity.AutoSize = true;
-            this.stockquantity.Location = new System.Drawing.Point(251, 247);
+            this.stockquantity.Location = new System.Drawing.Point(251, 192);
             this.stockquantity.Name = "stockquantity";
             this.stockquantity.Size = new System.Drawing.Size(80, 13);
             this.stockquantity.TabIndex = 7;
@@ -346,7 +350,7 @@
             // stockprice
             // 
             this.stockprice.AutoSize = true;
-            this.stockprice.Location = new System.Drawing.Point(251, 260);
+            this.stockprice.Location = new System.Drawing.Point(251, 205);
             this.stockprice.Name = "stockprice";
             this.stockprice.Size = new System.Drawing.Size(65, 13);
             this.stockprice.TabIndex = 8;
@@ -392,11 +396,85 @@
             // 
             // showstocksearchbox
             // 
-            this.showstocksearchbox.Location = new System.Drawing.Point(241, 123);
+            this.showstocksearchbox.Location = new System.Drawing.Point(241, 68);
             this.showstocksearchbox.Name = "showstocksearchbox";
             this.showstocksearchbox.Size = new System.Drawing.Size(175, 20);
             this.showstocksearchbox.TabIndex = 17;
-            this.showstocksearchbox.Text = "Stock to show (ID Number)";
+            this.showstocksearchbox.Text = "Stock to Display (ID Number)";
+            // 
+            // searchstockresult
+            // 
+            this.searchstockresult.Location = new System.Drawing.Point(12, 68);
+            this.searchstockresult.Multiline = true;
+            this.searchstockresult.Name = "searchstockresult";
+            this.searchstockresult.ReadOnly = true;
+            this.searchstockresult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.searchstockresult.Size = new System.Drawing.Size(174, 296);
+            this.searchstockresult.TabIndex = 18;
+            // 
+            // searchsalemultiline
+            // 
+            this.searchsalemultiline.Location = new System.Drawing.Point(488, 67);
+            this.searchsalemultiline.Multiline = true;
+            this.searchsalemultiline.Name = "searchsalemultiline";
+            this.searchsalemultiline.ReadOnly = true;
+            this.searchsalemultiline.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.searchsalemultiline.Size = new System.Drawing.Size(174, 296);
+            this.searchsalemultiline.TabIndex = 33;
+            // 
+            // showsalesearchbox
+            // 
+            this.showsalesearchbox.Location = new System.Drawing.Point(717, 68);
+            this.showsalesearchbox.Name = "showsalesearchbox";
+            this.showsalesearchbox.Size = new System.Drawing.Size(175, 20);
+            this.showsalesearchbox.TabIndex = 32;
+            this.showsalesearchbox.Text = "Sale to Display (ID Number)";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(717, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Edit Sale Record";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // searchsaletextbox
+            // 
+            this.searchsaletextbox.Location = new System.Drawing.Point(487, 11);
+            this.searchsaletextbox.Name = "searchsaletextbox";
+            this.searchsaletextbox.Size = new System.Drawing.Size(175, 20);
+            this.searchsaletextbox.TabIndex = 30;
+            this.searchsaletextbox.Text = "Date to seach for (YYYY-MM-DD)";
+            // 
+            // searchsalebutton
+            // 
+            this.searchsalebutton.Location = new System.Drawing.Point(487, 37);
+            this.searchsalebutton.Name = "searchsalebutton";
+            this.searchsalebutton.Size = new System.Drawing.Size(175, 23);
+            this.searchsalebutton.TabIndex = 29;
+            this.searchsalebutton.Text = "Search Sale";
+            this.searchsalebutton.UseVisualStyleBackColor = true;
+            this.searchsalebutton.Click += new System.EventHandler(this.searchsalebutton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(717, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(175, 23);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "Add Sale Record";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // showsalebutton
+            // 
+            this.showsalebutton.Location = new System.Drawing.Point(717, 94);
+            this.showsalebutton.Name = "showsalebutton";
+            this.showsalebutton.Size = new System.Drawing.Size(175, 23);
+            this.showsalebutton.TabIndex = 21;
+            this.showsalebutton.Text = "Show Sale Record";
+            this.showsalebutton.UseVisualStyleBackColor = true;
+            this.showsalebutton.Click += new System.EventHandler(this.showsalebutton_Click);
             // 
             // stockTableAdapter
             // 
@@ -405,151 +483,333 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.SaleTableAdapter = null;
+            this.tableAdapterManager.StockSaleTableAdapter = null;
             this.tableAdapterManager.StockTableAdapter = this.stockTableAdapter;
             this.tableAdapterManager.UpdateOrder = PHPSolution.PHPDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // searchstockresult
+            // saleBindingSource
             // 
-            this.searchstockresult.Location = new System.Drawing.Point(12, 68);
-            this.searchstockresult.Multiline = true;
-            this.searchstockresult.Name = "searchstockresult";
-            this.searchstockresult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.searchstockresult.Size = new System.Drawing.Size(174, 296);
-            this.searchstockresult.TabIndex = 18;
+            this.saleBindingSource.DataMember = "Sale";
+            this.saleBindingSource.DataSource = this.pHPDatabaseDataSet;
             // 
-            // textBox1
+            // saleTableAdapter
             // 
-            this.textBox1.Location = new System.Drawing.Point(488, 67);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(174, 296);
-            this.textBox1.TabIndex = 33;
+            this.saleTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox2
+            // saleDataGridView
             // 
-            this.textBox2.Location = new System.Drawing.Point(717, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 32;
-            this.textBox2.Text = "Stock to show (ID Number)";
+            this.saleDataGridView.AutoGenerateColumns = false;
+            this.saleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.saleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.saleDataGridView.DataSource = this.saleBindingSource;
+            this.saleDataGridView.Location = new System.Drawing.Point(337, 371);
+            this.saleDataGridView.Name = "saleDataGridView";
+            this.saleDataGridView.Size = new System.Drawing.Size(248, 143);
+            this.saleDataGridView.TabIndex = 33;
             // 
-            // button1
+            // dataGridViewTextBoxColumn7
             // 
-            this.button1.Location = new System.Drawing.Point(717, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Edit Stock Record";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Sale_No";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Sale_No";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // textBox3
+            // dataGridViewTextBoxColumn8
             // 
-            this.textBox3.Location = new System.Drawing.Point(487, 11);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 20);
-            this.textBox3.TabIndex = 30;
-            this.textBox3.Text = "Name to seach for (exact)";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // button2
+            // saleBindingNaviagtor
             // 
-            this.button2.Location = new System.Drawing.Point(487, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 23);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Search Stock";
-            this.button2.UseVisualStyleBackColor = true;
+            this.saleBindingNaviagtor.AddNewItem = null;
+            this.saleBindingNaviagtor.BindingSource = this.saleBindingSource;
+            this.saleBindingNaviagtor.CountItem = this.toolStripLabel1;
+            this.saleBindingNaviagtor.DeleteItem = null;
+            this.saleBindingNaviagtor.Dock = System.Windows.Forms.DockStyle.None;
+            this.saleBindingNaviagtor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripSeparator1,
+            this.toolStripTextBox1,
+            this.toolStripLabel1,
+            this.toolStripSeparator2,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripSeparator3,
+            this.toolStripButton8});
+            this.saleBindingNaviagtor.Location = new System.Drawing.Point(337, 517);
+            this.saleBindingNaviagtor.MoveFirstItem = this.toolStripButton3;
+            this.saleBindingNaviagtor.MoveLastItem = this.toolStripButton6;
+            this.saleBindingNaviagtor.MoveNextItem = this.toolStripButton5;
+            this.saleBindingNaviagtor.MovePreviousItem = this.toolStripButton4;
+            this.saleBindingNaviagtor.Name = "saleBindingNaviagtor";
+            this.saleBindingNaviagtor.PositionItem = this.toolStripTextBox1;
+            this.saleBindingNaviagtor.Size = new System.Drawing.Size(232, 25);
+            this.saleBindingNaviagtor.TabIndex = 34;
+            this.saleBindingNaviagtor.Text = "bindingNavigator1";
             // 
-            // button3
+            // toolStripLabel1
             // 
-            this.button3.Location = new System.Drawing.Point(717, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Add Stock Record";
-            this.button3.UseVisualStyleBackColor = true;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel1.Text = "of {0}";
+            this.toolStripLabel1.ToolTipText = "Total number of items";
             // 
-            // label1
+            // toolStripButton3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(727, 259);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Stock Price:";
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Move first";
             // 
-            // label2
+            // toolStripButton4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(727, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Stock Quantity:";
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "Move previous";
             // 
-            // label3
+            // toolStripSeparator1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(727, 233);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Stock Type:";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // label4
+            // toolStripTextBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(727, 220);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Stock Desc:";
+            this.toolStripTextBox1.AccessibleName = "Position";
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox1.Text = "0";
+            this.toolStripTextBox1.ToolTipText = "Current position";
             // 
-            // label5
+            // toolStripSeparator2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(727, 207);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Stock Name:";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // label6
+            // toolStripButton5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(727, 194);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Stock No:";
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Text = "Move next";
             // 
-            // button4
+            // toolStripButton6
             // 
-            this.button4.Location = new System.Drawing.Point(717, 148);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 23);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Show Stock Record";
-            this.button4.UseVisualStyleBackColor = true;
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "Move last";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "refreshdatabase";
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
+            // 
+            // showsalerecordmultiline
+            // 
+            this.showsalerecordmultiline.Location = new System.Drawing.Point(717, 123);
+            this.showsalerecordmultiline.Multiline = true;
+            this.showsalerecordmultiline.Name = "showsalerecordmultiline";
+            this.showsalerecordmultiline.ReadOnly = true;
+            this.showsalerecordmultiline.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.showsalerecordmultiline.Size = new System.Drawing.Size(174, 240);
+            this.showsalerecordmultiline.TabIndex = 40;
+            // 
+            // stockSaleBindingSource
+            // 
+            this.stockSaleBindingSource.DataMember = "StockSale";
+            this.stockSaleBindingSource.DataSource = this.pHPDatabaseDataSet;
+            // 
+            // stockSaleTableAdapter
+            // 
+            this.stockSaleTableAdapter.ClearBeforeFill = true;
+            // 
+            // stockSaleDataGridView
+            // 
+            this.stockSaleDataGridView.AutoGenerateColumns = false;
+            this.stockSaleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stockSaleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.stockSaleDataGridView.DataSource = this.stockSaleBindingSource;
+            this.stockSaleDataGridView.Location = new System.Drawing.Point(591, 371);
+            this.stockSaleDataGridView.Name = "stockSaleDataGridView";
+            this.stockSaleDataGridView.Size = new System.Drawing.Size(301, 143);
+            this.stockSaleDataGridView.TabIndex = 40;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Stock_No";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Stock_No";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Sale_No";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Sale_No";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Quantity_Sold";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Quantity_Sold";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Sale_Price";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Sale_Price";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // stocksaleBindingNavigator
+            // 
+            this.stocksaleBindingNavigator.AddNewItem = null;
+            this.stocksaleBindingNavigator.BindingSource = this.stockSaleBindingSource;
+            this.stocksaleBindingNavigator.CountItem = this.toolStripLabel2;
+            this.stocksaleBindingNavigator.DeleteItem = null;
+            this.stocksaleBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
+            this.stocksaleBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripSeparator4,
+            this.toolStripTextBox2,
+            this.toolStripLabel2,
+            this.toolStripSeparator5,
+            this.toolStripButton7,
+            this.toolStripButton9,
+            this.toolStripSeparator6,
+            this.toolStripButton10});
+            this.stocksaleBindingNavigator.Location = new System.Drawing.Point(591, 517);
+            this.stocksaleBindingNavigator.MoveFirstItem = this.toolStripButton1;
+            this.stocksaleBindingNavigator.MoveLastItem = this.toolStripButton9;
+            this.stocksaleBindingNavigator.MoveNextItem = this.toolStripButton7;
+            this.stocksaleBindingNavigator.MovePreviousItem = this.toolStripButton2;
+            this.stocksaleBindingNavigator.Name = "stocksaleBindingNavigator";
+            this.stocksaleBindingNavigator.PositionItem = this.toolStripTextBox2;
+            this.stocksaleBindingNavigator.Size = new System.Drawing.Size(232, 25);
+            this.stocksaleBindingNavigator.TabIndex = 41;
+            this.stocksaleBindingNavigator.Text = "stocksaleBindingNavigator";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel2.Text = "of {0}";
+            this.toolStripLabel2.ToolTipText = "Total number of items";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Move first";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Move previous";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.AccessibleName = "Position";
+            this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox2.Text = "0";
+            this.toolStripTextBox2.ToolTipText = "Current position";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "Move next";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton9.Text = "Move last";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton10.Text = "refreshdatabase";
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 551);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(905, 542);
+            this.Controls.Add(this.stocksaleBindingNavigator);
+            this.Controls.Add(this.stockSaleDataGridView);
+            this.Controls.Add(this.showsalerecordmultiline);
+            this.Controls.Add(this.saleBindingNaviagtor);
+            this.Controls.Add(this.saleDataGridView);
+            this.Controls.Add(this.searchsalemultiline);
+            this.Controls.Add(this.showsalesearchbox);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.searchsaletextbox);
+            this.Controls.Add(this.searchsalebutton);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.showsalebutton);
             this.Controls.Add(this.searchstockresult);
             this.Controls.Add(this.showstocksearchbox);
             this.Controls.Add(this.editstockrecord);
@@ -574,6 +834,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleBindingNaviagtor)).EndInit();
+            this.saleBindingNaviagtor.ResumeLayout(false);
+            this.saleBindingNaviagtor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSaleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksaleBindingNavigator)).EndInit();
+            this.stocksaleBindingNavigator.ResumeLayout(false);
+            this.stocksaleBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,9 +856,7 @@
         private PHPDatabaseDataSetTableAdapters.StockTableAdapter stockTableAdapter;
         private PHPDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator stockBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -597,7 +865,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton stockBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView stockDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -619,18 +886,47 @@
         private System.Windows.Forms.TextBox showstocksearchbox;
         private System.Windows.Forms.TextBox searchstockresult;
         private System.Windows.Forms.ToolStripButton refreshdatabase;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox searchsalemultiline;
+        private System.Windows.Forms.TextBox showsalesearchbox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox searchsaletextbox;
+        private System.Windows.Forms.Button searchsalebutton;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button showsalebutton;
+        private System.Windows.Forms.BindingSource saleBindingSource;
+        private PHPDatabaseDataSetTableAdapters.SaleTableAdapter saleTableAdapter;
+        private System.Windows.Forms.DataGridView saleDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.BindingNavigator saleBindingNaviagtor;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.TextBox showsalerecordmultiline;
+        private System.Windows.Forms.BindingSource stockSaleBindingSource;
+        private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
+        private System.Windows.Forms.DataGridView stockSaleDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.BindingNavigator stocksaleBindingNavigator;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
     }
 }

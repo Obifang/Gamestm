@@ -17,15 +17,28 @@ namespace PHPSolution
             InitializeComponent();
         }
 
-        private void stockBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.stockBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.pHPDatabaseDataSet);
-        }
-
         private void mainform_Load(object sender, EventArgs e)
         {
+            // Loads data into 'stocksaleTableAdapter'
+            try
+            {
+                this.stockSaleTableAdapter.Fill(this.pHPDatabaseDataSet.StockSale);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fill stock sale failed");
+            }
+
+            // Loads data into 'saleTableAdapter'
+            try
+            {
+                this.saleTableAdapter.Fill(this.pHPDatabaseDataSet.Sale);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fill sale failed");
+            }
+
             // Loads data into 'stockTableAdapter'
             try
             {
@@ -90,7 +103,7 @@ namespace PHPSolution
                 {
                     var array = newResultRow[i].ItemArray;
 
-                    searchstockresult.Text += ""+(i+1)+"st result." + Environment.NewLine;
+                    searchstockresult.Text += ""+(i+1)+"st Result." + Environment.NewLine;
 
                     searchstockresult.Text += "ID Number: "+array[0].ToString() + Environment.NewLine;
                     searchstockresult.Text += "Name: " + array[1].ToString().TrimEnd() + Environment.NewLine;
@@ -117,6 +130,92 @@ namespace PHPSolution
             catch (Exception ex)
             {
                 MessageBox.Show("Refresh failed");
+            }
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.saleTableAdapter.Fill(this.pHPDatabaseDataSet.Sale);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Refresh failed");
+            }
+        }
+
+        private void showsalebutton_Click(object sender, EventArgs e)
+        {
+            //Disaply sale and stocksale records for the entered sale number
+            try
+            {
+                //Initialise saleno
+                int saleno;
+                Int32.TryParse(showsalesearchbox.Text.Trim(), out saleno);
+
+                PHPDatabaseDataSet.SaleRow saleRow = pHPDatabaseDataSet.Sale.FindBySale_No(saleno);
+
+                showsalerecordmultiline.Text = "";
+                showsalerecordmultiline.Text += "Sale Number: " + saleRow.Sale_No.ToString() + Environment.NewLine;
+                showsalerecordmultiline.Text += "Sale Date: " + saleRow.Date.ToString() + Environment.NewLine;
+
+                DataRow[] stocksaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No] ='" + saleno.ToString() + "'");
+                int i = 0;
+                foreach (DataRow value in stocksaleRow)
+                {
+                    var array = stocksaleRow[i].ItemArray;
+
+                    showsalerecordmultiline.Text += Environment.NewLine;
+                    showsalerecordmultiline.Text += "" + (i + 1) + "st Item." + Environment.NewLine;
+
+                    showsalerecordmultiline.Text += "Stock No: " + array[0].ToString() + Environment.NewLine;
+                    showsalerecordmultiline.Text += "Quantity: " + array[2].ToString() + Environment.NewLine;
+                    showsalerecordmultiline.Text += "Price: " + array[3].ToString() + Environment.NewLine;
+
+                    i++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search for Sale Number query failed");
+            }
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.stockSaleTableAdapter.Fill(this.pHPDatabaseDataSet.StockSale);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Refresh failed");
+            }
+        }
+
+        private void searchsalebutton_Click(object sender, EventArgs e)
+        {
+            //Allows the user to search for a sale number made on a date
+            try
+            {
+                DataRow[] newResultRow = pHPDatabaseDataSet.Sale.Select("[Date] = '" + searchsaletextbox.Text.Trim() + "'");
+                int i = 0;
+                searchsalemultiline.Text = "";
+                foreach (DataRow value in newResultRow)
+                {
+                    var array = newResultRow[i].ItemArray;
+
+                    searchsalemultiline.Text += "" + (i + 1) + "st Result." + Environment.NewLine;
+                    searchsalemultiline.Text += "Sale Number: " + array[0].ToString() + Environment.NewLine;
+
+                    searchsalemultiline.Text += Environment.NewLine;
+                    i++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search for Sale Date failed");
             }
         }
     }
