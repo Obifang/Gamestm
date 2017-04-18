@@ -33,7 +33,7 @@ namespace PHPSolution
             _Quantity = newQuantity;
             _Price = newPrice;
 
-            //Edit database
+            //Edit database.
         }
 
         public string GetName
