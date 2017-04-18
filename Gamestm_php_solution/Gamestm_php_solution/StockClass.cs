@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 
 namespace Gamestm_php_solution
 {
@@ -16,18 +16,6 @@ namespace Gamestm_php_solution
 		private double _Price;
         //find out what stock is available.
 		private int _InStock;
-        private string v1;
-        private string v2;
-        private int v3;
-        private int v4;
-        //generated from correction in program.
-        public StockClass(string v1, string v2, int v3, int v4)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-        }
 
         //maybe have "Quantity" as a private variable if need be.
         public StockClass (string Name, string Desc, int Id, double Price, int InStock)

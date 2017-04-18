@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 
 namespace Gamestm_php_solution
 {
-	public class StockSale
+    public class StockSale
     {
         private string _StockName;
         private int _StockSold;
 
+        //set values and private variables.
 	    public StockSale(String StockName, int StockSold)
 	    {
 	        _StockName = StockName;

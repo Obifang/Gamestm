@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
+
 //PHP solution.
 namespace Gamestm_php_solution
 {

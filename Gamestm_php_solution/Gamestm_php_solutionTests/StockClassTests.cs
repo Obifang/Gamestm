@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Gamestm_php_solution;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Gamestm_php_solution;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +14,10 @@ namespace Gamestm_php_solution.Tests
         [TestMethod()]
         public void editNameTest()
         {
+            //create a test to show the stock.
             StockClass testStock = new StockClass("stock name", "stock desc", 1, 2, 3);
             Assert.AreEqual(testStock.GetName, "stock name");
-
+            //test stock will be stored.
             testStock.edit("new name", "new desc", 4, 5);
             Assert.AreEqual(testStock.GetName, "new name");
 

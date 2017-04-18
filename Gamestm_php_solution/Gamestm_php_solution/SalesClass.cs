@@ -7,7 +7,7 @@ namespace Gamestm_php_solution
     {
         //Stock Items.
         private StockClass[] _StockItems;
-		//A list to keep track of sales
+		//A list to keep track of sales.
 		private List<StockSale> _StockSold;
         //Quantity of stock.
         private int _StockCount;
@@ -68,11 +68,13 @@ namespace Gamestm_php_solution
         public void UpdateStock(string StockName, int StockSold)
         {
           //just need to know what to insert here.
+
         }
 
         public void AddStockToSale(string StockName, int StockSold)
           {
           //Just need to know what to insert here.
+
           }
     }
 }
