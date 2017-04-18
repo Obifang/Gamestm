@@ -13,7 +13,7 @@ namespace PHPSolution
 
         public SalesClass()
         {
-
+           //?.
         }
     }
 }
