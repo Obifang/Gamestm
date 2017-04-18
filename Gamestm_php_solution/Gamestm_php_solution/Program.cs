@@ -16,7 +16,6 @@ namespace Gamestm_php_solution
 			Console.WriteLine (testStock.GetDesc);
 			Console.WriteLine (testStock.GetId);
 			Console.WriteLine (testStock.GetPrice);*/
-
             Console.WriteLine(stockArray[0].GetName);
 		    Console.WriteLine(stockArray[0].GetDesc);
 			Console.WriteLine(stockArray[0].GetId);

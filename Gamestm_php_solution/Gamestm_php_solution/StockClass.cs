@@ -60,8 +60,9 @@ namespace Gamestm_php_solution
 			}
         //Add limitations and if statements if necessary.
 		}
-    
-		public void edit(string newName, string newDesc, int newId, double newPrice)
+
+        //search for entry of typed sales item.   
+        public void edit(string newName, string newDesc, int newId, double newPrice)
 		{
 			_Name = newName;
 			_Desc = newDesc;
@@ -76,13 +77,6 @@ namespace Gamestm_php_solution
             {
                 return _InStock;
             }
-        }
-
-        //search for entry of typed sales item.
-        //if certain item is selected, change to ' ', store edited entry.
-        public void EditStock()
-        {
-            //just need to know what to insert here.
-        }
+        }   
     }
 }
