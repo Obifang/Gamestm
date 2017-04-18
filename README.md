@@ -9,6 +9,10 @@ I also moved the tables at the bottom and added controllers to them, they are co
 
 Search Sale has been implemented in a basic manner, in future stock names will be displayed aswell
 
+The sales table is full of test data that doesn't have stocksales records associated with them.
+
+Show sale recod works flawlessly
+
 ADD SALE DOES NOT WORK
 
 EDIT SALE DOES NOT WORK
