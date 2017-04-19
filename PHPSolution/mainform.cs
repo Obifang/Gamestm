@@ -19,7 +19,7 @@ namespace PHPSolution
 
         private void mainform_Load(object sender, EventArgs e)
         {
-            // Loads data into 'stocksaleTableAdapter'
+            // Loads data into 'pHPDatabaseDataSet.StockSale'
             try
             {
                 this.stockSaleTableAdapter.Fill(this.pHPDatabaseDataSet.StockSale);
@@ -29,7 +29,7 @@ namespace PHPSolution
                 MessageBox.Show("Fill stock sale failed");
             }
 
-            // Loads data into 'saleTableAdapter'
+            // Loads data into 'pHPDatabaseDataSet.Sale'
             try
             {
                 this.saleTableAdapter.Fill(this.pHPDatabaseDataSet.Sale);
@@ -39,7 +39,7 @@ namespace PHPSolution
                 MessageBox.Show("Fill sale failed");
             }
 
-            // Loads data into 'stockTableAdapter'
+            // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
                 this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
@@ -217,6 +217,12 @@ namespace PHPSolution
             {
                 MessageBox.Show("Search for Sale Date failed");
             }
+        }
+
+        private void addsalebutton_Click(object sender, EventArgs e)
+        {
+            var addsaleform = new addsaleform();
+            addsaleform.Show(this);
         }
     }
 }

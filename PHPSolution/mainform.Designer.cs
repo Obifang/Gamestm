@@ -65,10 +65,10 @@
             this.searchstockresult = new System.Windows.Forms.TextBox();
             this.searchsalemultiline = new System.Windows.Forms.TextBox();
             this.showsalesearchbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.editalebutton = new System.Windows.Forms.Button();
             this.searchsaletextbox = new System.Windows.Forms.TextBox();
             this.searchsalebutton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.addsalebutton = new System.Windows.Forms.Button();
             this.showsalebutton = new System.Windows.Forms.Button();
             this.stockTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockTableAdapter();
             this.tableAdapterManager = new PHPSolution.PHPDatabaseDataSetTableAdapters.TableAdapterManager();
@@ -430,14 +430,14 @@
             this.showsalesearchbox.TabIndex = 32;
             this.showsalesearchbox.Text = "Sale to Display (ID Number)";
             // 
-            // button1
+            // editalebutton
             // 
-            this.button1.Location = new System.Drawing.Point(717, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Edit Sale Record";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editalebutton.Location = new System.Drawing.Point(717, 38);
+            this.editalebutton.Name = "editalebutton";
+            this.editalebutton.Size = new System.Drawing.Size(175, 23);
+            this.editalebutton.TabIndex = 31;
+            this.editalebutton.Text = "Edit Sale Record";
+            this.editalebutton.UseVisualStyleBackColor = true;
             // 
             // searchsaletextbox
             // 
@@ -457,14 +457,15 @@
             this.searchsalebutton.UseVisualStyleBackColor = true;
             this.searchsalebutton.Click += new System.EventHandler(this.searchsalebutton_Click);
             // 
-            // button3
+            // addsalebutton
             // 
-            this.button3.Location = new System.Drawing.Point(717, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Add Sale Record";
-            this.button3.UseVisualStyleBackColor = true;
+            this.addsalebutton.Location = new System.Drawing.Point(717, 9);
+            this.addsalebutton.Name = "addsalebutton";
+            this.addsalebutton.Size = new System.Drawing.Size(175, 23);
+            this.addsalebutton.TabIndex = 28;
+            this.addsalebutton.Text = "Add Sale Record";
+            this.addsalebutton.UseVisualStyleBackColor = true;
+            this.addsalebutton.Click += new System.EventHandler(this.addsalebutton_Click);
             // 
             // showsalebutton
             // 
@@ -805,10 +806,10 @@
             this.Controls.Add(this.saleDataGridView);
             this.Controls.Add(this.searchsalemultiline);
             this.Controls.Add(this.showsalesearchbox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.editalebutton);
             this.Controls.Add(this.searchsaletextbox);
             this.Controls.Add(this.searchsalebutton);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.addsalebutton);
             this.Controls.Add(this.showsalebutton);
             this.Controls.Add(this.searchstockresult);
             this.Controls.Add(this.showstocksearchbox);
@@ -888,10 +889,10 @@
         private System.Windows.Forms.ToolStripButton refreshdatabase;
         private System.Windows.Forms.TextBox searchsalemultiline;
         private System.Windows.Forms.TextBox showsalesearchbox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editalebutton;
         private System.Windows.Forms.TextBox searchsaletextbox;
         private System.Windows.Forms.Button searchsalebutton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addsalebutton;
         private System.Windows.Forms.Button showsalebutton;
         private System.Windows.Forms.BindingSource saleBindingSource;
         private PHPDatabaseDataSetTableAdapters.SaleTableAdapter saleTableAdapter;

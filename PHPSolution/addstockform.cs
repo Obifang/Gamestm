@@ -17,11 +17,6 @@ namespace PHPSolution
             InitializeComponent();
         }
 
-        private void addstockform_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void addstock_Click(object sender, EventArgs e)
         {
             //Initial values
@@ -32,7 +27,6 @@ namespace PHPSolution
             Int32.TryParse(stockquantity.Text, out intQuantity);
             decimal decPrice = Convert.ToDecimal(stockprice.Text); ;
             
-           
             // Create a new row.
             PHPDatabaseDataSet.StockRow newStockRow = pHPDatabaseDataSet.Stock.NewStockRow();
 

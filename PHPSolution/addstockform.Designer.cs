@@ -126,7 +126,6 @@
             this.Controls.Add(this.stockname);
             this.Name = "addstockform";
             this.Text = "Add Stock";
-            this.Load += new System.EventHandler(this.addstockform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -16,7 +16,7 @@ namespace PHPSolution
         {
             InitializeComponent();
 
-            // Loads data into 'stockTableAdapter'
+            // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
                 this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);

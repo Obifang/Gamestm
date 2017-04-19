@@ -1,6 +1,18 @@
 # Gamestm
 Project for PHP inc. - Group GamesTM
 
+19/04/2017
+
+Add sale now works, it's a little janky, but it serves it's purpose
+
+SEARCH SALE NEEDS TO BE MADE MORE USEFUL
+
+EDIT SALE DOES NOT WORK
+
+STILL NEED VALIDATION EVERYWHERE
+
+
+
 18/04/2017
 
 Database now supports sales, for more info look at "SQL Data.sql"
@@ -12,13 +24,6 @@ Search Sale has been implemented in a basic manner, in future stock names will b
 The sales table is full of test data that doesn't have stocksales records associated with them.
 
 Show sale recod works flawlessly
-
-ADD SALE DOES NOT WORK
-
-EDIT SALE DOES NOT WORK
-
-STILL NEED VALIDATION EVERYWHERE
-
 
 
 17/04/2017

@@ -39,3 +39,5 @@ C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\P
 C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\bin\Debug\PHPDatabase.mdf
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\bin\Debug\PHPDatabase_log.ldf
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
