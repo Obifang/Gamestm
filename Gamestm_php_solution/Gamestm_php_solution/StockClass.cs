@@ -77,12 +77,5 @@ namespace Gamestm_php_solution
                 return _InStock;
             }
         }
-
-        //search for entry of typed sales item.
-        //if certain item is selected, change to ' ', store edited entry.
-        public void EditStock()
-        {
-            //just need to know what to insert here.
-        }
     }
 }
