@@ -10,7 +10,7 @@ namespace PHPSolution
     {
         //Stock Items.
         private StockClass[] _StockItems;
-        //A list to keep track of sales
+        //A list to keep track of sales.
         private List<StockSale> _StockSold;
         //Quantity of stock.
         private int _StockCount;
