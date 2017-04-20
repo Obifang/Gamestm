@@ -1,6 +1,17 @@
 # Gamestm
 Project for PHP inc. - Group GamesTM
 
+20/04/2017
+
+Edit sale now works
+
+Search sale provides more information
+
+When a sale is added or edited it updates stock values
+
+STILL NEED VALIDATION EVERYWHERE
+
+
 19/04/2017
 
 Add sale now works, it's a little janky, but it serves it's purpose

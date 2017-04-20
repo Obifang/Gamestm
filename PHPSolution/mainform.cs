@@ -82,13 +82,13 @@ namespace PHPSolution
         private void addstockrecord_Click(object sender, EventArgs e)
         {
             var addstockform = new addstockform();
-            addstockform.Show(this);
+            addstockform.ShowDialog(this);
         }
 
         private void editstockrecord_Click(object sender, EventArgs e)
         {
-            var editstockform = new editstockform();
-            editstockform.Show(this);
+            var editstockform = new editstockform(editstocktextbox.Text.Trim());
+            editstockform.ShowDialog(this);
         }
 
         private void searchstock_Click(object sender, EventArgs e)
@@ -158,7 +158,7 @@ namespace PHPSolution
 
                 showsalerecordmultiline.Text = "";
                 showsalerecordmultiline.Text += "Sale Number: " + saleRow.Sale_No.ToString() + Environment.NewLine;
-                showsalerecordmultiline.Text += "Sale Date: " + saleRow.Date.ToString() + Environment.NewLine;
+                showsalerecordmultiline.Text += "Sale Date: " + saleRow.Date.ToString().Substring(0,10) + Environment.NewLine;
 
                 DataRow[] stocksaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No] ='" + saleno.ToString() + "'");
                 int i = 0;
@@ -206,8 +206,20 @@ namespace PHPSolution
                 {
                     var array = newResultRow[i].ItemArray;
 
-                    searchsalemultiline.Text += "" + (i + 1) + "st Result." + Environment.NewLine;
+                    searchsalemultiline.Text += "" + (i + 1) + "- Result." + Environment.NewLine;
                     searchsalemultiline.Text += "Sale Number: " + array[0].ToString() + Environment.NewLine;
+
+                    DataRow[] stockSaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No] = "+ array[0].ToString().Trim());
+                    int j = 0;
+                    foreach (DataRow stockSale in stockSaleRow)
+                    {
+                        var stockSaleArray = stockSaleRow[j].ItemArray;
+
+                        searchsalemultiline.Text += "" +(j + 1) + "- Stock" + Environment.NewLine;
+                        searchsalemultiline.Text += "Stock Number: " + stockSaleArray[0].ToString() + Environment.NewLine;
+                        searchsalemultiline.Text += "Stock Quantity: " + stockSaleArray[2].ToString() + Environment.NewLine;
+                        j++;
+                    }
 
                     searchsalemultiline.Text += Environment.NewLine;
                     i++;
@@ -216,13 +228,20 @@ namespace PHPSolution
             catch (Exception ex)
             {
                 MessageBox.Show("Search for Sale Date failed");
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void addsalebutton_Click(object sender, EventArgs e)
         {
             var addsaleform = new addsaleform();
-            addsaleform.Show(this);
+            addsaleform.ShowDialog(this);
+        }
+
+        private void editsalebutton_Click(object sender, EventArgs e)
+        {
+            var editsaleform = new editsaleform(editsalenotextbox.Text.TrimEnd());
+            editsaleform.ShowDialog(this);
         }
     }
 }

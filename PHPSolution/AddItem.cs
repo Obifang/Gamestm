@@ -16,7 +16,12 @@ namespace PHPSolution
         {
             InitializeComponent();
 
-            stockno.Text = "No: " + stocknumber;
+            if (Int32.Parse(stocknumber) != 0){
+                stockno.Text = stocknumber;
+            }
+            else {
+                stockno.Text = "No";
+            }
 
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try
@@ -31,18 +36,30 @@ namespace PHPSolution
 
         private void defaultpricebutton_Click(object sender, EventArgs e)
         {
-            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Substring(3).Trim()));
+            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Trim()));
             stockprice.Text =  stockRow.Price.ToString();
         }
 
         private void additembutton_Click(object sender, EventArgs e)
         {
+            //Alter stock values to reflect sales
+            try
+            {
+                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Trim()));
+                stockRow.Quantity -= Int32.Parse(stockquantity.Text.Trim());
+                stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Alter stock to reflect sales failed");
+            }
+
             Close();
         }
 
         public string StockNo
         {
-            get { return stockno.Text.Substring(3).Trim(); }
+            get { return stockno.Text.Trim(); }
         }
 
         public string Quantity

@@ -12,7 +12,7 @@ namespace PHPSolution
 {
     public partial class editstockform : Form
     {
-        public editstockform()
+        public editstockform(string stocktoedit)
         {
             InitializeComponent();
 
@@ -24,22 +24,6 @@ namespace PHPSolution
             catch (Exception ex)
             {
                 MessageBox.Show("Fill stock failed");
-            }            
-        }
-
-        //Populate the fields with the old data
-        private void selectstocktoedit_Click(object sender, EventArgs e)
-        {
-            //Initialise stockedit
-            int stocktoedit = 1;
-            try
-            {
-                stocktoedit = Int32.Parse(editstocktextbox.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Stock Edit Parse failed");
-                MessageBox.Show("String Value : " + editstocktextbox.Text.Trim() + "");
             }
 
             //Fetch data from database
@@ -67,12 +51,12 @@ namespace PHPSolution
             int stocktoedit = 1;
             try
             {
-                stocktoedit = Int32.Parse(editstocktextbox.Text.Trim());
+                stocktoedit = Int32.Parse(stocknumber.Text.Trim());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Stock Edit Parse failed");
-                MessageBox.Show("String Value : " + editstocktextbox.Text.Trim() + "");
+                MessageBox.Show("String Value : " + stocknumber.Text.Trim() + "");
             }
 
             //Insert data back into database, overwriting the previous entry
@@ -102,7 +86,7 @@ namespace PHPSolution
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Add stock failed");
+                MessageBox.Show("Edit stock failed");
             }
         }
     }

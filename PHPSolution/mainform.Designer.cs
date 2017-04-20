@@ -65,7 +65,7 @@
             this.searchstockresult = new System.Windows.Forms.TextBox();
             this.searchsalemultiline = new System.Windows.Forms.TextBox();
             this.showsalesearchbox = new System.Windows.Forms.TextBox();
-            this.editalebutton = new System.Windows.Forms.Button();
+            this.editsalebutton = new System.Windows.Forms.Button();
             this.searchsaletextbox = new System.Windows.Forms.TextBox();
             this.searchsalebutton = new System.Windows.Forms.Button();
             this.addsalebutton = new System.Windows.Forms.Button();
@@ -107,6 +107,8 @@
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.editsalenotextbox = new System.Windows.Forms.TextBox();
+            this.editstocktextbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
             this.stockBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
@@ -294,7 +296,7 @@
             // 
             // showstockrecord
             // 
-            this.showstockrecord.Location = new System.Drawing.Point(241, 94);
+            this.showstockrecord.Location = new System.Drawing.Point(241, 120);
             this.showstockrecord.Name = "showstockrecord";
             this.showstockrecord.Size = new System.Drawing.Size(175, 23);
             this.showstockrecord.TabIndex = 2;
@@ -305,7 +307,7 @@
             // stockno
             // 
             this.stockno.AutoSize = true;
-            this.stockno.Location = new System.Drawing.Point(251, 140);
+            this.stockno.Location = new System.Drawing.Point(251, 166);
             this.stockno.Name = "stockno";
             this.stockno.Size = new System.Drawing.Size(55, 13);
             this.stockno.TabIndex = 3;
@@ -314,7 +316,7 @@
             // stockname
             // 
             this.stockname.AutoSize = true;
-            this.stockname.Location = new System.Drawing.Point(251, 153);
+            this.stockname.Location = new System.Drawing.Point(251, 179);
             this.stockname.Name = "stockname";
             this.stockname.Size = new System.Drawing.Size(69, 13);
             this.stockname.TabIndex = 4;
@@ -323,7 +325,7 @@
             // stockdesc
             // 
             this.stockdesc.AutoSize = true;
-            this.stockdesc.Location = new System.Drawing.Point(251, 166);
+            this.stockdesc.Location = new System.Drawing.Point(251, 192);
             this.stockdesc.Name = "stockdesc";
             this.stockdesc.Size = new System.Drawing.Size(66, 13);
             this.stockdesc.TabIndex = 5;
@@ -332,7 +334,7 @@
             // stocktype
             // 
             this.stocktype.AutoSize = true;
-            this.stocktype.Location = new System.Drawing.Point(251, 179);
+            this.stocktype.Location = new System.Drawing.Point(251, 205);
             this.stocktype.Name = "stocktype";
             this.stocktype.Size = new System.Drawing.Size(65, 13);
             this.stocktype.TabIndex = 6;
@@ -341,7 +343,7 @@
             // stockquantity
             // 
             this.stockquantity.AutoSize = true;
-            this.stockquantity.Location = new System.Drawing.Point(251, 192);
+            this.stockquantity.Location = new System.Drawing.Point(251, 218);
             this.stockquantity.Name = "stockquantity";
             this.stockquantity.Size = new System.Drawing.Size(80, 13);
             this.stockquantity.TabIndex = 7;
@@ -350,7 +352,7 @@
             // stockprice
             // 
             this.stockprice.AutoSize = true;
-            this.stockprice.Location = new System.Drawing.Point(251, 205);
+            this.stockprice.Location = new System.Drawing.Point(251, 231);
             this.stockprice.Name = "stockprice";
             this.stockprice.Size = new System.Drawing.Size(65, 13);
             this.stockprice.TabIndex = 8;
@@ -386,7 +388,7 @@
             // 
             // editstockrecord
             // 
-            this.editstockrecord.Location = new System.Drawing.Point(241, 39);
+            this.editstockrecord.Location = new System.Drawing.Point(241, 65);
             this.editstockrecord.Name = "editstockrecord";
             this.editstockrecord.Size = new System.Drawing.Size(175, 23);
             this.editstockrecord.TabIndex = 16;
@@ -396,7 +398,7 @@
             // 
             // showstocksearchbox
             // 
-            this.showstocksearchbox.Location = new System.Drawing.Point(241, 68);
+            this.showstocksearchbox.Location = new System.Drawing.Point(241, 94);
             this.showstocksearchbox.Name = "showstocksearchbox";
             this.showstocksearchbox.Size = new System.Drawing.Size(175, 20);
             this.showstocksearchbox.TabIndex = 17;
@@ -424,20 +426,21 @@
             // 
             // showsalesearchbox
             // 
-            this.showsalesearchbox.Location = new System.Drawing.Point(717, 68);
+            this.showsalesearchbox.Location = new System.Drawing.Point(717, 95);
             this.showsalesearchbox.Name = "showsalesearchbox";
             this.showsalesearchbox.Size = new System.Drawing.Size(175, 20);
             this.showsalesearchbox.TabIndex = 32;
             this.showsalesearchbox.Text = "Sale to Display (ID Number)";
             // 
-            // editalebutton
+            // editsalebutton
             // 
-            this.editalebutton.Location = new System.Drawing.Point(717, 38);
-            this.editalebutton.Name = "editalebutton";
-            this.editalebutton.Size = new System.Drawing.Size(175, 23);
-            this.editalebutton.TabIndex = 31;
-            this.editalebutton.Text = "Edit Sale Record";
-            this.editalebutton.UseVisualStyleBackColor = true;
+            this.editsalebutton.Location = new System.Drawing.Point(717, 65);
+            this.editsalebutton.Name = "editsalebutton";
+            this.editsalebutton.Size = new System.Drawing.Size(175, 23);
+            this.editsalebutton.TabIndex = 31;
+            this.editsalebutton.Text = "Edit Sale Record";
+            this.editsalebutton.UseVisualStyleBackColor = true;
+            this.editsalebutton.Click += new System.EventHandler(this.editsalebutton_Click);
             // 
             // searchsaletextbox
             // 
@@ -469,7 +472,7 @@
             // 
             // showsalebutton
             // 
-            this.showsalebutton.Location = new System.Drawing.Point(717, 94);
+            this.showsalebutton.Location = new System.Drawing.Point(717, 121);
             this.showsalebutton.Name = "showsalebutton";
             this.showsalebutton.Size = new System.Drawing.Size(175, 23);
             this.showsalebutton.TabIndex = 21;
@@ -632,12 +635,12 @@
             // 
             // showsalerecordmultiline
             // 
-            this.showsalerecordmultiline.Location = new System.Drawing.Point(717, 123);
+            this.showsalerecordmultiline.Location = new System.Drawing.Point(717, 153);
             this.showsalerecordmultiline.Multiline = true;
             this.showsalerecordmultiline.Name = "showsalerecordmultiline";
             this.showsalerecordmultiline.ReadOnly = true;
             this.showsalerecordmultiline.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.showsalerecordmultiline.Size = new System.Drawing.Size(174, 240);
+            this.showsalerecordmultiline.Size = new System.Drawing.Size(174, 210);
             this.showsalerecordmultiline.TabIndex = 40;
             // 
             // stockSaleBindingSource
@@ -794,11 +797,29 @@
             this.toolStripButton10.Text = "refreshdatabase";
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
+            // editsalenotextbox
+            // 
+            this.editsalenotextbox.Location = new System.Drawing.Point(717, 38);
+            this.editsalenotextbox.Name = "editsalenotextbox";
+            this.editsalenotextbox.Size = new System.Drawing.Size(174, 20);
+            this.editsalenotextbox.TabIndex = 42;
+            this.editsalenotextbox.Text = "Sale To Edit (ID Number)";
+            // 
+            // editstocktextbox
+            // 
+            this.editstocktextbox.Location = new System.Drawing.Point(241, 38);
+            this.editstocktextbox.Name = "editstocktextbox";
+            this.editstocktextbox.Size = new System.Drawing.Size(174, 20);
+            this.editstocktextbox.TabIndex = 43;
+            this.editstocktextbox.Text = "Stock To Edit (ID Number)";
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 542);
+            this.Controls.Add(this.editstocktextbox);
+            this.Controls.Add(this.editsalenotextbox);
             this.Controls.Add(this.stocksaleBindingNavigator);
             this.Controls.Add(this.stockSaleDataGridView);
             this.Controls.Add(this.showsalerecordmultiline);
@@ -806,7 +827,7 @@
             this.Controls.Add(this.saleDataGridView);
             this.Controls.Add(this.searchsalemultiline);
             this.Controls.Add(this.showsalesearchbox);
-            this.Controls.Add(this.editalebutton);
+            this.Controls.Add(this.editsalebutton);
             this.Controls.Add(this.searchsaletextbox);
             this.Controls.Add(this.searchsalebutton);
             this.Controls.Add(this.addsalebutton);
@@ -889,7 +910,7 @@
         private System.Windows.Forms.ToolStripButton refreshdatabase;
         private System.Windows.Forms.TextBox searchsalemultiline;
         private System.Windows.Forms.TextBox showsalesearchbox;
-        private System.Windows.Forms.Button editalebutton;
+        private System.Windows.Forms.Button editsalebutton;
         private System.Windows.Forms.TextBox searchsaletextbox;
         private System.Windows.Forms.Button searchsalebutton;
         private System.Windows.Forms.Button addsalebutton;
@@ -929,5 +950,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
+        public System.Windows.Forms.TextBox editsalenotextbox;
+        public System.Windows.Forms.TextBox editstocktextbox;
     }
 }
