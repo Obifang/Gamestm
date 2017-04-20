@@ -67,21 +67,3 @@ namespace Gamestm_php_solution
 		}
 	}
 }
-/*
-        //get and find out if there is stock available or not.
-        public int InStock
-        {
-            get
-            {
-                return _InStock;
-            }
-        }
-
-        //search for entry of typed sales item.
-        //if certain item is selected, change to ' ', store edited entry.
-        public void EditStock()
-        {
-            //just need to know what to insert here.
-        }
-    }
-}*/
