@@ -44,6 +44,7 @@
             this.salechecklistbox = new System.Windows.Forms.CheckedListBox();
             this.editselecteditems = new System.Windows.Forms.Button();
             this.exitbutton = new System.Windows.Forms.Button();
+            this.deleteitem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).BeginInit();
@@ -110,9 +111,9 @@
             // 
             // newitem
             // 
-            this.newitem.Location = new System.Drawing.Point(242, 285);
+            this.newitem.Location = new System.Drawing.Point(275, 285);
             this.newitem.Name = "newitem";
-            this.newitem.Size = new System.Drawing.Size(220, 23);
+            this.newitem.Size = new System.Drawing.Size(187, 23);
             this.newitem.TabIndex = 35;
             this.newitem.Text = "Add New Item";
             this.newitem.UseVisualStyleBackColor = true;
@@ -141,7 +142,7 @@
             // 
             this.editselecteditems.Location = new System.Drawing.Point(12, 285);
             this.editselecteditems.Name = "editselecteditems";
-            this.editselecteditems.Size = new System.Drawing.Size(220, 23);
+            this.editselecteditems.Size = new System.Drawing.Size(136, 23);
             this.editselecteditems.TabIndex = 38;
             this.editselecteditems.Text = "Edit Selected Items";
             this.editselecteditems.UseVisualStyleBackColor = true;
@@ -157,11 +158,22 @@
             this.exitbutton.UseVisualStyleBackColor = true;
             this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
             // 
+            // deleteitem
+            // 
+            this.deleteitem.Location = new System.Drawing.Point(154, 285);
+            this.deleteitem.Name = "deleteitem";
+            this.deleteitem.Size = new System.Drawing.Size(115, 23);
+            this.deleteitem.TabIndex = 39;
+            this.deleteitem.Text = "Delete Item";
+            this.deleteitem.UseVisualStyleBackColor = true;
+            this.deleteitem.Click += new System.EventHandler(this.deleteitem_Click);
+            // 
             // editsaleform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 350);
+            this.Controls.Add(this.deleteitem);
             this.Controls.Add(this.editselecteditems);
             this.Controls.Add(this.salechecklistboxlabel);
             this.Controls.Add(this.salechecklistbox);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.CheckedListBox salechecklistbox;
         private System.Windows.Forms.Button editselecteditems;
         private System.Windows.Forms.Button exitbutton;
+        private System.Windows.Forms.Button deleteitem;
     }
 }

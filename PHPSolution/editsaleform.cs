@@ -17,8 +17,9 @@ namespace PHPSolution
         {
             InitializeComponent();
 
-            //Fill the stock table
+            //Fill the phpDatabaseDataSet
             stockSaleTableAdapter.Fill(pHPDatabaseDataSet.StockSale);
+            stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
             saleTableAdapter.Fill(pHPDatabaseDataSet.Sale);
 
             //Only show items for this sale
@@ -42,11 +43,12 @@ namespace PHPSolution
             try
             {
                 DataRow[] stockSaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No]=" + salenotoedit);
-
+                int i = 0;
                 foreach (DataRow stockrow in stockSaleRow)
                 {
-                    var array = stockSaleRow[0].ItemArray;
+                    var array = stockSaleRow[i].ItemArray;
                     salechecklistbox.Items.Add("No: " + array[0].ToString() + "     Quantity : " + array[2].ToString());
+                    i++;
                 }
             }
             catch (Exception ex)
@@ -123,8 +125,41 @@ namespace PHPSolution
                     stockSaleRow.Sale_Price = decimal.Parse(edititemform.Price);
 
                     // Update database
-                    pHPDatabaseDataSet.AcceptChanges();
+                    //pHPDatabaseDataSet.AcceptChanges();
                     stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                }
+            }
+        }
+
+        private void deleteitem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < salechecklistbox.Items.Count; i++)
+            {
+                if (salechecklistbox.GetItemChecked(i))
+                {
+                    string strtemp = (string)salechecklistbox.Items[i];
+                    int intstockno = int.Parse(strtemp.Substring(3, 4).Trim());
+                    int intsaleno = int.Parse(saleno.Text.Trim());
+
+                    //Fetch stocksale row of item
+                    PHPDatabaseDataSet.StockSaleRow stockSaleRow = pHPDatabaseDataSet.StockSale.FindByStock_NoSale_No(intstockno, intsaleno);
+
+                    //Alter stock values to reflect sales
+                    try
+                    {
+                        PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(intstockno);
+                        stockRow.Quantity += stockSaleRow.Quantity_Sold;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Alter stock to reflect sales failed");
+                    }
+
+                    //Deletes the item
+                    stockSaleRow.Delete();
+                    stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+
+                    MessageBox.Show("The Item has been deleted");
                 }
             }
         }

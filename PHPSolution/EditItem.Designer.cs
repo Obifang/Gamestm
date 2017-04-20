@@ -39,7 +39,6 @@
             this.defaultpricebutton = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
             this.stockno = new System.Windows.Forms.TextBox();
-            this.deleteitem = new System.Windows.Forms.Button();
             this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
@@ -52,7 +51,7 @@
             // 
             this.edititembutton.Location = new System.Drawing.Point(12, 47);
             this.edititembutton.Name = "edititembutton";
-            this.edititembutton.Size = new System.Drawing.Size(328, 23);
+            this.edititembutton.Size = new System.Drawing.Size(449, 23);
             this.edititembutton.TabIndex = 31;
             this.edititembutton.Text = "Edit Item";
             this.edititembutton.UseVisualStyleBackColor = true;
@@ -127,16 +126,6 @@
             this.stockno.TabIndex = 4;
             this.stockno.Text = "No:";
             // 
-            // deleteitem
-            // 
-            this.deleteitem.Location = new System.Drawing.Point(346, 47);
-            this.deleteitem.Name = "deleteitem";
-            this.deleteitem.Size = new System.Drawing.Size(115, 23);
-            this.deleteitem.TabIndex = 32;
-            this.deleteitem.Text = "Delete Item";
-            this.deleteitem.UseVisualStyleBackColor = true;
-            this.deleteitem.Click += new System.EventHandler(this.deleteitem_Click);
-            // 
             // stockSaleBindingSource
             // 
             this.stockSaleBindingSource.DataMember = "StockSale";
@@ -151,7 +140,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 79);
-            this.Controls.Add(this.deleteitem);
             this.Controls.Add(this.edititembutton);
             this.Controls.Add(this.panel);
             this.Name = "EditItem";
@@ -177,7 +165,6 @@
         private System.Windows.Forms.Button defaultpricebutton;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.TextBox stockno;
-        private System.Windows.Forms.Button deleteitem;
         private System.Windows.Forms.BindingSource stockSaleBindingSource;
         private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
     }
