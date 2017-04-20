@@ -41,3 +41,18 @@ H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Deb
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
 H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb
