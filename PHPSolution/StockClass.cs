@@ -32,12 +32,11 @@ namespace PHPSolution
             _Desc = newType;
             _Quantity = newQuantity;
             _Price = newPrice;
-
             //Edit database.
         }
 
         public string GetName
-        {
+        {//^[A-Za-z]\S*$
             get
             {
                 return _Name;
@@ -45,7 +44,7 @@ namespace PHPSolution
         }
 
         public string GetDesc
-        {
+        {//^[A-Za-z]\S*$
             get
             {
                 return _Desc;
@@ -53,7 +52,7 @@ namespace PHPSolution
         }
 
         public string GetStockType
-        {
+        {//^[A-Za-z]\S*$
             get
             {
                 return _Type;
@@ -61,7 +60,8 @@ namespace PHPSolution
         }
 
         public int GetQuantity
-        {
+        {//[0-9]
+            //^(?:\d|[1-3]\d|4[0-5])$
             get
             {
                 return _Quantity;
@@ -73,7 +73,8 @@ namespace PHPSolution
         }
 
         public decimal GetPrice
-        {
+        {//[0-9]
+            //^[0-9]([.,][0-9]{1,3})?$
             get
             {
                 return _Price;
