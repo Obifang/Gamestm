@@ -100,7 +100,7 @@ namespace Gamestm_php_solution
                 return _InStock;
             }
         }
-
+      
         //search for entry of typed sales item.
         public void edit(string newName, string newDesc, string newType, int newId, int newQuantity, decimal newPrice)
         {

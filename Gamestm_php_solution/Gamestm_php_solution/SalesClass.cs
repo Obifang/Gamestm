@@ -72,15 +72,15 @@ namespace Gamestm_php_solution
             Temp = _StockSold.Find(x => x.GetStockName == StockName);
             //might increase stock sold with each item added to the database.
             //Temp.UpdateStockSold = StockSold;
-            StockSold++;   
+            StockSold++;
         }
-
+      
         public void AddStockToSale(string StockName, int StockSold)
           {
             //Just need to know what to insert here.
             _StockSold.Add(new StockSale(StockName, StockSold));
             UpdateStock(StockName, StockSold);
             StockSold++;
-          }
+        }
     }
 }
