@@ -71,3 +71,18 @@ C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution
 C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
 C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
 C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb
