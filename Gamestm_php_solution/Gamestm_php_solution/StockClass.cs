@@ -8,14 +8,13 @@ namespace Gamestm_php_solution
 {
     //private variables.
     public class StockClass
-	{
-        
+    {   
         //name of product.
-		private string _Name;
+		    private string _Name;
         //product description.
-		private string _Desc;
+		    private string _Desc;
         //product ID.
-		private int _Id;
+		    private int _Id;
         //cost of item.
         private decimal _Price;
         //find out what stock is available.
