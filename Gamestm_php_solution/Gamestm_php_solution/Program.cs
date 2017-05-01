@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
+
 //PHP solution.
 namespace Gamestm_php_solution
 {
 	class MainClass
 	{
-		public static void Main()
+		public static void Main(string[] args)
 		{
             string userInput;
             StockClass[] stockArray = new StockClass[10];

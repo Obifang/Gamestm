@@ -7,7 +7,7 @@ namespace Gamestm_php_solution
     {
         //Stock Items.
         private StockClass[] _StockItems;
-		//A list to keep track of sales
+		//A list to keep track of sales.
 		private List<StockSale> _StockSold;
         //Quantity of stock.
         private int _StockCount;
@@ -58,12 +58,14 @@ namespace Gamestm_php_solution
 			}
         }
 
-		//calculate the total stock sold and profit.
-		public List<StockSale> StockSold {
-			get {
-				return _StockSold;
-			}
-		}
+        //calculate the total stock sold and profit.
+        public List<StockSale> StockSold
+        {
+            get
+            {
+                return _StockSold;
+            }
+        }
 
         public void UpdateStock(string StockName, int StockSold)
         {
@@ -74,13 +76,13 @@ namespace Gamestm_php_solution
             //Temp.UpdateStockSold = StockSold;
             StockSold++;
         }
-
+      
         public void AddStockToSale(string StockName, int StockSold)
-          {
-            //Just need to know what to insert here.
-            _StockSold.Add(new StockSale(StockName, StockSold));
-            UpdateStock(StockName, StockSold);
-            StockSold++;
+        {
+          //Just need to know what to insert here.
+          _StockSold.Add(new StockSale(StockName, StockSold));
+          UpdateStock(StockName, StockSold);
+          StockSold++;
         }
     }
 }

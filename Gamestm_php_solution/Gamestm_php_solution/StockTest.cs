@@ -1,5 +1,6 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
+//using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace Gamestm_php_solution
 {
@@ -184,7 +185,7 @@ namespace Gamestm_php_solution
 			//Sets the test value to actual.
 			int actual = StockItem.InStock;
 
-			//Sets the value of the expected result
+			//Sets the value of the expected result.
 			int expected = 100;
 
 			Assert.AreNotEqual(expected, actual, "Stock does not match");
