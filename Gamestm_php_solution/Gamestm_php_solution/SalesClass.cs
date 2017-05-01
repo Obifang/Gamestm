@@ -7,23 +7,23 @@ namespace Gamestm_php_solution
     {
         //Stock Items.
         private StockClass[] _StockItems;
-		//A list to keep track of sales
+		//A list to keep track of sales.
 		private List<StockSale> _StockSold;
         //Quantity of stock.
         private int _StockCount;
         //Date stock item was sold.
         private DateTime _SalesDate;
         //stock sold.
-        private StockClass[] _Stocksold;
+        //private StockClass[] _Stocksold;
         //I think we can reference stock class here as well to check the user input.
 
         //reference stock class or stock.
         public SalesClass()
         {
-            _StockItems = StockItems;
-            _StockCount = StockCount;
-			_SalesDate = SalesDate;
-			_StockSold = new List<StockSale> ();
+            _StockItems = null;
+            _SalesDate = default(DateTime);
+            _StockCount = 0;
+            _StockSold = new List<StockSale> ();
             //StockClass[] StockItems = null;
             //DateTime SalesDate = default(DateTime);
             //double ItemCost = 0;
@@ -74,9 +74,9 @@ namespace Gamestm_php_solution
             //Temp.UpdateStockSold = StockSold;
             StockSold++;
         }
-
+      
         public void AddStockToSale(string StockName, int StockSold)
-        {
+          {
             //Just need to know what to insert here.
             _StockSold.Add(new StockSale(StockName, StockSold));
             UpdateStock(StockName, StockSold);
