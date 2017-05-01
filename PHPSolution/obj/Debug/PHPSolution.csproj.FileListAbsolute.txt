@@ -1,0 +1,88 @@
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Debug\PHPSolution.exe.config
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Debug\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Debug\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.pdb
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.exe
+D:\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Debug\PHPSolution.Main.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe.config
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\bin\Debug\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.pdb
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\Joshua\Desktop\Swinburne\DP2\GamesProject\Games\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
+H:\Games and Media\University\Developement Project 2\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\Tom\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe.config
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.exe
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\bin\Debug\PHPSolution.pdb
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csprojResolveAssemblyReference.cache
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.AddItem.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addsaleform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.addstockform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.EditItem.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editsaleform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.editstockform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.mainform.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Properties.Resources.resources
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
+C:\Users\tlati\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb

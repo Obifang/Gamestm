@@ -1,0 +1,10 @@
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Release\PHPSolution.exe.config
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Release\PHPDatabase.mdf
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Release\PHPDatabase_log.ldf
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Release\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\bin\Release\PHPSolution.pdb
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Release\PHPSolution.mainform.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Release\PHPSolution.Properties.Resources.resources
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Release\PHPSolution.csproj.GenerateResource.Cache
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Release\PHPSolution.exe
+H:\Games and Media\University\Developement Project 2\PHPSolution\PHPSolution\obj\Release\PHPSolution.pdb
