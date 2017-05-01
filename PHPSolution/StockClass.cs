@@ -6,35 +6,37 @@ using System.Threading.Tasks;
 
 namespace PHPSolution
 {
+    //private variables.
     public class StockClass
     {
-        //Private variables.
+        //name of product.
         private string _Name;
+        //product description.
         private string _Desc;
+        //product ID.
+        private int _Id;
+        //cost of item.
+        private decimal _Price;
+        //find out what stock is available.
+        private int _InStock;
         private string _Type;
         private int _Quantity;
-        private decimal _Price;
-       
-        public StockClass(string Name, string Desc, string Type, int Quantity, decimal Price)
+
+
+        //maybe have "Quantity" as a private variable if need be.
+        public StockClass(string Name, string Desc, int Id, int InStock, string Type, int Quantity, decimal Price)
         {
             //Provide a value for the variables.
             _Name = Name;
             _Desc = Desc;
+            _Id = Id;
+            _Price = Price;
+            _InStock = InStock;
             _Type = Type;
             _Quantity = Quantity;
-            _Price = Price;
         }
 
-        public void edit(string newName, string newDesc, string newType, int newQuantity, decimal newPrice)
-        {
-            _Name = newName;
-            _Desc = newDesc;
-            _Desc = newType;
-            _Quantity = newQuantity;
-            _Price = newPrice;
-            //Edit database.
-        }
-
+        //Get the name of the product inserted.
         public string GetName
         {//^[A-Za-z]\S*$
             get
@@ -43,12 +45,37 @@ namespace PHPSolution
             }
         }
 
+        //Get the price of the product.	
+        public decimal GetPrice
+        {//[0-9]
+            //^[0-9]([.,][0-9]{1,3})?$
+            get
+            {
+                return _Price;
+            }
+            set
+            {
+                _Price = value;
+            }
+        }
+
+        //Get the ID of a product.	
+        public int GetId
+        {
+            get
+            {
+                return _Id;
+            }
+        }
+
+        //Get the description of the product.
         public string GetDesc
         {//^[A-Za-z]\S*$
             get
             {
                 return _Desc;
             }
+            //Add limitations and if statements if necessary.
         }
 
         public string GetStockType
@@ -72,17 +99,27 @@ namespace PHPSolution
             }
         }
 
-        public decimal GetPrice
-        {//[0-9]
-            //^[0-9]([.,][0-9]{1,3})?$
+        //get and find out if there is stock available or not.
+        public int InStock
+        {
             get
             {
-                return _Price;
-            }
-            set
-            {
-                _Price = value;
+                return _InStock;
             }
         }
+
+        //search for entry of typed sales item.
+        public void edit(string newName, string newDesc, string newType, int newId, int newQuantity, decimal newPrice)
+        {
+            //just need to know what to insert here.
+            _Id = newId;
+            _Name = newName;
+            _Desc = newDesc;
+            _Desc = newType;
+            _Quantity = newQuantity;
+            _Price = newPrice;
+            //Edit database.
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PHPSolution
 {
-    class SalesClass
+    public class SalesClass
     {
         //Stock Items.
         private StockClass[] _StockItems;
@@ -16,14 +16,22 @@ namespace PHPSolution
         private int _StockCount;
         //Date stock item was sold.
         private DateTime _SalesDate;
+        //stock sold.
+        //private StockClass[] _Stocksold;
+        //I think we can reference stock class here as well to check the user input.
 
         //reference stock class or stock.
         public SalesClass()
         {
-            _StockSold = new List<StockSale>();
             _StockItems = null;
             _SalesDate = default(DateTime);
             _StockCount = 0;
+            _StockSold = new List<StockSale>();
+            //StockClass[] StockItems = null;
+            //DateTime SalesDate = default(DateTime);
+            //double ItemCost = 0;
+            //int StockCount = 0;
+            //_StockSold = StockSold;
         }
 
         //Getters and setters. add fields to each item.
@@ -75,16 +83,19 @@ namespace PHPSolution
 
         private void UpdateStock(string StockName, int StockSold)
         {
+            //just need to know what to insert here.
             StockSale Temp;
             Temp = _StockSold.Find(x => x.GetStockName == StockName);
-
+            //might increase stock sold with each item added to the database.
+            //Temp.UpdateStockSold = StockSold;
             Temp.UpdateStockSold = StockSold;
         }
 
         public void AddStockToSale(string StockName, int StockSold)
         {
-            _StockSold.Add(new StockSale(StockName, StockSold));
-            UpdateStock(StockName, StockSold);
+          //Just need to know what to insert here.
+          _StockSold.Add(new StockSale(StockName, StockSold));
+          UpdateStock(StockName, StockSold);
         }
     }
 }

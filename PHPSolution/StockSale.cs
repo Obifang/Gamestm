@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace PHPSolution
 {
-    class StockSale
+    public class StockSale
     {
         private string _StockName;
         private int _StockSold;
 
+        //set values and private variables.
         public StockSale(String StockName, int StockSold)
         {
             _StockName = StockName;
@@ -23,6 +24,15 @@ namespace PHPSolution
             get
             {
                 return _StockName;
+            }
+        }
+
+        //Get the amount of stock sold.	
+        public int GetStockSold
+        {
+            get
+            {
+                return _StockSold;
             }
         }
 
