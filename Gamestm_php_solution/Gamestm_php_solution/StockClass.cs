@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +19,14 @@ namespace Gamestm_php_solution
         //cost of item.
         private decimal _Price;
         //find out what stock is available.
-		private int _InStock;
+		    private int _InStock;
         private string _Type;
         private int _Quantity;
-        
 
         //maybe have "Quantity" as a private variable if need be.
         public StockClass (string Name, string Desc, int Id, int InStock, string Type, int Quantity, decimal Price)
 		{
-            //Provide a value for the variables.
+      //Provide a value for the variables.
 			_Name = Name;
 			_Desc = Desc;
 			_Id = Id;

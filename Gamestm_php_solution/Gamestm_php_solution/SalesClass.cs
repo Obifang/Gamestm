@@ -58,12 +58,14 @@ namespace Gamestm_php_solution
 			}
         }
 
-		//calculate the total stock sold and profit.
-		public List<StockSale> StockSold {
-			get {
-				return _StockSold;
-			}
-		}
+        //calculate the total stock sold and profit.
+        public List<StockSale> StockSold
+        {
+            get
+            {
+                return _StockSold;
+            }
+        }
 
         public void UpdateStock(string StockName, int StockSold)
         {
@@ -76,11 +78,11 @@ namespace Gamestm_php_solution
         }
       
         public void AddStockToSale(string StockName, int StockSold)
-          {
-            //Just need to know what to insert here.
-            _StockSold.Add(new StockSale(StockName, StockSold));
-            UpdateStock(StockName, StockSold);
-            StockSold++;
+        {
+          //Just need to know what to insert here.
+          _StockSold.Add(new StockSale(StockName, StockSold));
+          UpdateStock(StockName, StockSold);
+          StockSold++;
         }
     }
 }
