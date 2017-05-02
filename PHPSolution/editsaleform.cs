@@ -17,53 +17,76 @@ namespace PHPSolution
         {
             InitializeComponent();
 
+            //Enters saleno into textbox
+            saleno.Text = salenotoedit;
+
+            //Renders the checklistbox
+            rendercheckbox();
+        }
+
+        private void rendercheckbox()
+        {
+            string salenotoedit = saleno.Text.Trim();
+
             //Fill the phpDatabaseDataSet
             stockSaleTableAdapter.Fill(pHPDatabaseDataSet.StockSale);
             stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
             saleTableAdapter.Fill(pHPDatabaseDataSet.Sale);
 
-            //Only show items for this sale
+            // Filter SaleBindingSource to only show items for provided salenotoedit
             stockSaleBindingSource.Filter = "[Sale_No] = " + salenotoedit;
 
             //Fetch data from database
             try
             {
-                DataRow[] saleRow = pHPDatabaseDataSet.Sale.Select("[Sale_No]=" + salenotoedit);
-                var array = saleRow[0].ItemArray;
+                // Searches pHPDatabaseDataSet.Sale for a entry with the entered sale no and assigns it to SaleRow
+                PHPDatabaseDataSet.SaleRow saleRow = pHPDatabaseDataSet.Sale.FindBySale_No(int.Parse(salenotoedit));
 
-                saleno.Text = array[0].ToString();
-                saledate.Text = array[1].ToString().Substring(0,10);
+                // Enters date form saleRow into textboxes
+                saledate.Text = saleRow.Date.ToString().Substring(0, 10);
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fetch data for sale edit failed");
             }
 
             //Disaply stock items in a checkbox
             try
             {
+                // Searches through stockSale for any items bought with the provided sale no
+                // Assigns the the results to an array of data rows
                 DataRow[] stockSaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No]=" + salenotoedit);
+
+                // Clears checklistbox, so if it is refreshed using the same function, we dont get dupe data
+                salechecklistbox.Items.Clear();
+
                 int i = 0;
+                // Iterates through array of data rows and adds each item to the checklistbox
                 foreach (DataRow stockrow in stockSaleRow)
                 {
+                    // Assigns a single data row to an array
+                    // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
                     var array = stockSaleRow[i].ItemArray;
+
+                    // Adds item to checklistbox
                     salechecklistbox.Items.Add("No: " + array[0].ToString() + "     Quantity : " + array[2].ToString());
                     i++;
                 }
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Entering data into checklistbox failed");
+                // Displays the error message using a messagebox
                 MessageBox.Show(ex.ToString());
             }
         }
 
         private void exitbutton_Click(object sender, EventArgs e)
         {
-            // Find row you want to modify.
+            // Find row you want to modify using FindBySale_No
             PHPDatabaseDataSet.SaleRow saleRow = pHPDatabaseDataSet.Sale.FindBySale_No(int.Parse(saleno.Text.Trim()));
 
-            // Insert data into old row
+            // Insert new date from textbox into old row
             saleRow.Date = Convert.ToDateTime(saledate.Text.Trim());
 
             // Save the new row to the database
@@ -77,21 +100,26 @@ namespace PHPSolution
                 Close();
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Edit sale failed");
             }
         }
 
         private void newitem_Click(object sender, EventArgs e)
         {
+            // Creates new form of type additenform, passing 0 to indicate it is not for any specific stock no
             var additemform = new AddItem(0.ToString());
+
+            // Disable's current form an opens add item form
             additemform.ShowDialog(this);
 
             //Create new stocksale row
             PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
             
-            //Insert data into new stocksale row
+            //Insert sale_no into new stocksale row
             newStockSaleRow.Sale_No = int.Parse(saleno.Text.Trim());
+
+            //Gets data from additemform using public getters and enters it into new stocksale row
             newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
             newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
             newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
@@ -99,69 +127,87 @@ namespace PHPSolution
             // Add the row to the Stock table and update database
             pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
             stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+
+            //Rerenders the checklistbox, updating it with the new information
+            rendercheckbox();
         }
 
         private void editselecteditems_Click(object sender, EventArgs e)
         {
-            // Edit items
+            // Iterates through each checked item in the checklistbox
             for (int i = 0; i < salechecklistbox.Items.Count; i++)
             {
                 if (salechecklistbox.GetItemChecked(i))
                 {
+                    //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
                     string strtemp = (string)salechecklistbox.Items[i];
                     int intstockno = int.Parse(strtemp.Substring(3, 4).Trim());
+                    //Gets saleno from textbox
                     int intsaleno = int.Parse(saleno.Text.Trim());
 
+                    // Creates new form of type edititemform, passing stock_no and sale_no to identify the item
                     var edititemform = new EditItem(intsaleno.ToString(), intstockno.ToString());
+                    // Disable's current form an opens edit item form
                     edititemform.ShowDialog(this);
 
-                    //Fetch stocksale row of item
+                    //Fetch stocksale row of item using FindByStock_NoSale_No
                     PHPDatabaseDataSet.StockSaleRow stockSaleRow = pHPDatabaseDataSet.StockSale.FindByStock_NoSale_No(intstockno, intsaleno);
 
-                    //Insert data into stocksale row
-                    stockSaleRow.Sale_No = intsaleno;
-                    stockSaleRow.Stock_No = intstockno;
+                    //Gets data from edititemform using public getters and enters it into stocksale row
                     stockSaleRow.Quantity_Sold = int.Parse(edititemform.Quantity);
                     stockSaleRow.Sale_Price = decimal.Parse(edititemform.Price);
 
                     // Update database
-                    //pHPDatabaseDataSet.AcceptChanges();
                     stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
                 }
             }
+            //Rerenders the checklistbox, updating it with the new information
+            rendercheckbox();
         }
 
         private void deleteitem_Click(object sender, EventArgs e)
         {
+            // Iterates through each checked item in the checklistbox
             for (int i = 0; i < salechecklistbox.Items.Count; i++)
             {
                 if (salechecklistbox.GetItemChecked(i))
                 {
+                    //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
                     string strtemp = (string)salechecklistbox.Items[i];
                     int intstockno = int.Parse(strtemp.Substring(3, 4).Trim());
+                    //Gets saleno from textbox
                     int intsaleno = int.Parse(saleno.Text.Trim());
 
-                    //Fetch stocksale row of item
+                    //Fetch stocksale row of item using FindByStock_NoSale_No
                     PHPDatabaseDataSet.StockSaleRow stockSaleRow = pHPDatabaseDataSet.StockSale.FindByStock_NoSale_No(intstockno, intsaleno);
 
                     //Alter stock values to reflect sales
                     try
                     {
+                        //Fetch stock row using FindByStock_No and assign it to stockRow
                         PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(intstockno);
+
+                        //Alter quantity to reflect deletion of item
                         stockRow.Quantity += stockSaleRow.Quantity_Sold;
                     }
                     catch (Exception ex)
-                    {
+                    {   // Catches an error and displays a messagebox
                         MessageBox.Show("Alter stock to reflect sales failed");
                     }
 
                     //Deletes the item
                     stockSaleRow.Delete();
-                    stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
 
+                    //Updates the databases
+                    stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                    stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+
+                    //Gives the user feedback in a messagebox
                     MessageBox.Show("The Item has been deleted");
                 }
             }
-        }
+            //Rerenders the checklistbox, updating it with the new information
+            rendercheckbox();
+        } 
     }
 }

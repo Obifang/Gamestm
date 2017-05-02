@@ -42,7 +42,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.refreshdatabase = new System.Windows.Forms.ToolStripButton();
             this.stockDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,7 +86,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.showsalerecordmultiline = new System.Windows.Forms.TextBox();
             this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
@@ -106,7 +104,6 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.editsalenotextbox = new System.Windows.Forms.TextBox();
             this.editstocktextbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
@@ -140,8 +137,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.refreshdatabase});
+            this.bindingNavigatorSeparator2});
             this.stockBindingNavigator.Location = new System.Drawing.Point(12, 517);
             this.stockBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.stockBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -149,7 +145,7 @@
             this.stockBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stockBindingNavigator.Name = "stockBindingNavigator";
             this.stockBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stockBindingNavigator.Size = new System.Drawing.Size(232, 25);
+            this.stockBindingNavigator.Size = new System.Drawing.Size(240, 25);
             this.stockBindingNavigator.TabIndex = 0;
             this.stockBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -229,16 +225,6 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // refreshdatabase
-            // 
-            this.refreshdatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshdatabase.Image = ((System.Drawing.Image)(resources.GetObject("refreshdatabase.Image")));
-            this.refreshdatabase.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshdatabase.Name = "refreshdatabase";
-            this.refreshdatabase.Size = new System.Drawing.Size(23, 22);
-            this.refreshdatabase.Text = "refreshdatabase";
-            this.refreshdatabase.Click += new System.EventHandler(this.refreshdatabase_Click);
             // 
             // stockDataGridView
             // 
@@ -543,8 +529,7 @@
             this.toolStripSeparator2,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripSeparator3,
-            this.toolStripButton8});
+            this.toolStripSeparator3});
             this.saleBindingNaviagtor.Location = new System.Drawing.Point(337, 517);
             this.saleBindingNaviagtor.MoveFirstItem = this.toolStripButton3;
             this.saleBindingNaviagtor.MoveLastItem = this.toolStripButton6;
@@ -552,7 +537,7 @@
             this.saleBindingNaviagtor.MovePreviousItem = this.toolStripButton4;
             this.saleBindingNaviagtor.Name = "saleBindingNaviagtor";
             this.saleBindingNaviagtor.PositionItem = this.toolStripTextBox1;
-            this.saleBindingNaviagtor.Size = new System.Drawing.Size(232, 25);
+            this.saleBindingNaviagtor.Size = new System.Drawing.Size(209, 25);
             this.saleBindingNaviagtor.TabIndex = 34;
             this.saleBindingNaviagtor.Text = "bindingNavigator1";
             // 
@@ -622,16 +607,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "refreshdatabase";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // showsalerecordmultiline
             // 
@@ -707,8 +682,7 @@
             this.toolStripSeparator5,
             this.toolStripButton7,
             this.toolStripButton9,
-            this.toolStripSeparator6,
-            this.toolStripButton10});
+            this.toolStripSeparator6});
             this.stocksaleBindingNavigator.Location = new System.Drawing.Point(591, 517);
             this.stocksaleBindingNavigator.MoveFirstItem = this.toolStripButton1;
             this.stocksaleBindingNavigator.MoveLastItem = this.toolStripButton9;
@@ -716,7 +690,7 @@
             this.stocksaleBindingNavigator.MovePreviousItem = this.toolStripButton2;
             this.stocksaleBindingNavigator.Name = "stocksaleBindingNavigator";
             this.stocksaleBindingNavigator.PositionItem = this.toolStripTextBox2;
-            this.stocksaleBindingNavigator.Size = new System.Drawing.Size(232, 25);
+            this.stocksaleBindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.stocksaleBindingNavigator.TabIndex = 41;
             this.stocksaleBindingNavigator.Text = "stocksaleBindingNavigator";
             // 
@@ -786,16 +760,6 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton10.Text = "refreshdatabase";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // editsalenotextbox
             // 
@@ -907,7 +871,6 @@
         private System.Windows.Forms.Button editstockrecord;
         private System.Windows.Forms.TextBox showstocksearchbox;
         private System.Windows.Forms.TextBox searchstockresult;
-        private System.Windows.Forms.ToolStripButton refreshdatabase;
         private System.Windows.Forms.TextBox searchsalemultiline;
         private System.Windows.Forms.TextBox showsalesearchbox;
         private System.Windows.Forms.Button editsalebutton;
@@ -930,7 +893,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.TextBox showsalerecordmultiline;
         private System.Windows.Forms.BindingSource stockSaleBindingSource;
         private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
@@ -949,7 +911,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
         public System.Windows.Forms.TextBox editsalenotextbox;
         public System.Windows.Forms.TextBox editstocktextbox;
     }

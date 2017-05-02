@@ -19,25 +19,28 @@ namespace PHPSolution
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
-                this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
+                stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fill stock failed");
             }
 
             //Disaply stock items in a checkbox
             try
             {
+                // Creates stockdatatable and populates it with the entirety of pHPDatabaseDataSet.Stock
                 PHPDatabaseDataSet.StockDataTable stockTable = pHPDatabaseDataSet.Stock;
 
+                // Iterates through stockTable, adding each item to a checklistbox
                 foreach (PHPDatabaseDataSet.StockRow stockrow in stockTable)
                 {
+                    // Adds stock to checklistbox as a string
                     salechecklistbox.Items.Add("No: " + stockrow.Stock_No.ToString() + "     Name : " + stockrow.Name.TrimEnd());
                 }
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Entering data into checklistbox failed");
             }
         }
@@ -47,50 +50,65 @@ namespace PHPSolution
             // Create a new sale row.
             PHPDatabaseDataSet.SaleRow newSaleRow = pHPDatabaseDataSet.Sale.NewSaleRow();
            
-            // Insert data into new sale row
+            // Insert date from textbox into new sale row
             newSaleRow.Date = Convert.ToDateTime(saledate.Text);
 
             // Add the row to the Stock table and update database
             pHPDatabaseDataSet.Sale.Rows.Add(newSaleRow);
             saleTableAdapter.Update(pHPDatabaseDataSet.Sale);
 
-            // Add data to items
+            // Iterates through each checked item in the checklistbox
             for (int i = 0; i < salechecklistbox.Items.Count; i++)
             {
                 if (salechecklistbox.GetItemChecked(i))
                 {
+                    //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
                     string strtemp = (string)salechecklistbox.Items[i];
                     string stockno = strtemp.Substring(3, 4).Trim();
 
+                    // Creates new form of type additemform
                     var additemform = new AddItem(stockno);
+                    // Disable's current form an opens add item form
                     additemform.ShowDialog(this);
 
                     //Create new stocksale row
                     PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
 
-                    //Get highest saleno
+                    //Gets highest saleno
+
+                    //Searches for any sale entries where sale_no is not null and sorts them, highest at the top
+                    //This was the only way i could find to access the last sale no that was generated (i.e the one for the item being entered)
+                    //In order to sort the sale entries i needed a filter, hecne sale_no is not null, as that will always be true
+                    //Assigns the the results to an array of data rows
                     DataRow[] newResultRow = pHPDatabaseDataSet.Sale.Select("Sale_No is not NULL","Sale_No DESC");
                     var array = newResultRow[0].ItemArray;
+                    //Assigns the first(highest) results first entry(Sale_No) as saleno
                     string saleno = array[0].ToString();
 
-                    //Insert data into new stocksale row
-                    newStockSaleRow.Sale_No = Int32.Parse(saleno);
-                    newStockSaleRow.Stock_No = Int32.Parse(additemform.StockNo);
-                    newStockSaleRow.Quantity_Sold = Int32.Parse(additemform.Quantity);
-                    newStockSaleRow.Sale_Price = Decimal.Parse(additemform.Price);
+                    //Inserts the saleno we just got into stocksale row
+                    newStockSaleRow.Sale_No = int.Parse(saleno);
+
+                    //Gets data from additemform using public getters and enters it into new stocksale row
+                    newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
+                    newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
+                    newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
 
                     // Add the row to the Stock table and update database
                     pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
                     stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
                 }
             }
+            // Closes form
             Close();
         }
 
         private void currentdatebutton_Click(object sender, EventArgs e)
         {
+            //Sets localtime
             DateTime localTime = DateTime.Now;
+            //Creates string with current date
             string currentDate = localTime.Year +"-"+ localTime.Month +"-"+ localTime.Day;
+            //Assigns string to text of textbox
             saledate.Text = currentDate;
         }
     }

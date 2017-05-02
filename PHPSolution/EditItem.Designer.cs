@@ -122,6 +122,7 @@
             // 
             this.stockno.Location = new System.Drawing.Point(3, 3);
             this.stockno.Name = "stockno";
+            this.stockno.ReadOnly = true;
             this.stockno.Size = new System.Drawing.Size(37, 20);
             this.stockno.TabIndex = 4;
             this.stockno.Text = "No:";
