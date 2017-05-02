@@ -19,7 +19,7 @@ namespace PHPSolution
 
         private void addstock_Click(object sender, EventArgs e)
         {
-            //Initial values
+            //Gets values from textboxes
             string strname = stockname.Text;
             string strdesc = stockdesc.Text;
             string strtype = stocktype.Text;
@@ -27,27 +27,29 @@ namespace PHPSolution
             Int32.TryParse(stockquantity.Text, out intQuantity);
             decimal decPrice = Convert.ToDecimal(stockprice.Text); ;
             
-            // Create a new row.
+            // Creates a new row.
             PHPDatabaseDataSet.StockRow newStockRow = pHPDatabaseDataSet.Stock.NewStockRow();
 
-            // Insert data into new row
+            // Inserts data into new row
             newStockRow.Name = strname;
             newStockRow.Desc = strdesc;
             newStockRow.Type = strtype;
             newStockRow.Quantity = intQuantity;
             newStockRow.Price = decPrice;
 
-            // Add the row to the Stock table
+            // Adds the new row to pHPDatabaseDataSet.Stock
             pHPDatabaseDataSet.Stock.Rows.Add(newStockRow);
 
             // Save the new row to the database
             try
             {
+                //Updates stockTableAdapter with the new information from pHPDatabaseDataSet.Stock
                 stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+                // Closes form
                 Close();
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Add stock failed");
             }
         }

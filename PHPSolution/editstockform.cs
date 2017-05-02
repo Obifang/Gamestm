@@ -19,35 +19,36 @@ namespace PHPSolution
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
-                this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
+                stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fill stock failed");
             }
 
             //Fetch data from database
             try
             {
-                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Stock_No]=" + stocktoedit + "");
-                var array = newResultRow[0].ItemArray;
+                // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock no and assigns it to newStockRow
+                PHPDatabaseDataSet.StockRow newStockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(stocktoedit));
 
-                stocknumber.Text = array[0].ToString();
-                stockname.Text = array[1].ToString();
-                stockdesc.Text = array[2].ToString();
-                stocktype.Text = array[3].ToString();
-                stockquantity.Text = array[4].ToString();
-                stockprice.Text = array[5].ToString();
+                // Populates textboxes with data from newStockRow
+                stocknumber.Text = newStockRow.Stock_No.ToString();
+                stockname.Text = newStockRow.Name;
+                stockdesc.Text = newStockRow.Desc;
+                stocktype.Text = newStockRow.Type;
+                stockquantity.Text = newStockRow.Quantity.ToString();
+                stockprice.Text = newStockRow.Price.ToString();
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fetch data for row edits failed");
             }
         }
 
         private void editstockrecordbutton_Click(object sender, EventArgs e)
         {
-            //Initialise stockedit
+            //Initialise stockedit, it complains unless you provide a value, which is later overwritten
             int stocktoedit = 1;
             try
             {
@@ -55,12 +56,13 @@ namespace PHPSolution
             }
             catch (Exception ex)
             {
+                // Catches an error and displays a messagebox
                 MessageBox.Show("Stock Edit Parse failed");
+                // Dispalys error message in a messagebox
                 MessageBox.Show("String Value : " + stocknumber.Text.Trim() + "");
             }
 
-            //Insert data back into database, overwriting the previous entry
-            //Initial values
+            //Gets new values from textboxes
             string strname = stockname.Text;
             string strdesc = stockdesc.Text;
             string strtype = stocktype.Text;
@@ -68,7 +70,7 @@ namespace PHPSolution
             Int32.TryParse(stockquantity.Text, out intQuantity);
             decimal decPrice = Convert.ToDecimal(stockprice.Text);
 
-            // Find row you want to modify.
+            // Find row you want to modify, using FindByStock_No
             PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);
 
             // Insert data into old row
@@ -78,14 +80,16 @@ namespace PHPSolution
             stockRow.Quantity = intQuantity;
             stockRow.Price = decPrice;
 
-            // Save the new row to the database
+            // Save the row to the database
             try
             {
+                //Updates stockTableAdapter with the new information from pHPDatabaseDataSet.Stock
                 stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+                // Closes form
                 Close();
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Edit stock failed");
             }
         }

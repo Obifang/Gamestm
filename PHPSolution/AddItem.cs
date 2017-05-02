@@ -16,27 +16,36 @@ namespace PHPSolution
         {
             InitializeComponent();
 
-            if (Int32.Parse(stocknumber) != 0){
+            //This is setup, so that if the form is opened from addsaleform, it will alwasys be passed a number, and that no will be entered into the textbox
+            //But if the form is opened from edit saleform, where it isn't passed a no, it will be passed 0 by default,
+            //thus it will enter placeholder text, indicating to the user to enter a stock number
+
+            //If stocknumber isnt 0, enter it into text of textbox
+            if (int.Parse(stocknumber) != 0){
+
                 stockno.Text = stocknumber;
             }
             else {
+                //else enter placeholder text
                 stockno.Text = "No";
             }
 
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
-                this.stockTableAdapter.Fill(this.pHPDatabaseDataSet.Stock);
+                stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fill stock failed");
             }
         }
 
         private void defaultpricebutton_Click(object sender, EventArgs e)
         {
-            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Trim()));
+            // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
+            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(stockno.Text.Trim()));
+            // Sets text of textbox with the price of the stock
             stockprice.Text =  stockRow.Price.ToString();
         }
 
@@ -45,18 +54,22 @@ namespace PHPSolution
             //Alter stock values to reflect sales
             try
             {
-                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Trim()));
-                stockRow.Quantity -= Int32.Parse(stockquantity.Text.Trim());
+                // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
+                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(stockno.Text.Trim()));
+                // Reduces quantity by the amount purchased
+                stockRow.Quantity -= int.Parse(stockquantity.Text.Trim());
+                // Updates database
                 stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
             }
             catch (Exception ex)
-            {
+            {   // Catches an error and displays a messagebox
                 MessageBox.Show("Alter stock to reflect sales failed");
             }
-
+            // Closes form
             Close();
         }
 
+        //Uses public getters so that the data entered can be obtained after the form is closed
         public string StockNo
         {
             get { return stockno.Text.Trim(); }
