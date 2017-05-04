@@ -31,54 +31,74 @@ namespace PHPSolution
             stockprice.Text = "";
         }
 
-        /*if (stockno.Length == 0){
-          MessageBox.Show("Please insert a Stock number")
-          return false;
-          }
-        */
+           public bool Validstockno(int stockno)//out string errorMessage
+           {
+            // Confirm that the string is not empty. 
+            if (stockno <= 0)
+            {
+                MessageBox.Show("Please insert a Stock number");
+                return false;
+            }
+           }
 
-        /*if (stockname.Length == 0){
-         MessageBox.Show("Please insert the name of the stock item")
-         return false;
-         }
-       */
+           public bool validstockname(string stockname)//out string errorMessage
+           {
+           if (stockname.Length == 0 && stockname != )
+                {
+                MessageBox.Show("Please insert the name of the stock item");
+                 return false;
+                }
+            //A description might not be required but it is there just in case.
+           }
 
-        //A description might not be required but it is there just in case.
-        /*if (stockdesc.Length == 0){
-         MessageBox.Show("Please insert the name of the stock item")
-         return false;
-         }
-       */
+           public bool Validstockdesc(string stockdesc)//out string errorMessage
+           {
+               if (stockdesc.Length == 0)
+               {
+                MessageBox.Show("Please insert the name of the stock item");
+                return false;
+               }
+           }
+              
 
-        /*if (stocktype.Length == 0){
-         MessageBox.Show("Please insert the stock type")
-         return false;
-         }
-       */
+           public bool validstocktype(string stocktype)//out string errorMessage
+           {
+                if (stocktype.Length == 0)
+                {
+                MessageBox.Show("Please insert the stock type");
+                 return false;
+                }
+           }       
 
-        /*if (stockquantity.Length == 0){
-         MessageBox.Show("Please insert the quantity of stock item")
-         return false;
-         }
-       */
+           public bool validstockquantity(int stockquantity)//out string errorMessage
+           {
+                if (stockquantity <= 0)
+                {
+                MessageBox.Show("Please insert the quantity of stock item, cannot be a negative number");
+                return false;
+                }
+           }
 
-        /*if (stockquantity.value < 0){
-         MessageBox.Show("Quantity of stock cannot be a negative number")
-         return false;
-         }
-       */
+            public bool validstockprice(decimal stockprice)//out string errorMessage
+            {
+            if (stockprice <= 0)
+                {
+                MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
+                return false;
+                }
+            }
 
-        /*if (stockprice.Length == 0){
-         MessageBox.Show("Please insert the price of stock item")
-         return false;
-         }
-       */
+        public bool validstockprice(decimal stockprice)//out string errorMessage
+        {
+            if (stockprice <= 0)
+            {
+                MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
+                return false;
+            }
+        }
 
-        /*if (stockprice.value < 0){
-         MessageBox.Show("Price of stock cannot be a negative number")
-         return false;
-         }
-       */
+
+
 
 
         //stock stuff is here from line 20 to 147
