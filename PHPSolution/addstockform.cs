@@ -23,9 +23,34 @@ namespace PHPSolution
             string strname = stockname.Text;
             string strdesc = stockdesc.Text;
             string strtype = stocktype.Text;
-            int intQuantity;
-            Int32.TryParse(stockquantity.Text, out intQuantity);
-            decimal decPrice = Convert.ToDecimal(stockprice.Text); ;
+            //decPrice set to 0 so it exists before try/catch
+            decimal decPrice = 0;
+            //intQuantity set to 0 so it exists before try/catch
+            int intQuantity = 0;
+            
+            try
+            {
+                //attempt to convert quantity to int
+                intQuantity = Int32.Parse(stockquantity.Text);
+            }
+            catch(Exception ex)
+            {
+                //else show error
+                MessageBox.Show("Please enter a valid quantity");
+
+            }
+            try
+            {
+                //attempt to convert price to decimal
+                decPrice = Convert.ToDecimal(stockprice.Text);
+            }
+            catch (Exception ex)
+            {
+                //if unable to convert price to decimal, show error
+                MessageBox.Show("Please enter a valid stock price");
+            }
+            
+            
             
             // Creates a new row.
             PHPDatabaseDataSet.StockRow newStockRow = pHPDatabaseDataSet.Stock.NewStockRow();
