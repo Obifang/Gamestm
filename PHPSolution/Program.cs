@@ -20,7 +20,6 @@ namespace PHPSolution
         }
     }
 }
-
 /*
 //PHP solution.
 namespace Gamestm_php_solution
