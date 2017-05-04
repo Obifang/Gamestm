@@ -12,6 +12,8 @@ namespace PHPSolution
 {
     public partial class EditItem : Form
     {
+        int oldQuantity;
+
         public EditItem(string salenumber, string stocknumber)
         {
             InitializeComponent();
@@ -36,6 +38,8 @@ namespace PHPSolution
                 stockno.Text = stockSaleRow.Stock_No.ToString();
                 stockquantity.Text = stockSaleRow.Quantity_Sold.ToString();
                 stockprice.Text = stockSaleRow.Sale_Price.ToString();
+
+                oldQuantity = int.Parse(stockSaleRow.Quantity_Sold.ToString());
             }
             catch (Exception ex)
             {
@@ -55,8 +59,7 @@ namespace PHPSolution
                 PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Trim()));
 
                 //Alter quantity to reflect changes in quantity
-                //THIS DOES NOT WORK CORRECTLY
-                int change = stockRow.Quantity - Int32.Parse(stockquantity.Text.Trim());
+                int change = oldQuantity - Int32.Parse(stockquantity.Text.Trim());
                 stockRow.Quantity += change;
 
                 //Updates database
