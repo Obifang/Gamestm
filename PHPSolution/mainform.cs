@@ -32,6 +32,43 @@ namespace PHPSolution
         }
 
         /*
+            // Confirm that the string is not empty. 
+            if (stockno <= 0)
+            {
+                MessageBox.Show("Please insert a Stock number");
+                //return false;
+            } 
+
+            else if (stockname.Length == 0)
+            {
+                MessageBox.Show("Please insert the name of the stock item");
+                //return false;
+            }
+
+            else if (stockdesc.Length == 0)
+            {
+                MessageBox.Show("Please insert the name of the stock item");
+                //return false;
+            }
+
+            else if (stocktype.Length == 0)
+            {
+                MessageBox.Show("Please insert the stock type");
+                //return false;
+            }
+
+            else if (stockquantity <= 0)
+            {
+                MessageBox.Show("Please insert the quantity of stock item, cannot be a negative number");
+                //return false;
+            }
+
+            else if (stockprice <= 0)
+            {
+                MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
+                //return false;
+            }
+
            public bool Validstockno(int stockno, object sender, EventArgs e)//out string errorMessage
            {
                // Confirm that the string is not empty. 
@@ -86,8 +123,6 @@ namespace PHPSolution
                    return false;
                }
            }
-
-        //Stock stuff is here from line 35 to 101 
         */
 
         private void loadIntopHPDatabaseSet()
@@ -169,88 +204,50 @@ namespace PHPSolution
             loadIntopHPDatabaseSet();
         }
 
-        private void searchstock_Click(object sender, EventArgs e, int stockno, string stockname, string stockdesc, string stocktype, int stockquantity, decimal stockprice)
+        private void searchstock_Click(object sender, EventArgs e)
         {
-            // Confirm that the string is not empty. 
-            if (stockno <= 0)
-            {
-                MessageBox.Show("Please insert a Stock number");
-                //return false;
-            } 
-
-            else if (stockname.Length == 0)
-            {
-                MessageBox.Show("Please insert the name of the stock item");
-                //return false;
-            }
-
-            else if (stockdesc.Length == 0)
-            {
-                MessageBox.Show("Please insert the name of the stock item");
-                //return false;
-            }
-
-            else if (stocktype.Length == 0)
-            {
-                MessageBox.Show("Please insert the stock type");
-                //return false;
-            }
-
-            else if (stockquantity <= 0)
-            {
-                MessageBox.Show("Please insert the quantity of stock item, cannot be a negative number");
-                //return false;
-            }
-
-            else if (stockprice <= 0)
-            {
-                MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
-                //return false;
-            }
-
-           /* //if searchstocktextbox.text.trim() is not text
-            else if (searchstocktextbox.Text.Trim())
-            {
-                MessageBox.Show("Please insert the name to search for, it must not contain numbers");
-                //Exit function
-            }
             //It needs to make sure the textbox does not contain anything but letters
-            */
-            else
+            MessageBox.Show(searchstocktextbox.Text.Trim());
+            if (!System.Text.RegularExpressions.Regex.IsMatch(searchstocktextbox.Text.Trim(), @"^[A-Za-z ]+$"))
             {
-                //Allows the user to search their stock by name to find the stock_no, also gives extra info if there are duplicate names
-                try
+                //Dispalys an error message
+                MessageBox.Show("Please insert the name to search for, it must not contain numbers");
+                //Exits function
+                return;
+            }
+            //Allows the user to search their stock by name to find the stock_no, also gives extra info if there are duplicate names
+            try
+            {
+                //Searches for any stock entries with the same name as entered in searchstocktextbox
+                //Assigns the the results to an array of data rows
+                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Name] like '" + searchstocktextbox.Text + "'");
+                //Clears searchstockresult textbox
+                searchstockresult.Text = "";
+                // Iterates through and displays relevant information, that could be used to distinguish between entries with the same name
+                int i = 0;
+                foreach (DataRow value in newResultRow)
                 {
-                    //Searches for any stock entries with the same name as entered in searchstocktextbox
-                    //Assigns the the results to an array of data rows
-                    DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Name] like '" + searchstocktextbox.Text + "'");
-                    //Clears searchstockresult textbox
-                    searchstockresult.Text = "";
-                    // Iterates through and displays relevant information, that could be used to distinguish between entries with the same name
-                    int i = 0;
-                    foreach (DataRow value in newResultRow)
-                    {
-                        // Assigns a single data row to an array
-                        // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
-                        var array = newResultRow[i].ItemArray;
+                    // Assigns a single data row to an array
+                    // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
+                    var array = newResultRow[i].ItemArray;
 
-                        // Numbers the result for readability sake
-                        searchstockresult.Text += "" + (i + 1) + "st Result." + Environment.NewLine;
-                        // Displays the information for the result number
-                        searchstockresult.Text += "ID Number: " + array[0].ToString() + Environment.NewLine;
-                        searchstockresult.Text += "Name: " + array[1].ToString().TrimEnd() + Environment.NewLine;
-                        searchstockresult.Text += "Desc: " + array[2].ToString().TrimEnd() + Environment.NewLine;
-                        searchstockresult.Text += "Price: " + array[5].ToString() + Environment.NewLine + Environment.NewLine;
+                    // Numbers the result for readability sake
+                    searchstockresult.Text += "" + (i + 1) + "st Result." + Environment.NewLine;
+                    // Displays the information for the result number
+                    searchstockresult.Text += "ID Number: " + array[0].ToString() + Environment.NewLine;
+                    searchstockresult.Text += "Name: " + array[1].ToString().TrimEnd() + Environment.NewLine;
+                    searchstockresult.Text += "Desc: " + array[2].ToString().TrimEnd() + Environment.NewLine;
+                    searchstockresult.Text += "Price: " + array[5].ToString() + Environment.NewLine + Environment.NewLine;
 
-                        i++;
-                    }
+                    i++;
                 }
-                catch (Exception ex)
-                {   // Catches an error and displays a messagebox
-                    MessageBox.Show("Search for ID query failed");
-                }
+            }
+            catch (Exception ex)
+            {   // Catches an error and displays a messagebox
+                MessageBox.Show("Search for ID query failed");
             }
         }
+
         private void showsalebutton_Click(object sender, EventArgs e)
         {
             //Disaply sale and stocksale records for the entered sale number
