@@ -113,6 +113,27 @@ namespace PHPSolution
             // Disable's current form an opens add item form
             additemform.ShowDialog(this);
 
+            //Make sure proceeding will not create a duplicate primary key
+            //Searches for any sale entries with the same saleno as the record being edited
+            //Assigns the the results to an array of data rows
+            DataRow[] stockSaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No] = " + saleno.Text.Trim());
+            // Iterates through and checks if the stock no that was entered in EditItem already exists for this sale record
+            int i = 0;
+            foreach (DataRow value in stockSaleRow)
+            {
+                // Assigns a single data row to an array
+                // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
+                var array = stockSaleRow[i].ItemArray;
+                //Checks to see if the stock no that was entered in EditItem already exits for this sale number
+                if (array[0].ToString().Trim() == additemform.StockNo) 
+                {
+                    MessageBox.Show("That stock already exits for this sale record"); // Debug Only
+                    //Exits method
+                    return;
+                }
+                i++;
+            }
+
             //Create new stocksale row
             PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
             
