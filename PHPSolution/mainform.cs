@@ -31,42 +31,41 @@ namespace PHPSolution
             stockprice.Text = "";
         }
 
+        /*
            public bool Validstockno(int stockno)//out string errorMessage
            {
-            // Confirm that the string is not empty. 
-            if (stockno <= 0)
-            {
-                MessageBox.Show("Please insert a Stock number");
-                return false;
-            }
+               // Confirm that the string is not empty. 
+               if (stockno <= 0)
+               {
+                   MessageBox.Show("Please insert a Stock number");
+                   return false;
+               }
            }
 
            public bool validstockname(string stockname)//out string errorMessage
            {
-           if (stockname.Length == 0 && stockname != )
+                if (stockname.Length == 0 && stockname != )
                 {
-                MessageBox.Show("Please insert the name of the stock item");
-                 return false;
+                    MessageBox.Show("Please insert the name of the stock item");
+                    return false;
                 }
-            //A description might not be required but it is there just in case.
            }
 
            public bool Validstockdesc(string stockdesc)//out string errorMessage
            {
                if (stockdesc.Length == 0)
                {
-                MessageBox.Show("Please insert the name of the stock item");
-                return false;
+                   MessageBox.Show("Please insert the name of the stock item");
+                   return false;
                }
            }
               
-
            public bool validstocktype(string stocktype)//out string errorMessage
            {
                 if (stocktype.Length == 0)
                 {
-                MessageBox.Show("Please insert the stock type");
-                 return false;
+                    MessageBox.Show("Please insert the stock type");
+                    return false;
                 }
            }       
 
@@ -74,34 +73,24 @@ namespace PHPSolution
            {
                 if (stockquantity <= 0)
                 {
-                MessageBox.Show("Please insert the quantity of stock item, cannot be a negative number");
-                return false;
+                    MessageBox.Show("Please insert the quantity of stock item, cannot be a negative number");
+                    return false;
                 }
            }
 
-            public bool validstockprice(decimal stockprice)//out string errorMessage
-            {
-            if (stockprice <= 0)
-                {
-                MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
-                return false;
-                }
-            }
+           public bool validstockprice(decimal stockprice)//out string errorMessage
+           {
+               if (stockprice <= 0)
+               {
+                   MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
+                   return false;
+               }
+           }
 
-        public bool validstockprice(decimal stockprice)//out string errorMessage
-        {
-            if (stockprice <= 0)
-            {
-                MessageBox.Show("Please insert the price of stock item, cannot be a negative number");
-                return false;
-            }
-        }
+        //Stock stuff is here from line 35 to 101 
+        
+        */
 
-
-
-
-
-        //stock stuff is here from line 20 to 147
         private void loadIntopHPDatabaseSet()
         {
             // Loads data into 'pHPDatabaseDataSet.StockSale'
@@ -183,6 +172,17 @@ namespace PHPSolution
 
         private void searchstock_Click(object sender, EventArgs e)
         {
+            /*
+            //if searchstocktextbox.text.trim() is not text
+            if (searchstocktextbox.Text.Trim() )
+            {
+                MessageBox.Show("Please insert the name to search for, it must not contain numbers");
+                //Exit function
+            }
+
+            //It needs to make sure the textbox does not contain anything but letters
+            */
+
             //Allows the user to search their stock by name to find the stock_no, also gives extra info if there are duplicate names
             try
             {
