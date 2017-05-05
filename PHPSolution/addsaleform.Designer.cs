@@ -39,7 +39,6 @@
             this.saleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.SaleTableAdapter();
             this.salechecklistbox = new System.Windows.Forms.CheckedListBox();
             this.salechecklistboxlabel = new System.Windows.Forms.Label();
-            this.currentdatebutton = new System.Windows.Forms.Button();
             this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
@@ -62,7 +61,7 @@
             // 
             this.saledate.Location = new System.Drawing.Point(12, 12);
             this.saledate.Name = "saledate";
-            this.saledate.Size = new System.Drawing.Size(225, 20);
+            this.saledate.Size = new System.Drawing.Size(449, 20);
             this.saledate.TabIndex = 18;
             this.saledate.Text = "Date Purchased ( YYYY-MM-DD)";
             // 
@@ -116,16 +115,6 @@
             this.salechecklistboxlabel.TabIndex = 25;
             this.salechecklistboxlabel.Text = "Please select stock purchased below:";
             // 
-            // currentdatebutton
-            // 
-            this.currentdatebutton.Location = new System.Drawing.Point(243, 11);
-            this.currentdatebutton.Name = "currentdatebutton";
-            this.currentdatebutton.Size = new System.Drawing.Size(217, 22);
-            this.currentdatebutton.TabIndex = 26;
-            this.currentdatebutton.Text = "Current Date";
-            this.currentdatebutton.UseVisualStyleBackColor = true;
-            this.currentdatebutton.Click += new System.EventHandler(this.currentdatebutton_Click);
-            // 
             // stockSaleBindingSource
             // 
             this.stockSaleBindingSource.DataMember = "StockSale";
@@ -140,7 +129,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 304);
-            this.Controls.Add(this.currentdatebutton);
             this.Controls.Add(this.salechecklistboxlabel);
             this.Controls.Add(this.salechecklistbox);
             this.Controls.Add(this.addsale);
@@ -167,7 +155,6 @@
         private PHPDatabaseDataSetTableAdapters.SaleTableAdapter saleTableAdapter;
         private System.Windows.Forms.CheckedListBox salechecklistbox;
         private System.Windows.Forms.Label salechecklistboxlabel;
-        private System.Windows.Forms.Button currentdatebutton;
         private System.Windows.Forms.BindingSource stockSaleBindingSource;
         private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
     }

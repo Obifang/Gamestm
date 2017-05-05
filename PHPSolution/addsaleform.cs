@@ -16,6 +16,13 @@ namespace PHPSolution
         {
             InitializeComponent();
 
+            //Sets localtime
+            DateTime localTime = DateTime.Now;
+            //Creates string with current date
+            string currentDate = localTime.Year + "-" + localTime.Month + "-" + localTime.Day;
+            //Assigns string to text of textbox
+            saledate.Text = currentDate;
+
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
@@ -109,16 +116,6 @@ namespace PHPSolution
             }
             // Closes form
             Close();
-        }
-
-        private void currentdatebutton_Click(object sender, EventArgs e)
-        {
-            //Sets localtime
-            DateTime localTime = DateTime.Now;
-            //Creates string with current date
-            string currentDate = localTime.Year +"-"+ localTime.Month +"-"+ localTime.Day;
-            //Assigns string to text of textbox
-            saledate.Text = currentDate;
         }
     }
 }
