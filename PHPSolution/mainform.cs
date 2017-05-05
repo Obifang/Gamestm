@@ -325,14 +325,14 @@ namespace PHPSolution
 
         private void searchsalebutton_Click(object sender, EventArgs e)
         {
-           /*//It needs to make sure the textbox does not contain anything but letters
-           if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[[0-3]\/[0-9]\/[0-9]{4}]+$"))
+           //It needs to make sure the textbox does not contain anything but letters
+           if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$"))
            {
                //Dispalys an error message
                MessageBox.Show("Please insert a date to search for, it must not contain anything else");
                //Exits function
                return;
-           }*/
+           }
 
             //Allows the user to search for a sale number made on a date
             try
@@ -403,6 +403,15 @@ namespace PHPSolution
 
         private void editsalebutton_Click(object sender, EventArgs e)
         {
+            //It needs to make sure the textbox does not contain anything but letters
+            if (!System.Text.RegularExpressions.Regex.IsMatch(editstocktextbox.Text.Trim(), @"^[0-9]+$"))
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a Sale ID to search for, it must not contain letters");
+                //Exits function
+                return;
+            }
+
             // Creates new form of type editsaleform and parses text of editsalenotextbox
             var editsaleform = new editsaleform(editsalenotextbox.Text.TrimEnd());
             //It needs to make sure the textbox does not contain anything but letters
