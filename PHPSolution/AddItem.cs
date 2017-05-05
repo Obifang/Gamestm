@@ -12,7 +12,7 @@ namespace PHPSolution
 {
     public partial class AddItem : Form
     {
-        public AddItem(string stocknumber)
+        public AddItem(string stocknumber) //, string Quantity, string Price
         {
             InitializeComponent();
 
@@ -29,6 +29,26 @@ namespace PHPSolution
                 //else enter placeholder text
                 stockno.Text = "No";
             }
+
+            /*if (int.Parse(Quantity) != 0)
+            {
+                stockquantity.Text = Quantity;
+            }
+            else
+            {
+                //else enter placeholder text
+                stockquantity.Text = "Quantity";
+            }
+
+            if (int.Parse(Price) != 0)
+            {
+                stockprice.Text = Price;
+            }
+            else
+            {
+                //else enter placeholder text
+                stockprice.Text = "Quantity";
+            }*/
 
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try

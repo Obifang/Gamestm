@@ -49,9 +49,7 @@ namespace PHPSolution
                 //if unable to convert price to decimal, show error
                 MessageBox.Show("Please enter a valid stock price");
                 return;
-            }
-            
-            
+            }         
             
             // Creates a new row.
             PHPDatabaseDataSet.StockRow newStockRow = pHPDatabaseDataSet.Stock.NewStockRow();
