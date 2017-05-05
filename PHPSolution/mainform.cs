@@ -223,7 +223,6 @@ namespace PHPSolution
         private void searchstock_Click(object sender, EventArgs e)
         {
             //It needs to make sure the textbox does not contain anything but letters
-            MessageBox.Show(searchstocktextbox.Text.Trim());
             if (!System.Text.RegularExpressions.Regex.IsMatch(searchstocktextbox.Text.Trim(), @"^[A-Za-z ]+$"))
             {
                 //Dispalys an error message

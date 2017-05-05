@@ -37,7 +37,7 @@ namespace PHPSolution
             {
                 //else show error
                 MessageBox.Show("Please enter a valid quantity");
-
+                return;
             }
             try
             {
@@ -48,6 +48,7 @@ namespace PHPSolution
             {
                 //if unable to convert price to decimal, show error
                 MessageBox.Show("Please enter a valid stock price");
+                return;
             }
             
             
