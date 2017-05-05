@@ -203,12 +203,7 @@ namespace PHPSolution
 
         private void editstockrecord_Click(object sender, EventArgs e)
         {
-            // Creates new form of type editstockform and parses text of editstocktextbox
-            var editstockform = new editstockform(editstocktextbox.Text.Trim());
-
-            // Disable's current form an opens edit stock form
-            editstockform.ShowDialog(this);
-             //It needs to make sure the textbox does not contain anything but letters
+            //It needs to make sure the textbox does not contain anything but letters
             if (!System.Text.RegularExpressions.Regex.IsMatch(editstocktextbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
@@ -216,6 +211,13 @@ namespace PHPSolution
                 //Exits function
                 return;
             }
+
+            // Creates new form of type editstockform and parses text of editstocktextbox
+            var editstockform = new editstockform(editstocktextbox.Text.Trim());
+
+            // Disable's current form an opens edit stock form
+            editstockform.ShowDialog(this);
+             
             // Reloads data into pHPDatabaseSet
             loadIntopHPDatabaseSet();
         }
