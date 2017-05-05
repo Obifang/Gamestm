@@ -161,6 +161,15 @@ namespace PHPSolution
         //Displays a stock number.
         private void showstockrecord_Click(object sender, EventArgs e)
         {
+            //It needs to make sure the textbox does not contain anything but letters
+            if (!System.Text.RegularExpressions.Regex.IsMatch(showstocksearchbox.Text.Trim(), @"^[0-9]+$"))
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number to search, it must not contain letters");
+                //Exits function
+                return;
+            }
+
             try
             {   
                 // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock no and assigns it to newStockRow
@@ -181,7 +190,7 @@ namespace PHPSolution
         }
 
         private void addstockrecord_Click(object sender, EventArgs e)
-        {
+        {   // doesn't need a message to pop up.
             // Creates new form of type addstockform
             var addstockform = new addstockform();
 
@@ -199,7 +208,14 @@ namespace PHPSolution
 
             // Disable's current form an opens edit stock form
             editstockform.ShowDialog(this);
-
+             //It needs to make sure the textbox does not contain anything but letters
+            if (!System.Text.RegularExpressions.Regex.IsMatch(editstocktextbox.Text.Trim(), @"^[0-9]+$"))
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number to search for, it must not contain letters");
+                //Exits function
+                return;
+            }
             // Reloads data into pHPDatabaseSet
             loadIntopHPDatabaseSet();
         }
@@ -215,6 +231,7 @@ namespace PHPSolution
                 //Exits function
                 return;
             }
+
             //Allows the user to search their stock by name to find the stock_no, also gives extra info if there are duplicate names
             try
             {
@@ -250,6 +267,15 @@ namespace PHPSolution
 
         private void showsalebutton_Click(object sender, EventArgs e)
         {
+            //It needs to make sure the textbox does not contain anything but letters
+            if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[0-9]+$"))
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number to search for, it must not contain letters");
+                //Exits function
+                return;
+            }
+
             //Disaply sale and stocksale records for the entered sale number
             try
             {
@@ -298,6 +324,15 @@ namespace PHPSolution
 
         private void searchsalebutton_Click(object sender, EventArgs e)
         {
+           /*//It needs to make sure the textbox does not contain anything but letters
+           if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[[0-3]\/[0-9]\/[0-9]{4}]+$"))
+           {
+               //Dispalys an error message
+               MessageBox.Show("Please insert a date to search for, it must not contain anything else");
+               //Exits function
+               return;
+           }*/
+
             //Allows the user to search for a sale number made on a date
             try
             {
@@ -354,7 +389,7 @@ namespace PHPSolution
         }
 
         private void addsalebutton_Click(object sender, EventArgs e)
-        {
+        {   //doesn't need message box to show up.
             // Creates new form of type addsaleform
             var addsaleform = new addsaleform();
 
@@ -369,7 +404,14 @@ namespace PHPSolution
         {
             // Creates new form of type editsaleform and parses text of editsalenotextbox
             var editsaleform = new editsaleform(editsalenotextbox.Text.TrimEnd());
-
+            //It needs to make sure the textbox does not contain anything but letters
+            if (!System.Text.RegularExpressions.Regex.IsMatch(editsalenotextbox.Text.Trim(), @"^[0-9]+$"))
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number to search for, it must not contain letters");
+                //Exits function
+                return;
+            }
             // Disable's current form an opens edit sale form
             editsaleform.ShowDialog(this);
 
