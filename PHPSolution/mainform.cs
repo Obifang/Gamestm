@@ -326,7 +326,7 @@ namespace PHPSolution
         private void searchsalebutton_Click(object sender, EventArgs e)
         {
            //It needs to make sure the textbox does not contain anything but letters
-           if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[0-9]{4}[-][0-9]{2}[-][0-9]{2}$"))
+           if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[0-9]{4}[-][0-9]{1,2}[-][0-9]{1,2}$"))
            {
                //Dispalys an error message
                MessageBox.Show("Please insert a date to search for, it must not contain anything else");
