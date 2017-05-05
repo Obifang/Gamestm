@@ -269,7 +269,7 @@ namespace PHPSolution
         private void showsalebutton_Click(object sender, EventArgs e)
         {
             //It needs to make sure the textbox does not contain anything but letters
-            if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[0-9]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(showsalesearchbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
                 MessageBox.Show("Please insert a number to search for, it must not contain letters");
@@ -404,7 +404,7 @@ namespace PHPSolution
         private void editsalebutton_Click(object sender, EventArgs e)
         {
             //It needs to make sure the textbox does not contain anything but letters
-            if (!System.Text.RegularExpressions.Regex.IsMatch(editstocktextbox.Text.Trim(), @"^[0-9]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(editsalenotextbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
                 MessageBox.Show("Please insert a Sale ID to search for, it must not contain letters");
