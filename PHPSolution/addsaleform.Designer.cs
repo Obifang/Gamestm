@@ -41,6 +41,9 @@
             this.salechecklistboxlabel = new System.Windows.Forms.Label();
             this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
+            this.searchterm = new System.Windows.Forms.TextBox();
+            this.searchbutton = new System.Windows.Forms.Button();
+            this.resetbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saleBindingSource)).BeginInit();
@@ -111,9 +114,9 @@
             this.salechecklistboxlabel.AutoSize = true;
             this.salechecklistboxlabel.Location = new System.Drawing.Point(11, 44);
             this.salechecklistboxlabel.Name = "salechecklistboxlabel";
-            this.salechecklistboxlabel.Size = new System.Drawing.Size(186, 13);
+            this.salechecklistboxlabel.Size = new System.Drawing.Size(167, 13);
             this.salechecklistboxlabel.TabIndex = 25;
-            this.salechecklistboxlabel.Text = "Please select stock purchased below:";
+            this.salechecklistboxlabel.Text = "Please select, or search for stock:";
             // 
             // stockSaleBindingSource
             // 
@@ -124,11 +127,41 @@
             // 
             this.stockSaleTableAdapter.ClearBeforeFill = true;
             // 
+            // searchterm
+            // 
+            this.searchterm.Location = new System.Drawing.Point(184, 41);
+            this.searchterm.Name = "searchterm";
+            this.searchterm.Size = new System.Drawing.Size(128, 20);
+            this.searchterm.TabIndex = 26;
+            // 
+            // searchbutton
+            // 
+            this.searchbutton.Location = new System.Drawing.Point(318, 39);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(75, 23);
+            this.searchbutton.TabIndex = 27;
+            this.searchbutton.Text = "Search";
+            this.searchbutton.UseVisualStyleBackColor = true;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
+            // 
+            // resetbutton
+            // 
+            this.resetbutton.Location = new System.Drawing.Point(399, 38);
+            this.resetbutton.Name = "resetbutton";
+            this.resetbutton.Size = new System.Drawing.Size(62, 23);
+            this.resetbutton.TabIndex = 28;
+            this.resetbutton.Text = "Reset";
+            this.resetbutton.UseVisualStyleBackColor = true;
+            this.resetbutton.Click += new System.EventHandler(this.resetbutton_Click);
+            // 
             // addsaleform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 304);
+            this.Controls.Add(this.resetbutton);
+            this.Controls.Add(this.searchbutton);
+            this.Controls.Add(this.searchterm);
             this.Controls.Add(this.salechecklistboxlabel);
             this.Controls.Add(this.salechecklistbox);
             this.Controls.Add(this.addsale);
@@ -157,5 +190,8 @@
         private System.Windows.Forms.Label salechecklistboxlabel;
         private System.Windows.Forms.BindingSource stockSaleBindingSource;
         private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
+        private System.Windows.Forms.TextBox searchterm;
+        private System.Windows.Forms.Button searchbutton;
+        private System.Windows.Forms.Button resetbutton;
     }
 }

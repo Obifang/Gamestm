@@ -39,6 +39,7 @@
             this.panel = new System.Windows.Forms.Panel();
             this.stockno = new System.Windows.Forms.TextBox();
             this.additembutton = new System.Windows.Forms.Button();
+            this.stockname = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.panel.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             // defaultpricebutton
             // 
-            this.defaultpricebutton.Location = new System.Drawing.Point(333, 2);
+            this.defaultpricebutton.Location = new System.Drawing.Point(423, 2);
             this.defaultpricebutton.Name = "defaultpricebutton";
             this.defaultpricebutton.Size = new System.Drawing.Size(111, 22);
             this.defaultpricebutton.TabIndex = 1;
@@ -78,17 +79,17 @@
             // 
             // stockquantity
             // 
-            this.stockquantity.Location = new System.Drawing.Point(46, 3);
+            this.stockquantity.Location = new System.Drawing.Point(189, 4);
             this.stockquantity.Name = "stockquantity";
-            this.stockquantity.Size = new System.Drawing.Size(158, 20);
+            this.stockquantity.Size = new System.Drawing.Size(111, 20);
             this.stockquantity.TabIndex = 2;
             this.stockquantity.Text = "Quantity Purchased";
             // 
             // stockprice
             // 
-            this.stockprice.Location = new System.Drawing.Point(210, 3);
+            this.stockprice.Location = new System.Drawing.Point(306, 4);
             this.stockprice.Name = "stockprice";
-            this.stockprice.Size = new System.Drawing.Size(117, 20);
+            this.stockprice.Size = new System.Drawing.Size(111, 20);
             this.stockprice.TabIndex = 3;
             this.stockprice.Text = "Purchase Price";
             // 
@@ -96,18 +97,19 @@
             // 
             this.panel.BackColor = System.Drawing.SystemColors.Window;
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Controls.Add(this.stockname);
             this.panel.Controls.Add(this.stockno);
             this.panel.Controls.Add(this.stockprice);
             this.panel.Controls.Add(this.stockquantity);
             this.panel.Controls.Add(this.defaultpricebutton);
             this.panel.Location = new System.Drawing.Point(12, 12);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(449, 28);
+            this.panel.Size = new System.Drawing.Size(538, 28);
             this.panel.TabIndex = 28;
             // 
             // stockno
             // 
-            this.stockno.Location = new System.Drawing.Point(3, 3);
+            this.stockno.Location = new System.Drawing.Point(146, 4);
             this.stockno.Name = "stockno";
             this.stockno.Size = new System.Drawing.Size(37, 20);
             this.stockno.TabIndex = 4;
@@ -117,17 +119,26 @@
             // 
             this.additembutton.Location = new System.Drawing.Point(12, 52);
             this.additembutton.Name = "additembutton";
-            this.additembutton.Size = new System.Drawing.Size(449, 23);
+            this.additembutton.Size = new System.Drawing.Size(538, 23);
             this.additembutton.TabIndex = 29;
             this.additembutton.Text = "Add Item";
             this.additembutton.UseVisualStyleBackColor = true;
             this.additembutton.Click += new System.EventHandler(this.additembutton_Click);
             // 
+            // stockname
+            // 
+            this.stockname.Location = new System.Drawing.Point(3, 4);
+            this.stockname.Name = "stockname";
+            this.stockname.ReadOnly = true;
+            this.stockname.Size = new System.Drawing.Size(137, 20);
+            this.stockname.TabIndex = 5;
+            this.stockname.Text = "Name";
+            // 
             // AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 87);
+            this.ClientSize = new System.Drawing.Size(560, 87);
             this.Controls.Add(this.additembutton);
             this.Controls.Add(this.panel);
             this.Name = "AddItem";
@@ -151,5 +162,6 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button additembutton;
         private System.Windows.Forms.TextBox stockno;
+        private System.Windows.Forms.TextBox stockname;
     }
 }
