@@ -105,13 +105,46 @@ namespace PHPSolution
                     newStockSaleRow.Sale_No = int.Parse(saleno);
 
                     //Gets data from additemform using public getters and enters it into new stocksale row
-                    newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
-                    newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
-                    newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
+                    //try catch for each field before storing
+                    try
+                    {
+                        newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Please enter a valid stock number");
+                    }
 
-                    // Add the row to the Stock table and update database
-                    pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
-                    stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                    try
+                    {
+                        newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Please enter a valid quantity");
+                    }
+
+                    try
+                    {
+                        newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Please enter a valid price");
+                    }
+
+                    //after try/catching data values, try/catch to add to database
+                    try
+                    {
+                        // Add the row to the Stock table and update database
+                        pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
+                        stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Add sales record failed; please enter valid data and try again");
+                    }
+                    
                 }
             }
             // Closes form
