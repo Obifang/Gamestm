@@ -33,9 +33,17 @@ namespace PHPSolution
                 MessageBox.Show("Fill stock failed");
             }
 
+            refreshchecklistbox();
+        }
+
+        private void refreshchecklistbox()
+        {
             //Disaply stock items in a checkbox
             try
             {
+                // Clears checklistbox
+                salechecklistbox.Items.Clear();
+
                 // Creates stockdatatable and populates it with the entirety of pHPDatabaseDataSet.Stock
                 PHPDatabaseDataSet.StockDataTable stockTable = pHPDatabaseDataSet.Stock;
 
@@ -48,7 +56,7 @@ namespace PHPSolution
             }
             catch (Exception ex)
             {   // Catches an error and displays a messagebox
-                MessageBox.Show("Entering data into checklistbox failed");
+                MessageBox.Show("Refreshing checklistbox failed");
             }
         }
 
@@ -108,6 +116,7 @@ namespace PHPSolution
                     catch(Exception ex)
                     {
                         MessageBox.Show("Please enter a valid stock number");
+                        return;
                     }
 
                     try
@@ -117,6 +126,7 @@ namespace PHPSolution
                     catch(Exception ex)
                     {
                         MessageBox.Show("Please enter a valid quantity");
+                        return;
                     }
 
                     try
@@ -126,6 +136,7 @@ namespace PHPSolution
                     catch (Exception ex)
                     {
                         MessageBox.Show("Please enter a valid price");
+                        return;
                     }
 
                     //after try/catching data values, try/catch to add to database
@@ -134,15 +145,59 @@ namespace PHPSolution
                         // Add the row to the Stock table and update database
                         pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
                         stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                        // Closes form
+                        Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Add sales record failed; please enter valid data and try again");
+<<<<<<< HEAD
                     }  
+=======
+                        return;
+                    }
+                    
+>>>>>>> origin/master
                 }
             }
-            // Closes form
-            Close();
+            
+        }
+
+        private void searchbutton_Click(object sender, EventArgs e)
+        {
+            //Disaply stock items in a checkbox
+            try
+            {
+                //Searches for any stock entries with a name containing the stirng entered in searchterm
+                //Assigns the the results to an array of data rows
+                DataRow[] newResultRow = pHPDatabaseDataSet.Stock.Select("[Name] like '%" + searchterm.Text.Trim() + "%'");
+
+                // Clears checklistbox
+                salechecklistbox.Items.Clear();
+
+                // Iterates through stockTable, adding each item to a checklistbox
+                int i = 0;
+                foreach (PHPDatabaseDataSet.StockRow stockrow in newResultRow)
+                {
+                    // Assigns a single data row to an array
+                    // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
+                    var array = newResultRow[i].ItemArray;
+
+                    // Adds stock to checklistbox as a string
+                    salechecklistbox.Items.Add("No: " + array[0].ToString().TrimEnd() + "     Name : " + array[1].ToString().TrimEnd());
+
+                    i++;
+                }
+            }
+            catch (Exception ex)
+            {   // Catches an error and displays a messagebox
+                MessageBox.Show("Searching checklistbox failed");
+            }
+        }
+
+        private void resetbutton_Click(object sender, EventArgs e)
+        {
+            refreshchecklistbox();
         }
     }
 }

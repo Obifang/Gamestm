@@ -29,6 +29,10 @@ namespace PHPSolution
                 MessageBox.Show("Fill stocksale and stock failed");
             }
 
+            // Fetches and dispalys stock name
+            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(stocknumber));
+            stockname.Text = stockRow.Name;
+
             //Fetch data from database
             try
             {
@@ -95,6 +99,11 @@ namespace PHPSolution
         public string Price
         {
             get { return stockprice.Text.Trim(); }
+        }
+
+        private void defaultpricebutton_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

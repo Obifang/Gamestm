@@ -16,18 +16,31 @@ namespace PHPSolution
         {
             InitializeComponent();
 
-            //This is setup, so that if the form is opened from addsaleform, it will alwasys be passed a number, and that no will be entered into the textbox
+            // Loads data into 'pHPDatabaseDataSet.Stock'
+            try
+            {
+                stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
+            }
+            catch (Exception ex)
+            {   // Catches an error and displays a messagebox
+                MessageBox.Show("Fill stock failed");
+            }
+
+            //This is setup so that if the form is opened from addsaleform, it will alwasys be passed a number, and that no will be entered into the textbox
             //But if the form is opened from edit saleform, where it isn't passed a no, it will be passed 0 by default,
             //thus it will enter placeholder text, indicating to the user to enter a stock number
 
             //If stocknumber isnt 0, enter it into text of textbox
             if (int.Parse(stocknumber) != 0){
-
                 stockno.Text = stocknumber;
+
+                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(stocknumber));
+                stockname.Text = stockRow.Name;
             }
             else {
                 //else enter placeholder text
                 stockno.Text = "No";
+<<<<<<< HEAD
             }
 
             /*if (int.Parse(Quantity) != 0)
@@ -58,6 +71,9 @@ namespace PHPSolution
             catch (Exception ex)
             {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fill stock failed");
+=======
+                stockname.Text = "";
+>>>>>>> origin/master
             }
         }
 
