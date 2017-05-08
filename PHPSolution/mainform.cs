@@ -71,7 +71,7 @@ namespace PHPSolution
             if (!System.Text.RegularExpressions.Regex.IsMatch(showstocksearchbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
-                MessageBox.Show("Please insert a number to search, it must not contain letters");
+                MessageBox.Show("Please insert a number to search");
                 //Exits function
                 return;
             }
@@ -113,7 +113,7 @@ namespace PHPSolution
             if (!System.Text.RegularExpressions.Regex.IsMatch(editstocktextbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
-                MessageBox.Show("Please insert a number to search for, it must not contain letters");
+                MessageBox.Show("Please insert a number!");
                 //Exits function
                 return;
             }
@@ -178,7 +178,7 @@ namespace PHPSolution
             if (!System.Text.RegularExpressions.Regex.IsMatch(showsalesearchbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
-                MessageBox.Show("Please insert a number to search for, it must not contain letters");
+                MessageBox.Show("Please insert a number in this field!");
                 //Exits function
                 return;
             }
@@ -235,7 +235,7 @@ namespace PHPSolution
            if (!System.Text.RegularExpressions.Regex.IsMatch(searchsaletextbox.Text.Trim(), @"^[0-9]{4}[-][0-9]{1,2}[-][0-9]{1,2}$"))
            {
                //Dispalys an error message
-               MessageBox.Show("Please insert a date to search for, it must not contain anything else");
+               MessageBox.Show("Please insert a date!");
                //Exits function
                return;
            }
@@ -324,7 +324,7 @@ namespace PHPSolution
             if (!System.Text.RegularExpressions.Regex.IsMatch(editsalenotextbox.Text.Trim(), @"^[0-9]+$"))
             {
                 //Dispalys an error message
-                MessageBox.Show("Please insert a number to search for, it must not contain letters");
+                MessageBox.Show("Please insert a number, it must not contain letters");
                 //Exits function
                 return;
             }

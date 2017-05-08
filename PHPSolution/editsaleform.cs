@@ -127,7 +127,8 @@ namespace PHPSolution
                 //Checks to see if the stock no that was entered in EditItem already exits for this sale number
                 if (array[0].ToString().Trim() == additemform.StockNo) 
                 {
-                    MessageBox.Show("That stock already exits for this sale record"); // Debug Only
+                    MessageBox.Show("That stock already exits for this sale record"); 
+                    // Debug Only
                     //Exits method
                     return;
                 }

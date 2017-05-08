@@ -47,7 +47,7 @@ namespace PHPSolution
             else
             {
                 //else enter placeholder text
-                stockprice.Text = "Quantity";
+                stockprice.Text = "Price";
             }*/
 
             // Loads data into 'pHPDatabaseDataSet.Stock'
@@ -92,17 +92,26 @@ namespace PHPSolution
         //Uses public getters so that the data entered can be obtained after the form is closed
         public string StockNo
         {
-            get { return stockno.Text.Trim(); }
+            get
+            {
+                return stockno.Text.Trim();
+            }
         }
 
         public string Quantity
         {
-            get { return stockquantity.Text.Trim(); }
+            get
+            {
+                return stockquantity.Text.Trim();
+            }
         }
 
         public string Price
         {
-            get { return stockprice.Text.Trim(); }
+            get
+            {
+                return stockprice.Text.Trim();
+            }
         }
     }
 }

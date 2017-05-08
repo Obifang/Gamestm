@@ -81,15 +81,12 @@ namespace PHPSolution
                     //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
                     string strtemp = (string)salechecklistbox.Items[i];
                     string stockno = strtemp.Substring(3, 4).Trim();
-
                     // Creates new form of type additemform
                     var additemform = new AddItem(stockno);
                     // Disable's current form an opens add item form
                     additemform.ShowDialog(this);
-
                     //Create new stocksale row
                     PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
-
                     //Gets highest saleno
 
                     //Searches for any sale entries where sale_no is not null and sorts them, highest at the top
@@ -100,10 +97,8 @@ namespace PHPSolution
                     var array = newResultRow[0].ItemArray;
                     //Assigns the first(highest) results first entry(Sale_No) as saleno
                     string saleno = array[0].ToString();
-
                     //Inserts the saleno we just got into stocksale row
                     newStockSaleRow.Sale_No = int.Parse(saleno);
-
                     //Gets data from additemform using public getters and enters it into new stocksale row
                     //try catch for each field before storing
                     try
@@ -143,8 +138,7 @@ namespace PHPSolution
                     catch (Exception ex)
                     {
                         MessageBox.Show("Add sales record failed; please enter valid data and try again");
-                    }
-                    
+                    }  
                 }
             }
             // Closes form
