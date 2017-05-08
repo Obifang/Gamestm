@@ -26,6 +26,7 @@ namespace PHPSolution
 
         private void rendercheckbox()
         {
+            //Get saleno
             string salenotoedit = saleno.Text.Trim();
 
             //Fill the phpDatabaseDataSet
@@ -33,7 +34,7 @@ namespace PHPSolution
             stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
             saleTableAdapter.Fill(pHPDatabaseDataSet.Sale);
 
-            // Filter SaleBindingSource to only show items for provided salenotoedit
+            // Filter stockSaleBindingSource to only show items for provided salenotoedit
             stockSaleBindingSource.Filter = "[Sale_No] = " + salenotoedit;
 
             //Fetch data from database
