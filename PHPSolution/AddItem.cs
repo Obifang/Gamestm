@@ -40,7 +40,6 @@ namespace PHPSolution
             else {
                 //else enter placeholder text
                 stockno.Text = "No";
-<<<<<<< HEAD
             }
 
             /*if (int.Parse(Quantity) != 0)
@@ -71,9 +70,7 @@ namespace PHPSolution
             catch (Exception ex)
             {   // Catches an error and displays a messagebox
                 MessageBox.Show("Fill stock failed");
-=======
                 stockname.Text = "";
->>>>>>> origin/master
             }
         }
 

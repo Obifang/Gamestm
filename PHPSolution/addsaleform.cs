@@ -151,17 +151,12 @@ namespace PHPSolution
                     catch (Exception ex)
                     {
                         MessageBox.Show("Add sales record failed; please enter valid data and try again");
-<<<<<<< HEAD
                     }  
-=======
                         return;
                     }
-                    
->>>>>>> origin/master
-                }
+                }          
             }
-            
-        }
+        
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
