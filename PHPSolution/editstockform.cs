@@ -71,9 +71,6 @@ namespace PHPSolution
             //intQuantity set to 0 so it exists before try/catch
             int intQuantity = 0;
 
-            // Find row you want to modify, using FindByStock_No
-            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);
-
             try
             {
                 //attempt to convert quantity to int
@@ -96,6 +93,11 @@ namespace PHPSolution
                 MessageBox.Show("Please enter a valid stock price");
                 return;
             }
+
+            // Find row you want to modify, using FindByStock_No
+            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);
+
+            
 
             // Insert data into old row
             stockRow.Name = strname;
