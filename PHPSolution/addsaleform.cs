@@ -113,6 +113,7 @@ namespace PHPSolution
                     catch(Exception ex)
                     {
                         MessageBox.Show("Please enter a valid stock number");
+                        return;
                     }
 
                     try
@@ -122,6 +123,7 @@ namespace PHPSolution
                     catch(Exception ex)
                     {
                         MessageBox.Show("Please enter a valid quantity");
+                        return;
                     }
 
                     try
@@ -131,6 +133,7 @@ namespace PHPSolution
                     catch (Exception ex)
                     {
                         MessageBox.Show("Please enter a valid price");
+                        return;
                     }
 
                     //after try/catching data values, try/catch to add to database
@@ -139,16 +142,18 @@ namespace PHPSolution
                         // Add the row to the Stock table and update database
                         pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
                         stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                        // Closes form
+                        Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Add sales record failed; please enter valid data and try again");
+                        return;
                     }
                     
                 }
             }
-            // Closes form
-            Close();
+            
         }
     }
 }
