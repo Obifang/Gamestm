@@ -66,19 +66,43 @@ namespace PHPSolution
             string strname = stockname.Text;
             string strdesc = stockdesc.Text;
             string strtype = stocktype.Text;
-            int intQuantity;
-            Int32.TryParse(stockquantity.Text, out intQuantity);
-            decimal decPrice = Convert.ToDecimal(stockprice.Text);
+            //decPrice set to 0 so it exists before try/catch
+            decimal decPrice = 0;
+            //intQuantity set to 0 so it exists before try/catch
+            int intQuantity = 0;
 
             // Find row you want to modify, using FindByStock_No
             PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);
+
+            try
+            {
+                //attempt to convert quantity to int
+                intQuantity = Int32.Parse(stockquantity.Text);
+            }
+            catch (Exception ex)
+            {
+                //else show error
+                MessageBox.Show("Please enter a valid quantity");
+                return;
+            }
+            try
+            {
+                //attempt to convert price to decimal
+                decPrice = Convert.ToDecimal(stockprice.Text);
+            }
+            catch (Exception ex)
+            {
+                //if unable to convert price to decimal, show error
+                MessageBox.Show("Please enter a valid stock price");
+                return;
+            }
 
             // Insert data into old row
             stockRow.Name = strname;
             stockRow.Desc = strdesc;
             stockRow.Type = strtype;
             stockRow.Quantity = intQuantity;
-            stockRow.Price = decPrice;
+            stockRow.Price = decPrice;     
 
             // Save the row to the database
             try
