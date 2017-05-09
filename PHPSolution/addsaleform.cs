@@ -113,11 +113,19 @@ namespace PHPSolution
                     newStockSaleRow.Sale_No = int.Parse(saleno);
 
                     //Gets data from additemform using public getters and enters it into new stocksale row
-                    //At this point the data has already been validated
-                    newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
-                    newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
-                    newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
-
+                    //Still have try catch to prevent exiting additemform from crashing the program
+                    try
+                    {
+                        newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
+                        newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
+                        newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("You closed the window unnexpectedly, this item will be skipped");
+                        continue;
+                    }
+                    
                     //Try catch adding data to the database and reducing stock quantity to avoid crashes and assure one does not occur without the other
                     try
                     {

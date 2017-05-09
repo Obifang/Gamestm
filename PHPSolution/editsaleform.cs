@@ -114,28 +114,6 @@ namespace PHPSolution
             // Disable's current form an opens add item form
             additemform.ShowDialog(this);
 
-            //Make sure proceeding will not create a duplicate primary key
-            //Searches for any sale entries with the same saleno as the record being edited
-            //Assigns the the results to an array of data rows
-            DataRow[] stockSaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No] = " + saleno.Text.Trim());
-            // Iterates through and checks if the stock no that was entered in EditItem already exists for this sale record
-            int i = 0;
-            foreach (DataRow value in stockSaleRow)
-            {
-                // Assigns a single data row to an array
-                // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
-                var array = stockSaleRow[i].ItemArray;
-                //Checks to see if the stock no that was entered in EditItem already exits for this sale number
-                if (array[0].ToString().Trim() == additemform.StockNo) 
-                {
-                    MessageBox.Show("That stock already exits for this sale record"); 
-                    // Debug Only
-                    //Exits method
-                    return;
-                }
-                i++;
-            }
-
             //Create new stocksale row
             PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
             
@@ -143,9 +121,18 @@ namespace PHPSolution
             newStockSaleRow.Sale_No = int.Parse(saleno.Text.Trim());
 
             //Gets data from additemform using public getters and enters it into new stocksale row
-            newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
-            newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
-            newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
+            //Still have try catch to prevent exiting additemform from crashing the program
+            try
+            {
+                newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
+                newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
+                newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You closed the window unnexpectedly, the item will not be added");
+                return;
+            }
 
             //Try catch adding data to the database and reducing stock quantity to avoid crashes and assure one does not occur without the other
             try
@@ -192,8 +179,17 @@ namespace PHPSolution
                     PHPDatabaseDataSet.StockSaleRow stockSaleRow = pHPDatabaseDataSet.StockSale.FindByStock_NoSale_No(intstockno, intsaleno);
 
                     //Gets data from edititemform using public getters and enters it into stocksale row
-                    stockSaleRow.Quantity_Sold = int.Parse(edititemform.Quantity);
-                    stockSaleRow.Sale_Price = decimal.Parse(edititemform.Price);
+                    //Still have try catch to prevent exiting additemform from crashing the program
+                    try
+                    {
+                        stockSaleRow.Quantity_Sold = int.Parse(edititemform.Quantity);
+                        stockSaleRow.Sale_Price = decimal.Parse(edititemform.Price);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("You closed the window unnexpectedly, this item will be skipped");
+                        continue;
+                    }
 
                     //Try catch adding data to the database and reducing stock quantity to avoid crashes and assure one does not occur without the other
                     try

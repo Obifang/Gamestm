@@ -56,22 +56,36 @@ namespace PHPSolution
 
         private void edititembutton_Click(object sender, EventArgs e)
         {
-            //Alter stock values to reflect sales
             try
             {
-                // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
-                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(Int32.Parse(stockno.Text.Trim()));
-
-                //Alter quantity to reflect changes in quantity
-                int change = oldQuantity - Int32.Parse(stockquantity.Text.Trim());
-                stockRow.Quantity += change;
-
-                //Updates database
-                stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+                if (int.Parse(stockquantity.Text.Trim()) <= 0)
+                {
+                    //Dispalys an error message
+                    MessageBox.Show("Please insert a value more than 0!");
+                    //Exits function
+                    return;
+                }
             }
             catch (Exception ex)
-            {   // Catches an error and displays a messagebox
-                MessageBox.Show("Alter stock to reflect sales failed");
+            {
+                MessageBox.Show("Please enter a valid quantity");
+                return;
+            }
+
+            try
+            {
+                if (decimal.Parse(stockprice.Text.Trim()) <= 0)
+                {
+                    //Dispalys an error message
+                    MessageBox.Show("Please insert a number more than 0!");
+                    //Exits function
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter a valid price");
+                return;
             }
             //Closes form
             Close();
@@ -104,11 +118,6 @@ namespace PHPSolution
         public int OldQuantity
         {
             get { return oldQuantity; }
-        }
-
-        private void defaultpricebutton_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
