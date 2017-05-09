@@ -71,6 +71,22 @@ namespace PHPSolution
                 return;
             }
 
+            /*if (Quantity_Sold <= 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a value more than 0!");
+                //Exits function
+                return;
+            }
+
+            if (sale_Price <= 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number more than 0!");
+                //Exits function
+                return;
+            }*/
+
             // Create a new sale row.
             PHPDatabaseDataSet.SaleRow newSaleRow = pHPDatabaseDataSet.Sale.NewSaleRow();
            
@@ -109,6 +125,7 @@ namespace PHPSolution
                     newStockSaleRow.Sale_No = int.Parse(saleno);
                     //Gets data from additemform using public getters and enters it into new stocksale row
                     //try catch for each field before storing
+
                     try
                     {
                         newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
@@ -155,8 +172,7 @@ namespace PHPSolution
                         return;
                     }
                 }          
-            }
-        
+            }        
 
         private void searchbutton_Click(object sender, EventArgs e)
         {

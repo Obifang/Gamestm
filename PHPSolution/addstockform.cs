@@ -27,7 +27,23 @@ namespace PHPSolution
             decimal decPrice = 0;
             //intQuantity set to 0 so it exists before try/catch
             int intQuantity = 0;
-            
+            //inserted here for testing.
+            if (intQuantity <= 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number more than 0!");
+                //Exits function
+                return;
+            }
+
+            if (decPrice <= 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a value more than 0!");
+                //Exits function
+                return;
+            }
+
             try
             {
                 //attempt to convert quantity to int

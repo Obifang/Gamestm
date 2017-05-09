@@ -99,7 +99,22 @@ namespace PHPSolution
         {   // doesn't need a message to pop up.
             // Creates new form of type addstockform
             var addstockform = new addstockform();
+            //might not need to be here.
+            /*if (stockquantity.value < 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number more than 0!");
+                //Exits function
+                return;
+            }
 
+            if (stockprice.value < 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a value more than 0!");
+                //Exits function
+                return;
+            }*/
             // Disable's current form an opens add stock form
             addstockform.ShowDialog(this);
 

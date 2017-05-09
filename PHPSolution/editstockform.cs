@@ -95,9 +95,7 @@ namespace PHPSolution
             }
 
             // Find row you want to modify, using FindByStock_No
-            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);
-
-            
+            PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(stocktoedit);         
 
             // Insert data into old row
             stockRow.Name = strname;
