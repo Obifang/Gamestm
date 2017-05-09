@@ -162,8 +162,7 @@ namespace PHPSolution
                         // Add the row to the Stock table and update database
                         pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
                         stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
-                        // Closes form
-                        Close();
+                        
                     }
                     catch (Exception ex)
                     {
@@ -171,8 +170,10 @@ namespace PHPSolution
                     }  
                         return;
                     }
-                }          
-            }        
+                }
+            // Closes form
+            Close();
+        }        
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
