@@ -86,19 +86,6 @@ namespace PHPSolution
             {
                 if (salechecklistbox.GetItemChecked(i))
                 {
-                    //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
-                    string strtemp = (string)salechecklistbox.Items[i];
-                    string stockno = strtemp.Substring(3, 4).Trim();
-
-                    // Creates new form of type additemform
-                    var additemform = new AddItem(stockno);
-
-                    // Disable's current form an opens add item form
-                    additemform.ShowDialog(this);
-
-                    //Create new stocksale row
-                    PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
-
                     //Gets highest saleno
                     //Searches for any sale entries where sale_no is not null and sorts them, highest at the top
                     //This was the only way i could find to access the last sale no that was generated (i.e the one for the item being entered)
@@ -108,7 +95,21 @@ namespace PHPSolution
                     var array = newResultRow[0].ItemArray;
                     //Assigns the first(highest) results first entry(Sale_No) as saleno
                     string saleno = array[0].ToString();
-                    //Inserts the saleno we just got into stocksale row
+
+                    //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
+                    string strtemp = (string)salechecklistbox.Items[i];
+                    string stockno = strtemp.Substring(3, 4).Trim();
+
+                    // Creates new form of type additemform
+                    var additemform = new AddItem(stockno, int.Parse(saleno));
+
+                    // Disable's current form an opens add item form
+                    additemform.ShowDialog(this);
+
+                    //Create new stocksale row
+                    PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
+
+                    //Inserts the saleno we got earlier into stocksale row
                     newStockSaleRow.Sale_No = int.Parse(saleno);
 
                     //Gets data from additemform using public getters and enters it into new stocksale row

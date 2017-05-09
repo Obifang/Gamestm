@@ -109,7 +109,7 @@ namespace PHPSolution
         private void newitem_Click(object sender, EventArgs e)
         {
             // Creates new form of type additenform, passing 0 to indicate it is not for any specific stock no
-            var additemform = new AddItem(0.ToString());
+            var additemform = new AddItem(0.ToString(),int.Parse(saleno.Text.Trim()));
 
             // Disable's current form an opens add item form
             additemform.ShowDialog(this);
@@ -195,17 +195,22 @@ namespace PHPSolution
                     stockSaleRow.Quantity_Sold = int.Parse(edititemform.Quantity);
                     stockSaleRow.Sale_Price = decimal.Parse(edititemform.Price);
 
-                    // Update database
-                    stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+                    //Try catch adding data to the database and reducing stock quantity to avoid crashes and assure one does not occur without the other
+                    try
+                    {
+                        // Update database
+                        stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
 
-                    // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
-                    PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(intstockno);
-                    //Alter quantity to reflect changes in quantity
-                    int change = edititemform.OldQuantity - int.Parse(edititemform.Quantity);
-                    stockRow.Quantity += change;
-                    //Updates database
-                    stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
-
+                        // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
+                        PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(intstockno);
+                        //Alter quantity to reflect changes in quantity
+                        int change = edititemform.OldQuantity - int.Parse(edititemform.Quantity);
+                        stockRow.Quantity += change;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Failed to add stock no: " + intstockno + " to sale record");
+                    }
                 }
             }
             //Rerenders the checklistbox, updating it with the new information

@@ -12,18 +12,23 @@ namespace PHPSolution
 {
     public partial class AddItem : Form
     {
-        public AddItem(string stocknumber) //, string Quantity, string Price
+        int saleno;
+
+        public AddItem(string stocknumber, int salenumber)
         {
             InitializeComponent();
+
+            saleno = salenumber;
 
             // Loads data into 'pHPDatabaseDataSet.Stock'
             try
             {
                 stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
+                stockSaleTableAdapter.Fill(pHPDatabaseDataSet.StockSale);
             }
             catch (Exception ex)
             {   // Catches an error and displays a messagebox
-                MessageBox.Show("Fill stock failed");
+                MessageBox.Show("Fill pHPDatabaseDataSet failed");
             }
 
             //This is setup so that if the form is opened from addsaleform, it will alwasys be passed a number, and that no will be entered into the textbox
@@ -63,6 +68,28 @@ namespace PHPSolution
                     MessageBox.Show("Please insert a value more than 0!");
                     //Exits function
                     return;
+                }
+
+                //Searches stockSale for items made on the provided sale no
+                //Assigns the the results to an array of data rows
+                DataRow[] stockSaleRow = pHPDatabaseDataSet.StockSale.Select("[Sale_No] = " + saleno);
+
+                // Iterates through stockSaleRow
+                int i = 0;
+                foreach (DataRow stockSale in stockSaleRow)
+                {
+                    // Assigns a single data row to an array
+                    // ItemArray can only be access this way, it cannot be accessed using value.ItemArray, hence this method
+                    var stockSaleArray = stockSaleRow[i].ItemArray;
+
+                    if (int.Parse(stockno.Text.Trim()) == int.Parse(stockSaleArray[0].ToString()))
+                    {
+                        //Dispalys an error message
+                        MessageBox.Show("An entry for that stock number already exits");
+                        //Exits function
+                        return;
+                    }
+                    i++;
                 }
             }
             catch (Exception ex)
@@ -129,6 +156,11 @@ namespace PHPSolution
             {
                 return stockprice.Text.Trim();
             }
+        }
+
+        private void AddItem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

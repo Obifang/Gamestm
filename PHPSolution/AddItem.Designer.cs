@@ -37,12 +37,15 @@
             this.stockquantity = new System.Windows.Forms.TextBox();
             this.stockprice = new System.Windows.Forms.TextBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.stockname = new System.Windows.Forms.TextBox();
             this.stockno = new System.Windows.Forms.TextBox();
             this.additembutton = new System.Windows.Forms.Button();
-            this.stockname = new System.Windows.Forms.TextBox();
+            this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pHPDatabaseDataSet
@@ -107,6 +110,15 @@
             this.panel.Size = new System.Drawing.Size(538, 28);
             this.panel.TabIndex = 28;
             // 
+            // stockname
+            // 
+            this.stockname.Location = new System.Drawing.Point(3, 4);
+            this.stockname.Name = "stockname";
+            this.stockname.ReadOnly = true;
+            this.stockname.Size = new System.Drawing.Size(137, 20);
+            this.stockname.TabIndex = 5;
+            this.stockname.Text = "Name";
+            // 
             // stockno
             // 
             this.stockno.Location = new System.Drawing.Point(146, 4);
@@ -125,14 +137,14 @@
             this.additembutton.UseVisualStyleBackColor = true;
             this.additembutton.Click += new System.EventHandler(this.additembutton_Click);
             // 
-            // stockname
+            // stockSaleBindingSource
             // 
-            this.stockname.Location = new System.Drawing.Point(3, 4);
-            this.stockname.Name = "stockname";
-            this.stockname.ReadOnly = true;
-            this.stockname.Size = new System.Drawing.Size(137, 20);
-            this.stockname.TabIndex = 5;
-            this.stockname.Text = "Name";
+            this.stockSaleBindingSource.DataMember = "StockSale";
+            this.stockSaleBindingSource.DataSource = this.pHPDatabaseDataSet;
+            // 
+            // stockSaleTableAdapter
+            // 
+            this.stockSaleTableAdapter.ClearBeforeFill = true;
             // 
             // AddItem
             // 
@@ -143,10 +155,12 @@
             this.Controls.Add(this.panel);
             this.Name = "AddItem";
             this.Text = "Add Item";
+            this.Load += new System.EventHandler(this.AddItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,5 +177,7 @@
         private System.Windows.Forms.Button additembutton;
         private System.Windows.Forms.TextBox stockno;
         private System.Windows.Forms.TextBox stockname;
+        private System.Windows.Forms.BindingSource stockSaleBindingSource;
+        private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
     }
 }
