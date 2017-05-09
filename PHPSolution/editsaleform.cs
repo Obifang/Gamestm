@@ -147,9 +147,24 @@ namespace PHPSolution
             newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
             newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
 
-            // Add the row to the Stock table and update database
-            pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
-            stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+            //Try catch adding data to the database and reducing stock quantity to avoid crashes and assure one does not occur without the other
+            try
+            {
+                // Add the row to the stockSale table and update database
+                pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
+                stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+
+                // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
+                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(additemform.StockNo));
+                // Reduces quantity by the amount purchased
+                stockRow.Quantity -= int.Parse(additemform.Quantity);
+                // Updates database
+                stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to add stock no: " + additemform.StockNo + " to sale record");
+            }
 
             //Rerenders the checklistbox, updating it with the new information
             rendercheckbox();
@@ -182,6 +197,15 @@ namespace PHPSolution
 
                     // Update database
                     stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+
+                    // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
+                    PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(intstockno);
+                    //Alter quantity to reflect changes in quantity
+                    int change = edititemform.OldQuantity - int.Parse(edititemform.Quantity);
+                    stockRow.Quantity += change;
+                    //Updates database
+                    stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
+
                 }
             }
             //Rerenders the checklistbox, updating it with the new information

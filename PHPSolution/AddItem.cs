@@ -102,21 +102,6 @@ namespace PHPSolution
                 MessageBox.Show("Please enter a valid price");
                 return;
             }
-
-            //Alter stock values to reflect sales
-            try
-            {
-                // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
-                PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(stockno.Text.Trim()));
-                // Reduces quantity by the amount purchased
-                stockRow.Quantity -= int.Parse(stockquantity.Text.Trim());
-                // Updates database
-                stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
-            }
-            catch (Exception ex)
-            {   // Catches an error and displays a messagebox
-                MessageBox.Show("Alter stock to reflect sales failed");
-            }
             // Closes form
             Close();
         }

@@ -77,7 +77,7 @@ namespace PHPSolution
             // Insert date from textbox into new sale row
             newSaleRow.Date = Convert.ToDateTime(saledate.Text);
 
-            // Add the row to the Stock table and update database
+            // Add the row to the Sale table and update database
             pHPDatabaseDataSet.Sale.Rows.Add(newSaleRow);
             saleTableAdapter.Update(pHPDatabaseDataSet.Sale);
 
@@ -117,16 +117,23 @@ namespace PHPSolution
                     newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
                     newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
 
-                    //Try catch adding data to the database to avoid crashes
+                    //Try catch adding data to the database and reducing stock quantity to avoid crashes and assure one does not occur without the other
                     try
                     {
-                        // Add the row to the Stock table and update database
+                        // Add the row to the stockSale table and update database
                         pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
                         stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
+
+                        // Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow
+                        PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(additemform.StockNo));
+                        // Reduces quantity by the amount purchased
+                        stockRow.Quantity -= int.Parse(additemform.Quantity);
+                        // Updates database
+                        stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Add sales record failed; please enter valid data and try again");
+                        MessageBox.Show("Failed to add stock no: " + additemform.StockNo + " to sale record");
                     }
                 }
             }

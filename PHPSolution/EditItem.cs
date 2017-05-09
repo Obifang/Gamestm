@@ -101,6 +101,11 @@ namespace PHPSolution
             get { return stockprice.Text.Trim(); }
         }
 
+        public int OldQuantity
+        {
+            get { return oldQuantity; }
+        }
+
         private void defaultpricebutton_Click_1(object sender, EventArgs e)
         {
 
