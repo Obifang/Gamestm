@@ -40,36 +40,6 @@ namespace PHPSolution
             else {
                 //else enter placeholder text
                 stockno.Text = "No";
-            }
-
-            /*if (int.Parse(Quantity) != 0)
-            {
-                stockquantity.Text = Quantity;
-            }
-            else
-            {
-                //else enter placeholder text
-                stockquantity.Text = "Quantity";
-            }
-
-            if (int.Parse(Price) != 0)
-            {
-                stockprice.Text = Price;
-            }
-            else
-            {
-                //else enter placeholder text
-                stockprice.Text = "Price";
-            }*/
-
-            // Loads data into 'pHPDatabaseDataSet.Stock'
-            try
-            {
-                stockTableAdapter.Fill(pHPDatabaseDataSet.Stock);
-            }
-            catch (Exception ex)
-            {   // Catches an error and displays a messagebox
-                MessageBox.Show("Fill stock failed");
                 stockname.Text = "";
             }
         }
@@ -84,6 +54,55 @@ namespace PHPSolution
 
         private void additembutton_Click(object sender, EventArgs e)
         {
+            //Validates each field using a try catch
+            try
+            {
+                if (int.Parse(stockno.Text.Trim()) <= 0)
+                {
+                    //Dispalys an error message
+                    MessageBox.Show("Please insert a value more than 0!");
+                    //Exits function
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter a valid stock number");
+                return;
+            }
+
+            try
+            {
+                if (int.Parse(stockquantity.Text.Trim()) <= 0)
+                {
+                    //Dispalys an error message
+                    MessageBox.Show("Please insert a value more than 0!");
+                    //Exits function
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter a valid quantity");
+                return;
+            }
+
+            try
+            {
+                if (decimal.Parse(stockprice.Text.Trim()) <= 0)
+                {
+                    //Dispalys an error message
+                    MessageBox.Show("Please insert a number more than 0!");
+                    //Exits function
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter a valid price");
+                return;
+            }
+
             //Alter stock values to reflect sales
             try
             {

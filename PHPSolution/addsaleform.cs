@@ -71,25 +71,9 @@ namespace PHPSolution
                 return;
             }
 
-            /*if (Quantity_Sold <= 0)
-            {
-                //Dispalys an error message
-                MessageBox.Show("Please insert a value more than 0!");
-                //Exits function
-                return;
-            }
-
-            if (sale_Price <= 0)
-            {
-                //Dispalys an error message
-                MessageBox.Show("Please insert a number more than 0!");
-                //Exits function
-                return;
-            }*/
-
             // Create a new sale row.
             PHPDatabaseDataSet.SaleRow newSaleRow = pHPDatabaseDataSet.Sale.NewSaleRow();
-           
+
             // Insert date from textbox into new sale row
             newSaleRow.Date = Convert.ToDateTime(saledate.Text);
 
@@ -105,75 +89,50 @@ namespace PHPSolution
                     //Gets stocknumber by fetching the string enterered into the checklistbox and using substing
                     string strtemp = (string)salechecklistbox.Items[i];
                     string stockno = strtemp.Substring(3, 4).Trim();
+
                     // Creates new form of type additemform
                     var additemform = new AddItem(stockno);
+
                     // Disable's current form an opens add item form
                     additemform.ShowDialog(this);
+
                     //Create new stocksale row
                     PHPDatabaseDataSet.StockSaleRow newStockSaleRow = pHPDatabaseDataSet.StockSale.NewStockSaleRow();
-                    //Gets highest saleno
 
+                    //Gets highest saleno
                     //Searches for any sale entries where sale_no is not null and sorts them, highest at the top
                     //This was the only way i could find to access the last sale no that was generated (i.e the one for the item being entered)
-                    //In order to sort the sale entries i needed a filter, hecne sale_no is not null, as that will always be true
+                    //In order to sort the sale entries i needed a filter, hence sale_no is not null, as that will always be true
                     //Assigns the the results to an array of data rows
-                    DataRow[] newResultRow = pHPDatabaseDataSet.Sale.Select("Sale_No is not NULL","Sale_No DESC");
+                    DataRow[] newResultRow = pHPDatabaseDataSet.Sale.Select("Sale_No is not NULL", "Sale_No DESC");
                     var array = newResultRow[0].ItemArray;
                     //Assigns the first(highest) results first entry(Sale_No) as saleno
                     string saleno = array[0].ToString();
                     //Inserts the saleno we just got into stocksale row
                     newStockSaleRow.Sale_No = int.Parse(saleno);
+
                     //Gets data from additemform using public getters and enters it into new stocksale row
-                    //try catch for each field before storing
+                    //At this point the data has already been validated
+                    newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
+                    newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
+                    newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
 
-                    try
-                    {
-                        newStockSaleRow.Stock_No = int.Parse(additemform.StockNo);
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show("Please enter a valid stock number");
-                        return;
-                    }
-
-                    try
-                    {
-                        newStockSaleRow.Quantity_Sold = int.Parse(additemform.Quantity);
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show("Please enter a valid quantity");
-                        return;
-                    }
-
-                    try
-                    {
-                        newStockSaleRow.Sale_Price = decimal.Parse(additemform.Price);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Please enter a valid price");
-                        return;
-                    }
-
-                    //after try/catching data values, try/catch to add to database
+                    //Try catch adding data to the database to avoid crashes
                     try
                     {
                         // Add the row to the Stock table and update database
                         pHPDatabaseDataSet.StockSale.Rows.Add(newStockSaleRow);
                         stockSaleTableAdapter.Update(pHPDatabaseDataSet.StockSale);
-                        
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Add sales record failed; please enter valid data and try again");
-                    }  
-                        return;
                     }
                 }
+            }
             // Closes form
             Close();
-        }        
+        }
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
