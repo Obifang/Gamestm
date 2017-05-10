@@ -29,57 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.stockSaleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockSale1DataGridView = new System.Windows.Forms.DataGridView();
-            this.stockSale1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportform));
             this.pHPDatabaseDataSet = new PHPSolution.PHPDatabaseDataSet();
             this.reportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.ReportTableAdapter();
             this.tableAdapterManager = new PHPSolution.PHPDatabaseDataSetTableAdapters.TableAdapterManager();
-            this.stockSaleTableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter();
-            this.stockSale1TableAdapter = new PHPSolution.PHPDatabaseDataSetTableAdapters.StockSale1TableAdapter();
-            this.stockNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPurchasdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avgPurchasedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avgValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockSale1DataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockSale1BindingSource)).BeginInit();
+            this.reportBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.reportDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportBindingNavigator)).BeginInit();
+            this.reportBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // stockSale1DataGridView
-            // 
-            this.stockSale1DataGridView.AutoGenerateColumns = false;
-            this.stockSale1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stockSale1DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stockNoDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.descDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.totalValueDataGridViewTextBoxColumn,
-            this.totalPurchasdDataGridViewTextBoxColumn,
-            this.avgPurchasedDataGridViewTextBoxColumn,
-            this.avgValueDataGridViewTextBoxColumn});
-            this.stockSale1DataGridView.DataSource = this.stockSale1BindingSource;
-            this.stockSale1DataGridView.Location = new System.Drawing.Point(12, 12);
-            this.stockSale1DataGridView.Name = "stockSale1DataGridView";
-            this.stockSale1DataGridView.Size = new System.Drawing.Size(1199, 481);
-            this.stockSale1DataGridView.TabIndex = 0;
-            // 
-            // stockSale1BindingSource
-            // 
-            this.stockSale1BindingSource.DataMember = "StockSale1";
-            this.stockSale1BindingSource.DataSource = this.pHPDatabaseDataSet;
             // 
             // pHPDatabaseDataSet
             // 
@@ -104,93 +85,202 @@
             this.tableAdapterManager.StockTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PHPSolution.PHPDatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // stockSaleTableAdapter
+            // reportBindingNavigator
             // 
-            this.stockSaleTableAdapter.ClearBeforeFill = true;
+            this.reportBindingNavigator.AddNewItem = null;
+            this.reportBindingNavigator.BindingSource = this.reportBindingSource;
+            this.reportBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.reportBindingNavigator.DeleteItem = null;
+            this.reportBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2});
+            this.reportBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.reportBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.reportBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.reportBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.reportBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.reportBindingNavigator.Name = "reportBindingNavigator";
+            this.reportBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.reportBindingNavigator.Size = new System.Drawing.Size(1197, 25);
+            this.reportBindingNavigator.TabIndex = 0;
+            this.reportBindingNavigator.Text = "bindingNavigator1";
             // 
-            // stockSale1TableAdapter
+            // bindingNavigatorCountItem
             // 
-            this.stockSale1TableAdapter.ClearBeforeFill = true;
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // stockNoDataGridViewTextBoxColumn
+            // bindingNavigatorMoveFirstItem
             // 
-            this.stockNoDataGridViewTextBoxColumn.DataPropertyName = "Stock_No";
-            this.stockNoDataGridViewTextBoxColumn.HeaderText = "Stock_No";
-            this.stockNoDataGridViewTextBoxColumn.Name = "stockNoDataGridViewTextBoxColumn";
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
-            // nameDataGridViewTextBoxColumn
+            // bindingNavigatorMovePreviousItem
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
-            // descDataGridViewTextBoxColumn
+            // bindingNavigatorSeparator
             // 
-            this.descDataGridViewTextBoxColumn.DataPropertyName = "Desc";
-            this.descDataGridViewTextBoxColumn.HeaderText = "Desc";
-            this.descDataGridViewTextBoxColumn.Name = "descDataGridViewTextBoxColumn";
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // typeDataGridViewTextBoxColumn
+            // bindingNavigatorPositionItem
             // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // quantityDataGridViewTextBoxColumn
+            // bindingNavigatorSeparator1
             // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // priceDataGridViewTextBoxColumn
+            // bindingNavigatorMoveNextItem
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
-            // totalValueDataGridViewTextBoxColumn
+            // bindingNavigatorMoveLastItem
             // 
-            this.totalValueDataGridViewTextBoxColumn.DataPropertyName = "TotalValue";
-            this.totalValueDataGridViewTextBoxColumn.HeaderText = "TotalValue";
-            this.totalValueDataGridViewTextBoxColumn.Name = "totalValueDataGridViewTextBoxColumn";
-            this.totalValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
-            // totalPurchasdDataGridViewTextBoxColumn
+            // bindingNavigatorSeparator2
             // 
-            this.totalPurchasdDataGridViewTextBoxColumn.DataPropertyName = "TotalPurchasd";
-            this.totalPurchasdDataGridViewTextBoxColumn.HeaderText = "TotalPurchasd";
-            this.totalPurchasdDataGridViewTextBoxColumn.Name = "totalPurchasdDataGridViewTextBoxColumn";
-            this.totalPurchasdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // avgPurchasedDataGridViewTextBoxColumn
+            // reportDataGridView
             // 
-            this.avgPurchasedDataGridViewTextBoxColumn.DataPropertyName = "AvgPurchased";
-            this.avgPurchasedDataGridViewTextBoxColumn.HeaderText = "AvgPurchased";
-            this.avgPurchasedDataGridViewTextBoxColumn.Name = "avgPurchasedDataGridViewTextBoxColumn";
-            this.avgPurchasedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.reportDataGridView.AutoGenerateColumns = false;
+            this.reportDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reportDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.reportDataGridView.DataSource = this.reportBindingSource;
+            this.reportDataGridView.Location = new System.Drawing.Point(12, 38);
+            this.reportDataGridView.Name = "reportDataGridView";
+            this.reportDataGridView.Size = new System.Drawing.Size(1173, 472);
+            this.reportDataGridView.TabIndex = 1;
             // 
-            // avgValueDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.avgValueDataGridViewTextBoxColumn.DataPropertyName = "AvgValue";
-            this.avgValueDataGridViewTextBoxColumn.HeaderText = "AvgValue";
-            this.avgValueDataGridViewTextBoxColumn.Name = "avgValueDataGridViewTextBoxColumn";
-            this.avgValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Stock_No";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Stock_No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Desc";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Desc";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TotalValue";
+            this.dataGridViewTextBoxColumn7.HeaderText = "TotalValue";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "TotalPurchasd";
+            this.dataGridViewTextBoxColumn8.HeaderText = "TotalPurchasd";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "AvgPurchased";
+            this.dataGridViewTextBoxColumn9.HeaderText = "AvgPurchased";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "AvgValue";
+            this.dataGridViewTextBoxColumn10.HeaderText = "AvgValue";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // reportform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 505);
-            this.Controls.Add(this.stockSale1DataGridView);
+            this.ClientSize = new System.Drawing.Size(1197, 522);
+            this.Controls.Add(this.reportDataGridView);
+            this.Controls.Add(this.reportBindingNavigator);
             this.Name = "reportform";
-            this.Text = "reportform";
-            this.Load += new System.EventHandler(this.reportform_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.stockSaleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockSale1DataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockSale1BindingSource)).EndInit();
+            this.Text = "Report";
             ((System.ComponentModel.ISupportInitialize)(this.pHPDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportBindingNavigator)).EndInit();
+            this.reportBindingNavigator.ResumeLayout(false);
+            this.reportBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -200,20 +290,26 @@
         private System.Windows.Forms.BindingSource reportBindingSource;
         private PHPDatabaseDataSetTableAdapters.ReportTableAdapter reportTableAdapter;
         private PHPDatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingSource stockSaleBindingSource;
-        private PHPDatabaseDataSetTableAdapters.StockSaleTableAdapter stockSaleTableAdapter;
-        private System.Windows.Forms.BindingSource stockSale1BindingSource;
-        private PHPDatabaseDataSetTableAdapters.StockSale1TableAdapter stockSale1TableAdapter;
-        private System.Windows.Forms.DataGridView stockSale1DataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalValueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPurchasdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn avgPurchasedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn avgValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingNavigator reportBindingNavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.DataGridView reportDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }
