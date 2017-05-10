@@ -207,12 +207,14 @@ SELECT Stock_No, Sale_No, Quantity_Sold, Sale_Price FROM StockSale WHERE (Sale_N
               <Mapping SourceColumn="Date" DataSetColumn="Date" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PHPDatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="PHPDatabaseConnectionString (Settings)" DbObjectName="dbo.StockSale" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT [StockSale].[Stock_No], [Stock].[Name], [Sale].[Date] FROM StockSale
+                    <CommandText>SELECT [StockSale].[Stock_No], SUM([StockSale].[Sale_Price] * [StockSale].[Quantity_Sold]) as "Total Value"
+FROM StockSale
 INNER JOIN Stock ON StockSale.Stock_No = Stock.Stock_No
-INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No;</CommandText>
+INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No
+GROUP BY [StockSale].[Stock_No];</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -227,7 +229,7 @@ INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No;</CommandText>
   <xs:element name="PHPDatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PHPDatabaseDataSet" msprop:Generator_UserDSName="PHPDatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Stock" msprop:Generator_TableClassName="StockDataTable" msprop:Generator_TableVarName="tableStock" msprop:Generator_TablePropName="Stock" msprop:Generator_RowDeletingName="StockRowDeleting" msprop:Generator_RowChangingName="StockRowChanging" msprop:Generator_RowEvHandlerName="StockRowChangeEventHandler" msprop:Generator_RowDeletedName="StockRowDeleted" msprop:Generator_UserTableName="Stock" msprop:Generator_RowChangedName="StockRowChanged" msprop:Generator_RowEvArgName="StockRowChangeEvent" msprop:Generator_RowClassName="StockRow">
+        <xs:element name="Stock" msprop:Generator_TableClassName="StockDataTable" msprop:Generator_TableVarName="tableStock" msprop:Generator_RowChangedName="StockRowChanged" msprop:Generator_TablePropName="Stock" msprop:Generator_RowDeletingName="StockRowDeleting" msprop:Generator_RowChangingName="StockRowChanging" msprop:Generator_RowEvHandlerName="StockRowChangeEventHandler" msprop:Generator_RowDeletedName="StockRowDeleted" msprop:Generator_RowClassName="StockRow" msprop:Generator_UserTableName="Stock" msprop:Generator_RowEvArgName="StockRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Stock_No" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnStock_No" msprop:Generator_ColumnPropNameInRow="Stock_No" msprop:Generator_ColumnPropNameInTable="Stock_NoColumn" msprop:Generator_UserColumnName="Stock_No" type="xs:int" />
@@ -257,7 +259,7 @@ INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sale" msprop:Generator_TableClassName="SaleDataTable" msprop:Generator_TableVarName="tableSale" msprop:Generator_RowChangedName="SaleRowChanged" msprop:Generator_TablePropName="Sale" msprop:Generator_RowDeletingName="SaleRowDeleting" msprop:Generator_RowChangingName="SaleRowChanging" msprop:Generator_RowEvHandlerName="SaleRowChangeEventHandler" msprop:Generator_RowDeletedName="SaleRowDeleted" msprop:Generator_RowClassName="SaleRow" msprop:Generator_UserTableName="Sale" msprop:Generator_RowEvArgName="SaleRowChangeEvent">
+        <xs:element name="Sale" msprop:Generator_TableClassName="SaleDataTable" msprop:Generator_TableVarName="tableSale" msprop:Generator_TablePropName="Sale" msprop:Generator_RowDeletingName="SaleRowDeleting" msprop:Generator_RowChangingName="SaleRowChanging" msprop:Generator_RowEvHandlerName="SaleRowChangeEventHandler" msprop:Generator_RowDeletedName="SaleRowDeleted" msprop:Generator_UserTableName="Sale" msprop:Generator_RowChangedName="SaleRowChanged" msprop:Generator_RowEvArgName="SaleRowChangeEvent" msprop:Generator_RowClassName="SaleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Sale_No" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSale_No" msprop:Generator_ColumnPropNameInRow="Sale_No" msprop:Generator_ColumnPropNameInTable="Sale_NoColumn" msprop:Generator_UserColumnName="Sale_No" type="xs:int" />
@@ -265,7 +267,7 @@ INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockSale" msprop:Generator_TableClassName="StockSaleDataTable" msprop:Generator_TableVarName="tableStockSale" msprop:Generator_RowChangedName="StockSaleRowChanged" msprop:Generator_TablePropName="StockSale" msprop:Generator_RowDeletingName="StockSaleRowDeleting" msprop:Generator_RowChangingName="StockSaleRowChanging" msprop:Generator_RowEvHandlerName="StockSaleRowChangeEventHandler" msprop:Generator_RowDeletedName="StockSaleRowDeleted" msprop:Generator_RowClassName="StockSaleRow" msprop:Generator_UserTableName="StockSale" msprop:Generator_RowEvArgName="StockSaleRowChangeEvent">
+        <xs:element name="StockSale" msprop:Generator_TableClassName="StockSaleDataTable" msprop:Generator_TableVarName="tableStockSale" msprop:Generator_TablePropName="StockSale" msprop:Generator_RowDeletingName="StockSaleRowDeleting" msprop:Generator_RowChangingName="StockSaleRowChanging" msprop:Generator_RowEvHandlerName="StockSaleRowChangeEventHandler" msprop:Generator_RowDeletedName="StockSaleRowDeleted" msprop:Generator_UserTableName="StockSale" msprop:Generator_RowChangedName="StockSaleRowChanged" msprop:Generator_RowEvArgName="StockSaleRowChangeEvent" msprop:Generator_RowClassName="StockSaleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Stock_No" msprop:Generator_ColumnVarNameInTable="columnStock_No" msprop:Generator_ColumnPropNameInRow="Stock_No" msprop:Generator_ColumnPropNameInTable="Stock_NoColumn" msprop:Generator_UserColumnName="Stock_No" type="xs:int" />
@@ -275,7 +277,7 @@ INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Report" msprop:Generator_TableClassName="ReportDataTable" msprop:Generator_TableVarName="tableReport" msprop:Generator_TablePropName="Report" msprop:Generator_RowDeletingName="ReportRowDeleting" msprop:Generator_RowChangingName="ReportRowChanging" msprop:Generator_RowEvHandlerName="ReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportRowDeleted" msprop:Generator_UserTableName="Report" msprop:Generator_RowChangedName="ReportRowChanged" msprop:Generator_RowEvArgName="ReportRowChangeEvent" msprop:Generator_RowClassName="ReportRow">
+        <xs:element name="Report" msprop:Generator_TableClassName="ReportDataTable" msprop:Generator_TableVarName="tableReport" msprop:Generator_RowChangedName="ReportRowChanged" msprop:Generator_TablePropName="Report" msprop:Generator_RowDeletingName="ReportRowDeleting" msprop:Generator_RowChangingName="ReportRowChanging" msprop:Generator_RowEvHandlerName="ReportRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportRowDeleted" msprop:Generator_RowClassName="ReportRow" msprop:Generator_UserTableName="Report" msprop:Generator_RowEvArgName="ReportRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Stock_No" msprop:Generator_ColumnVarNameInTable="columnStock_No" msprop:Generator_ColumnPropNameInRow="Stock_No" msprop:Generator_ColumnPropNameInTable="Stock_NoColumn" msprop:Generator_UserColumnName="Stock_No" type="xs:int" />
@@ -336,8 +338,8 @@ INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No;</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Sale_No" msdata:parent="Sale" msdata:child="StockSale" msdata:parentkey="Sale_No" msdata:childkey="Sale_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Sale_No" msprop:Generator_RelationVarName="relationSale_No" msprop:Generator_UserParentTable="Sale" msprop:Generator_ParentPropName="SaleRow" />
-      <msdata:Relationship name="Stock_No" msdata:parent="Stock" msdata:child="StockSale" msdata:parentkey="Stock_No" msdata:childkey="Stock_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Stock_No" msprop:Generator_RelationVarName="relationStock_No" msprop:Generator_UserParentTable="Stock" msprop:Generator_ParentPropName="StockRow" />
+      <msdata:Relationship name="Sale_No" msdata:parent="Sale" msdata:child="StockSale" msdata:parentkey="Sale_No" msdata:childkey="Sale_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Sale_No" msprop:Generator_ParentPropName="SaleRow" msprop:Generator_RelationVarName="relationSale_No" msprop:Generator_UserParentTable="Sale" />
+      <msdata:Relationship name="Stock_No" msdata:parent="Stock" msdata:child="StockSale" msdata:parentkey="Stock_No" msdata:childkey="Stock_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Stock_No" msprop:Generator_ParentPropName="StockRow" msprop:Generator_RelationVarName="relationStock_No" msprop:Generator_UserParentTable="Stock" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

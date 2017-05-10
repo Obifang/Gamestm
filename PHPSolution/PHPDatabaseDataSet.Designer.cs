@@ -3426,9 +3426,11 @@ SELECT Stock_No, Sale_No, Quantity_Sold, Sale_Price FROM StockSale WHERE (Sale_N
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT [StockSale].[Stock_No], [Stock].[Name], [Sale].[Date] FROM StockSale\r\nINNE" +
-                "R JOIN Stock ON StockSale.Stock_No = Stock.Stock_No\r\nINNER JOIN Sale ON StockSal" +
-                "e.Sale_No = Sale.Sale_No;";
+            this._commandCollection[1].CommandText = @"SELECT [StockSale].[Stock_No], SUM([StockSale].[Sale_Price] * [StockSale].[Quantity_Sold]) as ""Total Value""
+FROM StockSale
+INNER JOIN Stock ON StockSale.Stock_No = Stock.Stock_No
+INNER JOIN Sale ON StockSale.Sale_No = Sale.Sale_No
+GROUP BY [StockSale].[Stock_No];";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
