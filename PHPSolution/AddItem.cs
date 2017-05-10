@@ -97,7 +97,7 @@ namespace PHPSolution
                 MessageBox.Show("Please enter a valid stock number");
                 return;
             }
-
+            
             try
             {
                 if (int.Parse(stockquantity.Text.Trim()) <= 0)
