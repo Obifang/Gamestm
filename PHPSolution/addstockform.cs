@@ -28,6 +28,22 @@ namespace PHPSolution
             //intQuantity set to 0 so it exists before try/catch
             int intQuantity = 0;
 
+            if (int.Parse(stockquantity.Text.Trim()) < 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a value that is more than 0!");
+                //Exits function
+                return;
+            }
+
+            if (decimal.Parse(stockprice.Text.Trim()) < 0)
+            {
+                //Dispalys an error message
+                MessageBox.Show("Please insert a number more than 0!");
+                //Exits function
+                return;
+            }
+
             try
             {
                 //attempt to convert quantity to int

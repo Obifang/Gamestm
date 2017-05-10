@@ -100,7 +100,7 @@ namespace PHPSolution
             
             try
             {
-                if (int.Parse(stockquantity.Text.Trim()) <= 0)
+                if (int.Parse(stockquantity.Text.Trim()) < 0)
                 {
                     //Dispalys an error message
                     MessageBox.Show("Please insert a value more than 0!");
@@ -116,7 +116,7 @@ namespace PHPSolution
 
             try
             {
-                if (decimal.Parse(stockprice.Text.Trim()) <= 0)
+                if (decimal.Parse(stockprice.Text.Trim()) < 0)
                 {
                     //Dispalys an error message
                     MessageBox.Show("Please insert a number more than 0!");
