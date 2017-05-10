@@ -221,6 +221,36 @@ GROUP BY [StockSale].[Stock_No];</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StockSale1TableAdapter" GeneratorDataComponentClassName="StockSale1TableAdapter" Name="StockSale1" UserDataComponentName="StockSale1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PHPDatabaseConnectionString (Settings)" DbObjectName="dbo.Stock" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [Stock].[Stock_No], [Stock].[Name], [Stock].[Desc], [Stock].[Type], [Stock].[Quantity], [Stock].[Price] ,
+AvgPurchased = (SELECT AVG([StockSale].[Quantity_Sold]) FROM [StockSale] WHERE [StockSale].Stock_No = [Stock].Stock_No),
+TotalPurchasd = (SELECT SUM([StockSale].[Quantity_Sold]) FROM [StockSale] WHERE [StockSale].Stock_No = [Stock].Stock_No),
+AvgValue = (SELECT AVG([StockSale].[Sale_Price] * [StockSale].[Quantity_Sold]) FROM [StockSale] WHERE [StockSale].Stock_No = [Stock].Stock_No),
+TotalValue = (SELECT SUM([StockSale].[Sale_Price] * [StockSale].[Quantity_Sold]) FROM [StockSale] WHERE [StockSale].Stock_No = [Stock].Stock_No)
+FROM [Stock];</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Stock_No" DataSetColumn="Stock_No" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Desc" DataSetColumn="Desc" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+              <Mapping SourceColumn="TotalValue" DataSetColumn="TotalValue" />
+              <Mapping SourceColumn="TotalPurchasd" DataSetColumn="TotalPurchasd" />
+              <Mapping SourceColumn="AvgPurchased" DataSetColumn="AvgPurchased" />
+              <Mapping SourceColumn="AvgValue" DataSetColumn="AvgValue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -313,6 +343,40 @@ GROUP BY [StockSale].[Stock_No];</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="StockSale1" msprop:Generator_TableClassName="StockSale1DataTable" msprop:Generator_TableVarName="tableStockSale1" msprop:Generator_TablePropName="StockSale1" msprop:Generator_RowDeletingName="StockSale1RowDeleting" msprop:Generator_RowChangingName="StockSale1RowChanging" msprop:Generator_RowEvHandlerName="StockSale1RowChangeEventHandler" msprop:Generator_RowDeletedName="StockSale1RowDeleted" msprop:Generator_UserTableName="StockSale1" msprop:Generator_RowChangedName="StockSale1RowChanged" msprop:Generator_RowEvArgName="StockSale1RowChangeEvent" msprop:Generator_RowClassName="StockSale1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Stock_No" msprop:Generator_ColumnVarNameInTable="columnStock_No" msprop:Generator_ColumnPropNameInRow="Stock_No" msprop:Generator_ColumnPropNameInTable="Stock_NoColumn" msprop:Generator_UserColumnName="Stock_No" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Desc" msprop:Generator_ColumnVarNameInTable="columnDesc" msprop:Generator_ColumnPropNameInRow="Desc" msprop:Generator_ColumnPropNameInTable="DescColumn" msprop:Generator_UserColumnName="Desc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:int" />
+              <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:decimal" />
+              <xs:element name="TotalValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalValue" msprop:Generator_ColumnPropNameInRow="TotalValue" msprop:Generator_ColumnPropNameInTable="TotalValueColumn" msprop:Generator_UserColumnName="TotalValue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalPurchasd" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalPurchasd" msprop:Generator_ColumnPropNameInRow="TotalPurchasd" msprop:Generator_ColumnPropNameInTable="TotalPurchasdColumn" msprop:Generator_UserColumnName="TotalPurchasd" type="xs:int" minOccurs="0" />
+              <xs:element name="AvgPurchased" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAvgPurchased" msprop:Generator_ColumnPropNameInRow="AvgPurchased" msprop:Generator_ColumnPropNameInTable="AvgPurchasedColumn" msprop:Generator_UserColumnName="AvgPurchased" type="xs:int" minOccurs="0" />
+              <xs:element name="AvgValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAvgValue" msprop:Generator_ColumnPropNameInRow="AvgValue" msprop:Generator_ColumnPropNameInTable="AvgValueColumn" msprop:Generator_UserColumnName="AvgValue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -328,18 +392,24 @@ GROUP BY [StockSale].[Stock_No];</CommandText>
       <xs:field xpath="mstns:Stock_No" />
       <xs:field xpath="mstns:Sale_No" />
     </xs:unique>
-    <xs:unique name="Report_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Report_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:Report" />
       <xs:field xpath="mstns:Stock_No" />
       <xs:field xpath="mstns:Sale_No" />
       <xs:field xpath="mstns:Stock_No1" />
       <xs:field xpath="mstns:Sale_No1" />
     </xs:unique>
+    <xs:unique name="StockSale1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StockSale1" />
+      <xs:field xpath="mstns:Stock_No" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="Sale_No" msdata:parent="Sale" msdata:child="StockSale" msdata:parentkey="Sale_No" msdata:childkey="Sale_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Sale_No" msprop:Generator_ParentPropName="SaleRow" msprop:Generator_RelationVarName="relationSale_No" msprop:Generator_UserParentTable="Sale" />
       <msdata:Relationship name="Stock_No" msdata:parent="Stock" msdata:child="StockSale" msdata:parentkey="Stock_No" msdata:childkey="Stock_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Stock_No" msprop:Generator_ParentPropName="StockRow" msprop:Generator_RelationVarName="relationStock_No" msprop:Generator_UserParentTable="Stock" />
+      <msdata:Relationship name="Stock_No1" msdata:parent="Stock" msdata:child="StockSale1" msdata:parentkey="Stock_No" msdata:childkey="Stock_No" msprop:Generator_UserChildTable="StockSale1" msprop:Generator_ChildPropName="GetStockSale1Rows" msprop:Generator_UserRelationName="Stock_No1" msprop:Generator_ParentPropName="StockRow" msprop:Generator_RelationVarName="relationStock_No1" msprop:Generator_UserParentTable="Stock" />
+      <msdata:Relationship name="Stock_No2" msdata:parent="StockSale1" msdata:child="StockSale" msdata:parentkey="Stock_No" msdata:childkey="Stock_No" msprop:Generator_UserChildTable="StockSale" msprop:Generator_ChildPropName="GetStockSaleRows" msprop:Generator_UserRelationName="Stock_No2" msprop:Generator_RelationVarName="relationStock_No2" msprop:Generator_UserParentTable="StockSale1" msprop:Generator_ParentPropName="StockSale1Row" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

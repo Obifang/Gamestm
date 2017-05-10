@@ -19,10 +19,16 @@ namespace PHPSolution
 
         private void reportform_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pHPDatabaseDataSet.StockSale1' table. You can move, or remove it, as needed.
+            this.stockSale1TableAdapter.Fill(this.pHPDatabaseDataSet.StockSale1);
+            // TODO: This line of code loads data into the 'pHPDatabaseDataSet.StockSale' table. You can move, or remove it, as needed.
+            this.stockSaleTableAdapter.Fill(this.pHPDatabaseDataSet.StockSale);
+            // TODO: This line of code loads data into the 'pHPDatabaseDataSet.StockSale1' table. You can move, or remove it, as needed.
+            this.stockSale1TableAdapter.Fill(this.pHPDatabaseDataSet.StockSale1);
             // Loads data into the 'pHPDatabaseDataSet.Report' table.
             try
             {
-                reportTableAdapter.FillBy(pHPDatabaseDataSet.Report);
+                reportTableAdapter.Fill(pHPDatabaseDataSet.Report);
             }
             catch (Exception ex)
             {

@@ -103,6 +103,9 @@
     <Compile Include="mainform.Designer.cs">
       <DependentUpon>mainform.cs</DependentUpon>
     </Compile>
+    <Compile Include="PHPDatabaseDataSet.cs">
+      <DependentUpon>PHPDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PHPDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
