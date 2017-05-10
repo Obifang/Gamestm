@@ -106,6 +106,7 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.editsalenotextbox = new System.Windows.Forms.TextBox();
             this.editstocktextbox = new System.Windows.Forms.TextBox();
+            this.generatereport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
             this.stockBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
@@ -145,7 +146,7 @@
             this.stockBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stockBindingNavigator.Name = "stockBindingNavigator";
             this.stockBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stockBindingNavigator.Size = new System.Drawing.Size(240, 25);
+            this.stockBindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.stockBindingNavigator.TabIndex = 0;
             this.stockBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -777,11 +778,22 @@
             this.editstocktextbox.TabIndex = 43;
             this.editstocktextbox.Text = "Stock To Edit (ID Number)";
             // 
+            // generatereport
+            // 
+            this.generatereport.Location = new System.Drawing.Point(240, 340);
+            this.generatereport.Name = "generatereport";
+            this.generatereport.Size = new System.Drawing.Size(175, 23);
+            this.generatereport.TabIndex = 44;
+            this.generatereport.Text = "Generate Report";
+            this.generatereport.UseVisualStyleBackColor = true;
+            this.generatereport.Click += new System.EventHandler(this.generatereport_Click);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 542);
+            this.Controls.Add(this.generatereport);
             this.Controls.Add(this.editstocktextbox);
             this.Controls.Add(this.editsalenotextbox);
             this.Controls.Add(this.stocksaleBindingNavigator);
@@ -913,5 +925,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         public System.Windows.Forms.TextBox editsalenotextbox;
         public System.Windows.Forms.TextBox editstocktextbox;
+        private System.Windows.Forms.Button generatereport;
     }
 }

@@ -131,3 +131,4 @@ C:\Users\Brendan\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.Prop
 C:\Users\Brendan\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.csproj.GenerateResource.Cache
 C:\Users\Brendan\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.exe
 C:\Users\Brendan\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.pdb
+C:\Users\Brendan Pert\Documents\GitHub\Gamestm\PHPSolution\obj\Debug\PHPSolution.reportform.resources

@@ -320,19 +320,21 @@ namespace PHPSolution
 
             // Creates new form of type editsaleform and parses text of editsalenotextbox
             var editsaleform = new editsaleform(editsalenotextbox.Text.TrimEnd());
-            //It needs to make sure the textbox does not contain anything but letters
-            if (!System.Text.RegularExpressions.Regex.IsMatch(editsalenotextbox.Text.Trim(), @"^[0-9]+$"))
-            {
-                //Dispalys an error message
-                MessageBox.Show("Please insert a number, it must not contain letters");
-                //Exits function
-                return;
-            }
+            
             // Disable's current form an opens edit sale form
             editsaleform.ShowDialog(this);
 
             // Reloads data into pHPDatabaseSet
             loadIntopHPDatabaseSet();
+        }
+
+        private void generatereport_Click(object sender, EventArgs e)
+        {
+            // Creates new form of type editsaleform and parses text of editsalenotextbox
+            var reportform = new reportform();
+
+            // Disable's current form an opens edit sale form
+            reportform.ShowDialog(this);
         }
     }
 }
