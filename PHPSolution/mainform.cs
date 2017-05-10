@@ -334,5 +334,27 @@ namespace PHPSolution
             // Reloads data into pHPDatabaseSet
             loadIntopHPDatabaseSet();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CSVGenerator file = new CSVGenerator();
+            if (CSVFileName.Text != "")
+            {
+                file.NewCSVFile(CSVFileName.Text);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a filename!");
+                return;
+            }
+
+            MessageBox.Show(file.GetFilePath + " created!");
+            return;
+        }
+
+        private void CSVFileName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
