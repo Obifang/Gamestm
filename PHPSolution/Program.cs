@@ -16,6 +16,8 @@ namespace PHPSolution
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //CSVGenerator file = new CSVGenerator();
+            //file.NewCSVFile("Test");
             Application.Run(new mainform());
         }
     }
