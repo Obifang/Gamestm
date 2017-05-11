@@ -51,7 +51,7 @@ namespace PHPSolution
         }
 
         //Function for writing data to file.
-        public bool WriteToFile (string[,] DataToWrite)
+        public bool WriteToFile (List<List<string>> DataToWrite)
         {
             //Delimiter ','  represents the seperation of elements in a csv.
             string delimiter = ",";
@@ -59,11 +59,8 @@ namespace PHPSolution
             //Checks whether file exists to write to.
             if (File.Exists(_FilePath))
             {
-                //Checks the length of the data to write.
-                int length = DataToWrite.GetLength(0);
                 //Creates a string builder to work in delimiter.
-                // StringBuilder buildString = new StringBuilder();
-                string buildString = "";
+                StringBuilder buildString = new StringBuilder();
 
                 //  buildString.AppendLine("sep=,");
 
@@ -71,18 +68,12 @@ namespace PHPSolution
                 using (StreamWriter file = new StreamWriter(_FilePath, true))
                 {
                     //Loops through all the indexes to add a delimiter and build a string.
-                    // for (int i = 0; i < length; i++)
-                    // {
-                    //     buildString.AppendLine(string.Join(delimiter,));
-                    // }
-
-                    for (int j = 0; j < DataToWrite.GetLength(0); j++)
-                    {
-                        for (int k = 0; k < DataToWrite.GetLength(1); k++)
-                        {
-                            buildString += DataToWrite[j, k] + delimiter;
-                        }
+                     for (int i = 0; i < DataToWrite.Count; i++)
+                     {
+                           buildString.AppendLine(string.Join(delimiter,DataToWrite[i]));
                     }
+
+
 
                     //Writes the string that was built to file.
                     file.Write(buildString.ToString());
