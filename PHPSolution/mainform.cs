@@ -376,7 +376,7 @@ namespace PHPSolution
 
         private void CSVFileName_TextChanged(object sender, EventArgs e)
         {
-            //Something needs to go here.
+            //Does something need to go here?
         }
 
         private void createreport_Click(object sender, EventArgs e)
