@@ -62,7 +62,7 @@ namespace PHPSolution
                 //Creates a string builder to work in delimiter.
                 StringBuilder buildString = new StringBuilder();
 
-                //  buildString.AppendLine("sep=,");
+                //buildString.AppendLine("sep=,");
 
                 //Opens file to begin writing data.
                 using (StreamWriter file = new StreamWriter(_FilePath, true))
@@ -91,8 +91,8 @@ namespace PHPSolution
 
        // internal void WriteToFile(string[] readerArray)
        // {
-      //      throw new NotImplementedException();
-      //  }
+       //     throw new NotImplementedException();
+       // }
 
         //Getter for _FilePath.
         public string GetFilePath

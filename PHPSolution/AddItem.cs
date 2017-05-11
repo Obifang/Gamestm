@@ -167,7 +167,7 @@ namespace PHPSolution
 
         private void AddItem_Load(object sender, EventArgs e)
         {
-        //Is something supposed to go here.
+        //Is something supposed to go here?
         }
     }
 }

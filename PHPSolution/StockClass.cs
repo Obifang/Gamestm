@@ -73,7 +73,6 @@ namespace PHPSolution
             {
                 return _Desc;
             }
-            //Add limitations and if statements if necessary.
         }
 
         public string GetStockType

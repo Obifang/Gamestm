@@ -92,7 +92,7 @@ namespace PHPSolution
 
             try
             {
-                //Attempt to convert price to decimal
+                //Attempt to convert price to decimal.
                 decPrice = Convert.ToDecimal(stockprice.Text);
             }
 

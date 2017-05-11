@@ -27,22 +27,7 @@ namespace PHPSolution
             decimal decPrice = 0;
             //intQuantity set to 0 so it exists before try/catch.
             int intQuantity = 0;
-            /* Commented out due to errors, validation replicated in try/catch statements below
-            if (int.Parse(stockquantity.Text.Trim()) < 0)
-            {
-                //Dispalys an error message.
-                MessageBox.Show("Please insert a value that is more than 0!");
-                //Exits function.
-                return;
-            }
-
-            if (decimal.Parse(stockprice.Text.Trim()) < 0)
-            {
-                //Dispalys an error message.
-                MessageBox.Show("Please insert a number more than 0!");
-                //Exits function.
-                return;
-            } */
+            //Commented out due to errors, validation replicated in try/catch statements below
 
             try
             {

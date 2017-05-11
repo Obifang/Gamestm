@@ -27,18 +27,13 @@ namespace PHPSolution
             _SalesDate = default(DateTime);
             _StockCount = 0;
             _StockSold = new List<StockSale>();
-            //StockClass[] StockItems = null;
-            //DateTime SalesDate = default(DateTime);
-            //double ItemCost = 0;
-            //int StockCount = 0;
-            //_StockSold = StockSold;
         }
 
         //Getters and setters. add fields to each item.
         //assign price to stock item.
         //bring up stock data in set messages.
         public StockClass[] StockItems
-        { //^[A-Za-z]\S*$
+        { 
             get
             {
                 return _StockItems;
@@ -48,18 +43,12 @@ namespace PHPSolution
         //with each stock added - increase quantity of item.
         //calculate the amount of purchases of each sales item.
         public int StockCount
-        {//[0-9]
+        {
             get
             {
                 return _StockCount;
             }
         }
-
-        /*function validateDate(testdate)
-        {
-            var date_regex = /^\d{ 2}\/\d{ 2}\/\d{ 4}$/ ;
-            return date_regex.test(testdate);
-        }*/
 
         //enable the sales date to synchronise with the clock on the computer.
         public DateTime SalesDate
@@ -86,7 +75,6 @@ namespace PHPSolution
             StockSale Temp;
             Temp = _StockSold.Find(x => x.GetStockName == StockName);
             //might increase stock sold with each item added to the database.
-            //Temp.UpdateStockSold = StockSold;
             Temp.UpdateStockSold = StockSold;
         }
 
