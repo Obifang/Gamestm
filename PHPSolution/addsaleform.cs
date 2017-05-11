@@ -140,7 +140,17 @@ namespace PHPSolution
                         //Searches pHPDatabaseDataSet.Stock for a entry with the entered stock_no and assigns it to stockRow.
                         PHPDatabaseDataSet.StockRow stockRow = pHPDatabaseDataSet.Stock.FindByStock_No(int.Parse(additemform.StockNo));
                         //Reduces quantity by the amount purchased.
-                        stockRow.Quantity -= int.Parse(additemform.Quantity);
+                        //Check if stock would be reduced to below 0 by sale
+                        if ((stockRow.Quantity - int.Parse(additemform.Quantity) < 0))
+                        {
+                            MessageBox.Show("The sold amount exceeds the quantity of stock, re-enter data and try again");
+                            return;
+                        }
+                        else
+                        {
+                            stockRow.Quantity -= int.Parse(additemform.Quantity);
+                        }
+                        
                         //Updates database.
                         stockTableAdapter.Update(pHPDatabaseDataSet.Stock);
                     }
