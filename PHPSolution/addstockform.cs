@@ -27,7 +27,7 @@ namespace PHPSolution
             decimal decPrice = 0;
             //intQuantity set to 0 so it exists before try/catch
             int intQuantity = 0;
-
+            /* Commented out due to errors, validation replicated in try/catch statements below
             if (int.Parse(stockquantity.Text.Trim()) < 0)
             {
                 //Dispalys an error message
@@ -42,12 +42,17 @@ namespace PHPSolution
                 MessageBox.Show("Please insert a number more than 0!");
                 //Exits function
                 return;
-            }
+            } */
 
             try
             {
                 //attempt to convert quantity to int
                 intQuantity = Int32.Parse(stockquantity.Text);
+                if (intQuantity < 0)
+                {
+                    MessageBox.Show("Please enter a quantity higher than 0");
+                    return;
+                }
             }
             catch(Exception ex)
             {
@@ -59,6 +64,11 @@ namespace PHPSolution
             {
                 //attempt to convert price to decimal
                 decPrice = Convert.ToDecimal(stockprice.Text);
+                if (decPrice < 0)
+                {
+                    MessageBox.Show("Please enter a price higher than 0");
+                    return;
+                }
             }
             catch (Exception ex)
             {
