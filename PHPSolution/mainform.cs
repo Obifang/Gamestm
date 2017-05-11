@@ -332,8 +332,6 @@ namespace PHPSolution
                 return;
             }
 
-            //Creates new form of type editsaleform and parses text of editsalenotextbox.
-            var editsaleform = new editsaleform(editsalenotextbox.Text.TrimEnd());
             //It needs to make sure the textbox does not contain anything but letters.
             if (!System.Text.RegularExpressions.Regex.IsMatch(editsalenotextbox.Text.Trim(), @"^[0-9]+$"))
             {
@@ -342,6 +340,10 @@ namespace PHPSolution
                 //Exits function.
                 return;
             }
+
+            //Creates new form of type editsaleform and parses text of editsalenotextbox.
+            var editsaleform = new editsaleform(editsalenotextbox.Text.TrimEnd());
+
             //Disable's current form an opens edit sale form.
             editsaleform.ShowDialog(this);
 
@@ -360,7 +362,6 @@ namespace PHPSolution
                 //Create new CSV file.
                 file.NewCSVFile(CSVFileName.Text);
             }
-
             else
             {
                 //If no name prompt the user to enter a name.
@@ -376,6 +377,16 @@ namespace PHPSolution
         private void CSVFileName_TextChanged(object sender, EventArgs e)
         {
             //Something needs to go here.
+        }
+
+        private void createreport_Click(object sender, EventArgs e)
+        {
+
+            //Creates new form of type editsaleform and parses text of editsalenotextbox.
+            var reportform = new reportform();
+
+            //Disable's current form an opens edit sale form.
+            reportform.ShowDialog(this);
         }
     }
 }

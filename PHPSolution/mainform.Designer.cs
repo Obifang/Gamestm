@@ -108,6 +108,7 @@
             this.editstocktextbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.CSVFileName = new System.Windows.Forms.TextBox();
+            this.createreport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
             this.stockBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
@@ -797,11 +798,22 @@
             this.CSVFileName.TabIndex = 45;
             this.CSVFileName.TextChanged += new System.EventHandler(this.CSVFileName_TextChanged);
             // 
+            // createreport
+            // 
+            this.createreport.Location = new System.Drawing.Point(241, 262);
+            this.createreport.Name = "createreport";
+            this.createreport.Size = new System.Drawing.Size(174, 23);
+            this.createreport.TabIndex = 46;
+            this.createreport.Text = "Create Report";
+            this.createreport.UseVisualStyleBackColor = true;
+            this.createreport.Click += new System.EventHandler(this.createreport_Click);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 542);
+            this.Controls.Add(this.createreport);
             this.Controls.Add(this.CSVFileName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editstocktextbox);
@@ -937,5 +949,6 @@
         public System.Windows.Forms.TextBox editstocktextbox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox CSVFileName;
+        private System.Windows.Forms.Button createreport;
     }
 }

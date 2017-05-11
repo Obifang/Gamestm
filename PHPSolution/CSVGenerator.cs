@@ -51,7 +51,7 @@ namespace PHPSolution
         }
 
         //Function for writing data to file.
-        public bool WriteToFile (string[] [] DataToWrite)
+        public bool WriteToFile (string[,] DataToWrite)
         {
             //Delimiter ','  represents the seperation of elements in a csv.
             string delimiter = ",";
@@ -62,17 +62,26 @@ namespace PHPSolution
                 //Checks the length of the data to write.
                 int length = DataToWrite.GetLength(0);
                 //Creates a string builder to work in delimiter.
-                StringBuilder buildString = new StringBuilder();
+                // StringBuilder buildString = new StringBuilder();
+                string buildString = "";
 
-                buildString.AppendLine("sep=,");
+                //  buildString.AppendLine("sep=,");
 
                 //Opens file to begin writing data.
                 using (StreamWriter file = new StreamWriter(_FilePath, true))
                 {
                     //Loops through all the indexes to add a delimiter and build a string.
-                    for (int i = 0; i < length; i++)
+                    // for (int i = 0; i < length; i++)
+                    // {
+                    //     buildString.AppendLine(string.Join(delimiter,));
+                    // }
+
+                    for (int j = 0; j < DataToWrite.GetLength(0); j++)
                     {
-                        buildString.AppendLine(string.Join(delimiter, DataToWrite[i]));
+                        for (int k = 0; k < DataToWrite.GetLength(1); k++)
+                        {
+                            buildString += DataToWrite[j, k] + delimiter;
+                        }
                     }
 
                     //Writes the string that was built to file.
@@ -80,7 +89,6 @@ namespace PHPSolution
                     //Closes the file.
                     file.Close();
                 }
-
                 return true;
             }
 
@@ -89,6 +97,11 @@ namespace PHPSolution
                 return false;
             }
         }
+
+       // internal void WriteToFile(string[] readerArray)
+       // {
+      //      throw new NotImplementedException();
+      //  }
 
         //Getter for _FilePath.
         public string GetFilePath
