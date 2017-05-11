@@ -79,6 +79,7 @@
     <Compile Include="addstockform.Designer.cs">
       <DependentUpon>addstockform.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSVGenerator.cs" />
     <Compile Include="EditItem.cs">
       <SubType>Form</SubType>
     </Compile>
