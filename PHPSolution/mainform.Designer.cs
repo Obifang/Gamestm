@@ -106,6 +106,8 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.editsalenotextbox = new System.Windows.Forms.TextBox();
             this.editstocktextbox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.CSVFileName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
             this.stockBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
@@ -145,7 +147,7 @@
             this.stockBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stockBindingNavigator.Name = "stockBindingNavigator";
             this.stockBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stockBindingNavigator.Size = new System.Drawing.Size(240, 25);
+            this.stockBindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.stockBindingNavigator.TabIndex = 0;
             this.stockBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -777,11 +779,31 @@
             this.editstocktextbox.TabIndex = 43;
             this.editstocktextbox.Text = "Stock To Edit (ID Number)";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(241, 327);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 23);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Create CSV File";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CSVFileName
+            // 
+            this.CSVFileName.Location = new System.Drawing.Point(241, 301);
+            this.CSVFileName.Name = "CSVFileName";
+            this.CSVFileName.Size = new System.Drawing.Size(174, 20);
+            this.CSVFileName.TabIndex = 45;
+            this.CSVFileName.TextChanged += new System.EventHandler(this.CSVFileName_TextChanged);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 542);
+            this.Controls.Add(this.CSVFileName);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.editstocktextbox);
             this.Controls.Add(this.editsalenotextbox);
             this.Controls.Add(this.stocksaleBindingNavigator);
@@ -913,5 +935,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         public System.Windows.Forms.TextBox editsalenotextbox;
         public System.Windows.Forms.TextBox editstocktextbox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox CSVFileName;
     }
 }

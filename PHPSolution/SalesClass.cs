@@ -63,7 +63,7 @@ namespace PHPSolution
 
         //enable the sales date to synchronise with the clock on the computer.
         public DateTime SalesDate
-        {//[RegularExpression(@"\d{2,2}/\d{2,2}/\d{4,4} \d{2,2}:\d{2,2}:\d{2,2}")]
+        {
             get
             {
 
@@ -73,8 +73,7 @@ namespace PHPSolution
 
         //calculate the total stock sold and profit.
         public List<StockSale> StockSold
-        {//[0-9]
-            //^(?:\d|[1-3]\d|4[0-5])$
+        {
             get
             {
                 return _StockSold;
@@ -83,7 +82,7 @@ namespace PHPSolution
 
         private void UpdateStock(string StockName, int StockSold)
         {
-            //just need to know what to insert here.
+            //Just need to know what to insert here.
             StockSale Temp;
             Temp = _StockSold.Find(x => x.GetStockName == StockName);
             //might increase stock sold with each item added to the database.

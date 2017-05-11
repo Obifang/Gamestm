@@ -11,7 +11,7 @@ namespace PHPSolution
         private string _StockName;
         private int _StockSold;
 
-        //set values and private variables.
+        //Set values and private variables.
         public StockSale(String StockName, int StockSold)
         {
             _StockName = StockName;
@@ -20,7 +20,7 @@ namespace PHPSolution
 
         //Get the name of the stock.	
         public string GetStockName
-        {//^[A-Za-z]\S*$
+        {
             get
             {
                 return _StockName;
@@ -38,8 +38,7 @@ namespace PHPSolution
 
         //Get the amount of stock sold.	
         public int UpdateStockSold
-        {//[0-9]
-            //^(?:\d|[1-3]\d|4[0-5])$
+        {
             set
             {
                 _StockSold -= value;
