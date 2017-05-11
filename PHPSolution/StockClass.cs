@@ -22,8 +22,7 @@ namespace PHPSolution
         private string _Type;
         private int _Quantity;
 
-
-        //maybe have "Quantity" as a private variable if need be.
+        //Maybe have "Quantity" as a private variable if need be.
         public StockClass(string Name, string Desc, int Id, int InStock, string Type, int Quantity, decimal Price)
         {
             //Provide a value for the variables.
@@ -38,7 +37,7 @@ namespace PHPSolution
 
         //Get the name of the product inserted.
         public string GetName
-        {//^[A-Za-z]\S*$
+        {
             get
             {
                 return _Name;
@@ -47,8 +46,7 @@ namespace PHPSolution
 
         //Get the price of the product.	
         public decimal GetPrice
-        {//[0-9]
-            //^[0-9]([.,][0-9]{1,3})?$
+        {
             get
             {
                 return _Price;
@@ -70,7 +68,7 @@ namespace PHPSolution
 
         //Get the description of the product.
         public string GetDesc
-        {//^[A-Za-z]\S*$
+        {
             get
             {
                 return _Desc;
@@ -79,7 +77,7 @@ namespace PHPSolution
         }
 
         public string GetStockType
-        {//^[A-Za-z]\S*$
+        {
             get
             {
                 return _Type;
@@ -87,8 +85,7 @@ namespace PHPSolution
         }
 
         public int GetQuantity
-        {//[0-9]
-            //^(?:\d|[1-3]\d|4[0-5])$
+        {
             get
             {
                 return _Quantity;
@@ -99,7 +96,7 @@ namespace PHPSolution
             }
         }
 
-        //get and find out if there is stock available or not.
+        //Get and find out if there is stock available or not.
         public int InStock
         {
             get
@@ -108,10 +105,10 @@ namespace PHPSolution
             }
         }
 
-        //search for entry of typed sales item.
+        //Search for entry of typed sales item.
         public void edit(string newName, string newDesc, string newType, int newId, int newQuantity, decimal newPrice)
         {
-            //just need to know what to insert here.
+            //Just need to know what to insert here.
             _Id = newId;
             _Name = newName;
             _Desc = newDesc;
@@ -120,6 +117,5 @@ namespace PHPSolution
             _Price = newPrice;
             //Edit database.
         }
-
     }
 }
