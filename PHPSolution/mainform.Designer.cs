@@ -780,24 +780,6 @@
             this.editstocktextbox.TabIndex = 43;
             this.editstocktextbox.Text = "Stock To Edit (ID Number)";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(241, 327);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Create CSV File";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // CSVFileName
-            // 
-            this.CSVFileName.Location = new System.Drawing.Point(241, 301);
-            this.CSVFileName.Name = "CSVFileName";
-            this.CSVFileName.Size = new System.Drawing.Size(174, 20);
-            this.CSVFileName.TabIndex = 45;
-            this.CSVFileName.TextChanged += new System.EventHandler(this.CSVFileName_TextChanged);
-            // 
             // createreport
             // 
             this.createreport.Location = new System.Drawing.Point(241, 262);

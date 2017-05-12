@@ -351,34 +351,6 @@ namespace PHPSolution
             loadIntopHPDatabaseSet();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Create CSV generator class.
-            CSVGenerator file = new CSVGenerator();
-
-            //Check to ensure there is a name for the file.
-            if (CSVFileName.Text != "")
-            {
-                //Create new CSV file.
-                file.NewCSVFile(CSVFileName.Text);
-            }
-            else
-            {
-                //If no name prompt the user to enter a name.
-                MessageBox.Show("Please enter a filename!");
-                return;
-            }
-
-            //Prompt the user that their data has been successfully saved.
-            MessageBox.Show(file.GetFilePath + " has been saved!");
-            return;
-        }
-
-        private void CSVFileName_TextChanged(object sender, EventArgs e)
-        {
-            //Does something need to go here?
-        }
-
         private void createreport_Click(object sender, EventArgs e)
         {
 

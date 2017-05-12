@@ -41,15 +41,24 @@ namespace PHPSolution
             {
                 List<string> tempList = new List<string>();
                 readerArray.Add(tempList);
-                readerArray[i].Add(reader.GetString(0).Trim()); //Name
-                readerArray[i].Add(reader.GetInt32(1).ToString()); //Stock_No
-                readerArray[i].Add(reader.GetInt32(2).ToString()); //Quantity
-                readerArray[i].Add(reader.GetDecimal(3).ToString()); //Price
-                readerArray[i].Add(reader.GetInt32(4).ToString()); //NoOfPurchases
-                readerArray[i].Add(reader.GetInt32(5).ToString()); //AvgPurchased
-                readerArray[i].Add(reader.GetInt32(6).ToString()); //SumPurchased
-                readerArray[i].Add(reader.GetDecimal(7).ToString()); //AvgValue
-                readerArray[i].Add(reader.GetDecimal(8).ToString()); //SumValue
+                readerArray[i].Add(reader.GetString(0).Trim()); 
+                //Name.
+                readerArray[i].Add(reader.GetInt32(1).ToString()); 
+                //Stock_No.
+                readerArray[i].Add(reader.GetInt32(2).ToString()); 
+                //Quantity.
+                readerArray[i].Add(reader.GetDecimal(3).ToString());
+                //Price.
+                readerArray[i].Add(reader.GetInt32(4).ToString()); 
+                //NoOfPurchases.
+                readerArray[i].Add(reader.GetInt32(5).ToString()); 
+                //AvgPurchased.
+                readerArray[i].Add(reader.GetInt32(6).ToString()); 
+                //SumPurchased.
+                readerArray[i].Add(reader.GetDecimal(7).ToString()); 
+                //AvgValue.
+                readerArray[i].Add(reader.GetDecimal(8).ToString());
+                //SumValue.
                 i++;
             }
             reader.Close();
@@ -88,17 +97,17 @@ namespace PHPSolution
 
                 if (localTime.Month - 1 == 1 || localTime.Month - 1 == 3 || localTime.Month - 1 == 5 || localTime.Month - 1 == 7 || localTime.Month - 1 == 8 || localTime.Month - 1 == 10 || localTime.Month - 1 == 12)
                 {
-                    //31 days
+                    //31 days.
                     aWeekAgo = localTime.Year + "-" + (localTime.Month - 1).ToString() + "-" + (31-amount).ToString();
                 }
                 else if (localTime.Month - 1 == 2)
                 {
-                    //28 days
+                    //28 days.
                     aWeekAgo = localTime.Year + "-" + (localTime.Month - 1).ToString() + "-" + (28-amount).ToString();
                 }
                 else
                 {
-                    //30 days
+                    //30 days.
                     aWeekAgo = localTime.Year + "-" + (localTime.Month - 1).ToString() + "-" + (30 - amount).ToString();
                 }
             }
