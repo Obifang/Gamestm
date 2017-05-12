@@ -39,14 +39,14 @@
             this.multiline.Name = "multiline";
             this.multiline.ReadOnly = true;
             this.multiline.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.multiline.Size = new System.Drawing.Size(349, 367);
+            this.multiline.Size = new System.Drawing.Size(392, 367);
             this.multiline.TabIndex = 34;
             // 
             // weeklyreport
             // 
             this.weeklyreport.Location = new System.Drawing.Point(12, 12);
             this.weeklyreport.Name = "weeklyreport";
-            this.weeklyreport.Size = new System.Drawing.Size(349, 23);
+            this.weeklyreport.Size = new System.Drawing.Size(392, 23);
             this.weeklyreport.TabIndex = 35;
             this.weeklyreport.Text = "Weekly Report";
             this.weeklyreport.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 420);
+            this.ClientSize = new System.Drawing.Size(416, 420);
             this.Controls.Add(this.weeklyreport);
             this.Controls.Add(this.multiline);
             this.Name = "reportform";
