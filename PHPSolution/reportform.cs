@@ -63,7 +63,8 @@ namespace PHPSolution
             }
             reader.Close();
 
-            multiline.Text = "";
+            multiline.Text = "NAME, STOCK_NO, QUANTITY, PRICE, NOOFPURCHASES, AVGPURCHASED, SUMPURCHASED, AVGTOTAL, SUMTOTAL" + Environment.NewLine;
+
             for (int j = 0; j < readerArray.Count; j++)
             {
                 for (int k = 0; k < readerArray[j].Count - 2; k++)

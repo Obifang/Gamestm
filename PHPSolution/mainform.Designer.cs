@@ -780,7 +780,7 @@
             // 
             // createreport
             // 
-            this.createreport.Location = new System.Drawing.Point(241, 262);
+            this.createreport.Location = new System.Drawing.Point(241, 340);
             this.createreport.Name = "createreport";
             this.createreport.Size = new System.Drawing.Size(174, 23);
             this.createreport.TabIndex = 46;
