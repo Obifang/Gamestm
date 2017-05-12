@@ -21,7 +21,7 @@ namespace PHPSolution
         private void generatereport(string startdate, string enddate)
         {
             System.Data.SqlClient.SqlConnection sqlConnection1 =
-                new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog='C:\\USERS\\BRENDAN\\DOCUMENTS\\GITHUB\\GAMESTM\\PHPSOLUTION\\BIN\\DEBUG\\PHPDATABASE.MDF';Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;User ID=DESKTOP-4A7DDVC\\Brendan Pert;Password=;");
+                new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog='C:\\Users\\Joshua\\Desktop\\Swinburne\\DP2\\GamesProject\\Games4\\PHPSolution\\BIN\\DEBUG\\PHPDATABASE.MDF';Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;User ID=DESKTOP-4A7DDVC\\Brendan Pert;Password=;");
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             System.Data.SqlClient.SqlDataReader reader;

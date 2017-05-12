@@ -106,8 +106,6 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.editsalenotextbox = new System.Windows.Forms.TextBox();
             this.editstocktextbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CSVFileName = new System.Windows.Forms.TextBox();
             this.createreport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingNavigator)).BeginInit();
             this.stockBindingNavigator.SuspendLayout();
@@ -796,8 +794,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 542);
             this.Controls.Add(this.createreport);
-            this.Controls.Add(this.CSVFileName);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.editstocktextbox);
             this.Controls.Add(this.editsalenotextbox);
             this.Controls.Add(this.stocksaleBindingNavigator);
@@ -929,8 +925,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         public System.Windows.Forms.TextBox editsalenotextbox;
         public System.Windows.Forms.TextBox editstocktextbox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox CSVFileName;
         private System.Windows.Forms.Button createreport;
     }
 }
