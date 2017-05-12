@@ -76,6 +76,8 @@ namespace PHPSolution
             file.NewCSVFile("Test");
             file.WriteToFile(readerArray);
 
+            MessageBox.Show(file.GetFilePath + " has been saved");
+
             sqlConnection1.Close();
         }
 
